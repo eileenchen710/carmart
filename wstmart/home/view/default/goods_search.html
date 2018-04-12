@@ -23,7 +23,7 @@
      	<div class="des">
      		<div class="p-sale">已售{$vo['saleNum']}件</div>
      		<div class="p-name"><a target='_blank' href='{:Url("home/goods/detail","id=".$vo["goodsId"])}'>{$vo['goodsName']}</a></div>
-     		<div class="p-price">￥{$vo['shopPrice']}</div>
+     		<div class="p-price">${$vo['shopPrice']}</div>
      		<div class="p-buy"><a href="javascript:WST.addCart({$vo['goodsId']})">加入购物车</a></div>
      	</div>
       </li>
@@ -52,7 +52,7 @@
 			<div class="item">
 				<div class="img"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo['goodsId'])}"><img class='goodsImg' data-original="__ROOT__/{:WSTImg($vo['goodsImg'])}" alt="{$vo['goodsName']}" title="{$vo['goodsName']}"/></a></div>
 				<div class="p-name"><a class="wst-hide wst-redlink">{$vo['goodsName']}</a></div>
-				<div class="p-price">￥{$vo['shopPrice']}<span class="v-price">￥{$vo['marketPrice']}</span></div>
+				<div class="p-price">${$vo['shopPrice']}<span class="v-price">${$vo['marketPrice']}</span></div>
 			</div>
 			{/wst:goods}
 		</div>
@@ -62,7 +62,7 @@
 			<div class="item">
 				<div class="img"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo['goodsId'])}"><img class='goodsImg' data-original="__ROOT__/{:WSTImg($vo['goodsImg'])}" alt="{$vo['goodsName']}" title="{$vo['goodsName']}"/></a></div>
 				<div class="p-name"><a class="wst-hide wst-redlink">{$vo['goodsName']}</a></div>
-				<div class="p-price">￥{$vo['shopPrice']}<span class="v-price">￥{$vo['marketPrice']}</span></div>
+				<div class="p-price">${$vo['shopPrice']}<span class="v-price">${$vo['marketPrice']}</span></div>
 			</div>
 			{/wst:goods}
 		</div>
@@ -156,7 +156,7 @@
 	        <a class="{$orderBy==3?'curr':''}" href='javascript:void(0)' onclick='javascript:searchOrder(3)'>人气<span class="{if condition="$orderBy neq 3"}store{/if}{if condition="$orderBy eq 3 and $order eq 1"}store2{/if}{if condition="$orderBy eq 3 and $order eq 0"}store3{/if}"></span></a>
 	        <a class="{$orderBy==4?'curr':''}" href='javascript:void(0)' onclick='javascript:searchOrder(4)'>上架时间<span class="{if condition="$orderBy neq 4"}store{/if}{if condition="$orderBy eq 4 and $order eq 1"}store2{/if}{if condition="$orderBy eq 4 and $order eq 0"}store3{/if}"></span></a>
         	<div class="wst-price-ipts">
-			<span class="wst-price-ipt1">￥</span><span class="wst-price-ipt2">￥</span>
+			<span class="wst-price-ipt1">$</span><span class="wst-price-ipt2">$</span>
 			<input type="text" class="sipt wst-price-ipt" id="sprice" value="{$sprice}" style="margin-left:8px;" onkeypress='return WST.isNumberdoteKey(event);' onkeyup="javascript:WST.isChinese(this,1)">
 			- <input type="text" class="sipt wst-price-ipt" id="eprice" value="{$eprice}" onkeypress='return WST.isNumberKey(event);' onkeyup="javascript:WST.isChinese(this,1)">
 			</div>
@@ -169,7 +169,7 @@
 	      	<div class="img"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo['goodsId'])}"><img title="{$vo['goodsName']}" alt="{$vo['goodsName']}" class='goodsImg2' data-original="__ROOT__/{:WSTImg($vo['goodsImg'])}"/></a></div>
 	      	<div class="p-name"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo['goodsId'])}" class="wst-redlink" title="{$vo['goodsName']}">{$vo['goodsName']}</a></div>
 	      	<div>
-	      		<div class="p-price">￥{$vo['shopPrice']}</div>
+	      		<div class="p-price">${$vo['shopPrice']}</div>
 	      		<div class="p-hsale">
 	      			<div class="sale-num">成交数：<span class="wst-fred">{$vo['saleNum']}</span></div>
 		      		<a class="p-add-cart" style="display:none;" href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a>
@@ -177,7 +177,7 @@
 	      		<div class='wst-clear'></div>
 	      	</div>
 	      	<div>
-	      		<div class="p-mprice">市场价<span>￥{$vo['marketPrice']}</span></div>
+	      		<div class="p-mprice">市场价<span>${$vo['marketPrice']}</span></div>
 	      		<div class="p-appraise">已有<span class="wst-fred">{$vo['appraiseNum']}</span>人评价</div>
 	      		<div class='wst-clear'></div>
 	      	</div>
@@ -204,7 +204,7 @@
 	      	<div class="img"><a target='_blank' href="{:Url('home/goods/detail','id='.$rvo['goodsId'])}"><img title="{$rvo['goodsName']}" alt="{$rvo['goodsName']}" class='goodsImg' data-original="__ROOT__/{$rvo['goodsImg']}"/></a></div>
 	      	<div class="p-name"><a target='_blank' class="wst-redlink">{$rvo['goodsName']}</a></div>
 	      	<div>
-	      		<div class="p-price">￥{$rvo['shopPrice']}</div>
+	      		<div class="p-price">${$rvo['shopPrice']}</div>
 	      		<div class="p-hsale">
 	      			<div class="sale-num">成交数：<span class="wst-fred">{$rvo['saleNum']}</span></div>
 		      		<a class="p-add-cart" style="display:none;" href="javascript:WST.addCart({$rvo['goodsId']});">加入购物车</a>
@@ -212,7 +212,7 @@
 	      		<div class='wst-clear'></div>
 	      	</div>
 	      	<div>
-	      		<div class="p-mprice">市场价<span>￥{$rvo['marketPrice']}</span></div>
+	      		<div class="p-mprice">市场价<span>${$rvo['marketPrice']}</span></div>
 	      		<div class="p-appraise">已有<span class="wst-fred">{$rvo['appraiseNum']}</span>人评价</div>
 	      		<div class='wst-clear'></div>
 	      	</div>
@@ -232,7 +232,7 @@
 			<div class="item">
 				<div class="img"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo['goodsId'])}"><img class='goodsImg' data-original="__ROOT__/{:WSTImg($vo['goodsImg'])}" alt="{$vo['goodsName']}" title="{$vo['goodsName']}"/></a></div>
 				<div class="p-name"><a class="wst-hide wst-redlink" href="{:Url('home/goods/detail','id='.$vo['goodsId'])}">{$vo['goodsName']}</a></div>
-				<div class="p-price">￥{$vo['shopPrice']}<span class="v-price">￥{$vo['marketPrice']}</span></div>
+				<div class="p-price">${$vo['shopPrice']}<span class="v-price">${$vo['marketPrice']}</span></div>
 			</div>
 	       {/wst:goods}
 	     	<div class='wst-clear'></div>

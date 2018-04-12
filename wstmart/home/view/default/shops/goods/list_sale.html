@@ -72,7 +72,7 @@
       </td>
       <td>{{d[i]['goodsSn']}}</td>
       {{# if(d[i]['isSpec']==1) { }}
-        <td>￥{{d[i]['shopPrice']}}</td>
+        <td>${{d[i]['shopPrice']}}</td>
       {{# }else{ }}
       <td width="40" ondblclick="javascript:toEditGoodsBase(2,{{d[i]['goodsId']}},'')">
           <input id="ipt_2_{{d[i]['goodsId']}}" onkeyup="javascript:WST.isChinese(this,1)" onkeypress="return WST.isNumberdoteKey(event)" onblur="javascript:editGoodsBase(2,{{d[i]['goodsId']}})" style="display:none;width:100%;border:1px solid red;width:40px;" maxlength="10"/>

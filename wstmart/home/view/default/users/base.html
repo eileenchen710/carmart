@@ -54,7 +54,7 @@ $(function() {
 	<div class="goods" id="j-goods{{ d.list[i].cartId }}">
 	   	<div class="imgs"><a href="__ROOT__/home/goods/detail/id/{{d.list[i].goodsId }}"><img class="goodsImgc" data-original="__ROOT__/{{ d.list[i].goodsImg }}" title="{{ d.list[i].goodsName }}"></a></div>
 	   	<div class="number"><p><a  href="__ROOT__/home/goods/detail/id/{{d.list[i].goodsId }}">{{WST.cutStr(d.list[i].goodsName,26)}}</a></p><p>数量：{{ d.list[i].cartNum }}</p></div>
-	   	<div class="price"><p>￥{{ d.list[i].shopPrice }}</p><span><a href="javascript:WST.delCheckCart({{ d.list[i].cartId }})">删除</a></span></div>
+	   	<div class="price"><p>${{ d.list[i].shopPrice }}</p><span><a href="javascript:WST.delCheckCart({{ d.list[i].cartId }})">删除</a></span></div>
 	</div>
 {{# } }}
 </script>
@@ -131,36 +131,36 @@ $(function() {
           		<div class="wst-bottom-gs">
           			<div class="wst-bottom-i"><img class="goodsImg" data-original="__STYLE__/img/img_hot_02.jpg"></div>
           			<div class="wst-bottom-n1">商品名称商品名称商品名称商品名称商品名称</div>
-          			<span class="wst-bottom-n2"><span class="wst-bottom-n2l">￥100.00</span><span class="wst-bottom-n2r">成交数：<span>123</span></span></span>
-          			<span class="wst-bottom-n3"><span class="wst-bottom-n3l">市场价：￥100.00</span><span class="wst-bottom-n3r">已有<span>123</span>人评价</span></span>
+          			<span class="wst-bottom-n2"><span class="wst-bottom-n2l">$100.00</span><span class="wst-bottom-n2r">成交数：<span>123</span></span></span>
+          			<span class="wst-bottom-n3"><span class="wst-bottom-n3l">市场价：$100.00</span><span class="wst-bottom-n3r">已有<span>123</span>人评价</span></span>
           			<span class="wst-bottom-n4"><span class="wst-lfloat">店铺名称店铺名称</span><img class="wst-lfloat" style="margin: 2px 0px 0px 5px;" src="__STYLE__/img/icon_dianpujie_03.png"></span>
           		</div>
           		          		<div class="wst-bottom-gs">
           			<div class="wst-bottom-i"><img class="goodsImg" data-original="__STYLE__/img/img_hot_02.jpg"></div>
           			<div class="wst-bottom-n1">商品名称商品名称商品名称商品名称商品名称</div>
-          			<span class="wst-bottom-n2"><span class="wst-bottom-n2l">￥100.00</span><span class="wst-bottom-n2r">成交数：<span>123</span></span></span>
-          			<span class="wst-bottom-n3"><span class="wst-bottom-n3l">市场价：￥100.00</span><span class="wst-bottom-n3r">已有<span>123</span>人评价</span></span>
+          			<span class="wst-bottom-n2"><span class="wst-bottom-n2l">$100.00</span><span class="wst-bottom-n2r">成交数：<span>123</span></span></span>
+          			<span class="wst-bottom-n3"><span class="wst-bottom-n3l">市场价：$100.00</span><span class="wst-bottom-n3r">已有<span>123</span>人评价</span></span>
           			<span class="wst-bottom-n4"><span class="wst-lfloat">店铺名称店铺名称</span><img class="wst-lfloat" style="margin: 2px 0px 0px 5px;" src="__STYLE__/img/icon_dianpujie_03.png"></span>
           		</div>
           		          		<div class="wst-bottom-gs">
           			<div class="wst-bottom-i"><img class="goodsImg" data-original="__STYLE__/img/img_hot_02.jpg"></div>
           			<div class="wst-bottom-n1">商品名称商品名称商品名称商品名称商品名称</div>
-          			<span class="wst-bottom-n2"><span class="wst-bottom-n2l">￥100.00</span><span class="wst-bottom-n2r">成交数：<span>123</span></span></span>
-          			<span class="wst-bottom-n3"><span class="wst-bottom-n3l">市场价：￥100.00</span><span class="wst-bottom-n3r">已有<span>123</span>人评价</span></span>
+          			<span class="wst-bottom-n2"><span class="wst-bottom-n2l">$100.00</span><span class="wst-bottom-n2r">成交数：<span>123</span></span></span>
+          			<span class="wst-bottom-n3"><span class="wst-bottom-n3l">市场价：$100.00</span><span class="wst-bottom-n3r">已有<span>123</span>人评价</span></span>
           			<span class="wst-bottom-n4"><span class="wst-lfloat">店铺名称店铺名称</span><img class="wst-lfloat" style="margin: 2px 0px 0px 5px;" src="__STYLE__/img/icon_dianpujie_03.png"></span>
           		</div>
           		          		<div class="wst-bottom-gs">
           			<div class="wst-bottom-i"><img class="goodsImg" data-original="__STYLE__/img/img_hot_02.jpg"></div>
           			<div class="wst-bottom-n1">商品名称商品名称商品名称商品名称商品名称</div>
-          			<span class="wst-bottom-n2"><span class="wst-bottom-n2l">￥100.00</span><span class="wst-bottom-n2r">成交数：<span>123</span></span></span>
-          			<span class="wst-bottom-n3"><span class="wst-bottom-n3l">市场价：￥100.00</span><span class="wst-bottom-n3r">已有<span>123</span>人评价</span></span>
+          			<span class="wst-bottom-n2"><span class="wst-bottom-n2l">$100.00</span><span class="wst-bottom-n2r">成交数：<span>123</span></span></span>
+          			<span class="wst-bottom-n3"><span class="wst-bottom-n3l">市场价：$100.00</span><span class="wst-bottom-n3r">已有<span>123</span>人评价</span></span>
           			<span class="wst-bottom-n4"><span class="wst-lfloat">店铺名称店铺名称</span><img class="wst-lfloat" style="margin: 2px 0px 0px 5px;" src="__STYLE__/img/icon_dianpujie_03.png"></span>
           		</div>
           		          		<div class="wst-bottom-gs">
           			<div class="wst-bottom-i"><img class="goodsImg" data-original="__STYLE__/img/img_hot_02.jpg"></div>
           			<div class="wst-bottom-n1">商品名称商品名称商品名称商品名称商品名称</div>
-          			<span class="wst-bottom-n2"><span class="wst-bottom-n2l">￥100.00</span><span class="wst-bottom-n2r">成交数：<span>123</span></span></span>
-          			<span class="wst-bottom-n3"><span class="wst-bottom-n3l">市场价：￥100.00</span><span class="wst-bottom-n3r">已有<span>123</span>人评价</span></span>
+          			<span class="wst-bottom-n2"><span class="wst-bottom-n2l">$100.00</span><span class="wst-bottom-n2r">成交数：<span>123</span></span></span>
+          			<span class="wst-bottom-n3"><span class="wst-bottom-n3l">市场价：$100.00</span><span class="wst-bottom-n3r">已有<span>123</span>人评价</span></span>
           			<span class="wst-bottom-n4"><span class="wst-lfloat">店铺名称店铺名称</span><img class="wst-lfloat" style="margin: 2px 0px 0px 5px;" src="__STYLE__/img/icon_dianpujie_03.png"></span>
           		</div>
           		<div style='clear:both;'></div>

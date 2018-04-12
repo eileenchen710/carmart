@@ -3,7 +3,7 @@ body{color:#666;font:12px/150% Arial,Verdana,"宋体"}
 *{padding:0;margin:0;font-size: 13px;}
 ol,ul {list-style: none}
 a {color:#666;text-decoration: none;}
-img{ border:none;} 
+img{ border:none;}
 select{background-color: #ffffff;border: 1px solid #cccccc;border-radius: 2px;height: 24px;margin:2px;-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;}
 input[type=text],input[type=password]{border: 1px solid #ccc;height: 23px;line-height: 17px;padding:2px;}
 input[type="radio"],input[type="checkbox"]{margin:2px;}
@@ -137,8 +137,8 @@ input[type=button]{cursor:pointer}
 
 .wst-lite-container{height:auto;}
 .wst-logo{margin:5px 5px 5px 0px;float:left;height:auto;}
-.wst-search-box{float:left;position: relative;width: 670px;}
-.wst-search{border:2px solid #e23c3d;height: 36px;margin-left: 20px;margin-top: 50px;position: relative;}
+.wst-search-box{float:left;position: relative;width: 750px;}
+.wst-search{border:2px solid #e23c3d;height: 36px;margin-left: 50px;margin-top: 50px;position: relative;}
 .wst-search .j-search-type{width:78px;top:0;line-height:36px;position: absolute;padding:0;border-right:2px solid #e23c3d;border-left:2px solid #e23c3d;cursor: pointer;left:-2px;text-align:center;}
 .wst-search .j-type-list{width:70px;top:35px;line-height:36px;position: absolute;padding:0 4px;border:2px solid #e23c3d;cursor: pointer;background-color: #fff;left:-2px;z-index: 100;border-top:0;display: none;text-align: center;}
 
@@ -284,7 +284,7 @@ input[type=button]{cursor:pointer}
   margin:0 5px;
 }
 #wst-right-new-list>li>a{
-  color:#605e5e; 
+  color:#605e5e;
 }
 .visitor-new-list{
   height:161px !important;
@@ -385,7 +385,7 @@ input[type=button]{cursor:pointer}
 .wst-footer-frd{color:#e23e3d;font-weight:bolder;font-size:18px;}
 .wst-footer-pno{color:red;font-weight:bolder;font-size:18px;}
 .wst-footer{
-	text-align:center;line-height:25px;width:1200px;margin:0 auto; 
+	text-align:center;line-height:25px;width:1200px;margin:0 auto;
 }
 .wst-footer-fl-box{text-align:center;margin-top:45px;}
 .wst-footer-cld-box{border:1px solid #D5D5D5;height:auto;line-height:30px;text-align:left;}

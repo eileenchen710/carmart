@@ -62,7 +62,7 @@
 	<div class="goods" id="j-goods{{ d.list[i].cartId }}">
 	   	<div class="imgs"><a href="__ROOT__/home/goods/detail/id/{{d.list[i].goodsId }}"><img class="goodsImgc" data-original="__ROOT__/{{ d.list[i].goodsImg }}" title="{{ d.list[i].goodsName }}"></a></div>
 	   	<div class="number"><p><a  href="__ROOT__/home/goods/detail/id/{{d.list[i].goodsId }}">{{WST.cutStr(d.list[i].goodsName,26)}}</a></p><p>数量：{{ d.list[i].cartNum }}</p></div>
-	   	<div class="price"><p>￥{{ d.list[i].shopPrice }}</p><span><a href="javascript:WST.delCheckCart({{ d.list[i].cartId }})">删除</a></span></div>
+	   	<div class="price"><p>${{ d.list[i].shopPrice }}</p><span><a href="javascript:WST.delCheckCart({{ d.list[i].cartId }})">删除</a></span></div>
 	</div>
 {{# } }}
 </script>
@@ -72,7 +72,7 @@
 <div class="wst-nav-menus">
    <div class="nav-w" style="position: relative;">
       <div class="w-spacer"></div>
-      <div class="dorpdown {if isset($hideCategory)}j-index{/if}" id="wst-categorys">
+      <!-- <div class="dorpdown {if isset($hideCategory)}j-index{/if}" id="wst-categorys">
          <div class="dt j-cate-dt">
              <a href="{:Url('home/goods/lists')}" target="_blank">全部商品分类</a>
          </div>
@@ -84,7 +84,7 @@
                       <div class="{if ($key>=12)} over-cat-icon {else /} cat-icon-{$k} {/if}"></div>
                       <a href="{:Url('home/goods/lists','cat='.$vo['catId'])}" target="_blank">{$vo['catName']}</a>
                      </h3>
-                     <i>&gt;</i> 
+                     <i>&gt;</i>
                  </div>
                  {/volist}
              </div>
@@ -129,7 +129,7 @@
                   {/volist}
              </div>
         </div>
-      </div>
+      </div> -->
       {/* 横栏菜单 */}
       <div id="wst-nav-items">
            <ul>
@@ -140,7 +140,7 @@
                {/volist}
            </ul>
       </div>
-      <div class='wst-right-panel' {if !isset($hideCategory)}style="display:none" {/if}>
+      <!-- <div class='wst-right-panel' {if !isset($hideCategory)}style="display:none" {/if}>
         <div class="index-user-tab">
           <div id="wst-right-photo">
   		  	 <a href="{:url('home/users/index')}"><img class="usersImg" data-original="__ROOT__/{:session('WST_USER.userPhoto')}"/></a>
@@ -159,7 +159,7 @@
             </a>
             <a href="{:Url('home/users/regist')}"><div class="wst-right-pic"><img src="__STYLE__/img/icon_register.png" /></div>
               <p class="wst-right-text">注册</p>
-            </a> 
+            </a>
             <div class="wst-clear"></div>
             </div>
 
@@ -185,12 +185,12 @@
           </a>
           {/wst:ads}
         </div>
-      </div>
-      
+      </div> -->
+
       <span class="wst-clear">
-        
+
       </span>
-       
+
     </div>
 </div>
 <div class="wst-clear"></div>

@@ -77,8 +77,8 @@ function checkGoodsStock(){
 		goodsPrice = goodsInfo.goodsPrice;
 	}
 	$('#goods-stock').html(stock);
-	$('#j-market-price').html('￥'+marketPrice);
-	$('#j-shop-price').html('￥'+goodsPrice);
+	$('#j-market-price').html('$'+marketPrice);
+	$('#j-shop-price').html('$'+goodsPrice);
 	if(stock<=0){
 		$('#addBtn').addClass('disabled');
 		$('#buyBtn').addClass('disabled');

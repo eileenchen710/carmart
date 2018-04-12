@@ -10,7 +10,7 @@
 			  	<div class="wst-tagt">
 			  	   <div class="userImg" >
 				  	<img class='usersImg' data-original="__ROOT__/{:session('WST_USER.userPhoto')}"/>
-				   </div>	
+				   </div>
 				  <div class="wst-tagt-n">
 				    <div>
 					  	<span class="wst-tagt-na">{:session('WST_USER.userName')?session('WST_USER.userName'):session('WST_USER.loginName')}</span>
@@ -45,7 +45,7 @@
 			</li>
 			{else /}
 			<li class="drop-info">
-			  <div>欢迎来到{:WSTMSubstr(WSTConf('CONF.mallName'),0,13)}<a href="{:Url('home/users/login')}">&nbsp;&nbsp;请&nbsp;登录</a></div>
+			  <div>{:WSTMSubstr(WSTConf('CONF.mallName'),0,13)}<a href="{:Url('home/users/login')}">&nbsp;&nbsp;请&nbsp;登录</a></div>
 			</li>
 			<li class="spacer">|</li>
 			<li class="drop-info">
@@ -63,8 +63,8 @@
 				   <div><a href='{:Url("home/orders/waitReceive")}' onclick='WST.position(5,0)'>待发货订单</a></div>
 				   <div><a href='{:Url("home/orders/waitAppraise")}' onclick='WST.position(6,0)'>待评价订单</a></div>
 				</div>
-			</li>	
-			
+			</li>
+
 			<li class="spacer">|</li>
 			<li class="j-dorpdown">
 				<div class="drop-down drop-down2 pdr5"><i class="di-left"></i><a href="#" target="_blank">手机商城</a></div>

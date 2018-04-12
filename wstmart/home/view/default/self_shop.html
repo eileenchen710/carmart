@@ -74,7 +74,7 @@
 					</a>
 					<p class="s-rec-goods-desc"><a href='{:Url("home/goods/detail","id=".$vo["goodsId"])}' target='_blank'>{$vo['goodsName']}</a></p>
 					<div class="s-rec-goods-bottom">
-					   <p class="s-rec-goods-price">价格:<span>￥{$vo['shopPrice']}</span></p>
+					   <p class="s-rec-goods-price">价格:<span>${$vo['shopPrice']}</span></p>
 					   <a href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a>
 					</div>
 				</li>
@@ -92,7 +92,7 @@
 					</a>
 					<p class="s-rec-goods-desc"><a href='{:Url("home/goods/detail","id=".$hot["goodsId"])}' target='_blank'>{$hot['goodsName']}</a></p>
 					<div class="s-rec-goods-bottom">
-					   <p class="s-rec-goods-price">价格:<span>￥{$hot['shopPrice']}</span></p>
+					   <p class="s-rec-goods-price">价格:<span>${$hot['shopPrice']}</span></p>
 					   <a href="javascript:WST.addCart({$hot['goodsId']});">加入购物车</a>
 					</div>
 				</li>
@@ -141,12 +141,12 @@
 		      	<div class="p-name"><a target="_blank" href="{:Url('home/goods/detail','id='.$sgf['goodsId'])}" class="wst-redlink" title="{$sgf['goodsName']}">
 		      		{:WSTMSubstr($sgf['goodsName'],0,13)}</a></div>
 		      	<div>
-		      		<div class="p-price">￥{:sprintf('%.1f',$sgf['shopPrice'])}</div>
+		      		<div class="p-price">${:sprintf('%.1f',$sgf['shopPrice'])}</div>
 		      		<div class="p-hsale">
 		      			<div class="sale-num" style="display: block;">成交数：<span class="wst-fred">{$sgf['saleNum']}</span></div>
 		      		</div>
 
-		      		<div class="p-market">市场价￥{:sprintf('%.1f',$sgf['marketPrice'])}</div>
+		      		<div class="p-market">市场价${:sprintf('%.1f',$sgf['marketPrice'])}</div>
 		      		<div class="p-appraise">
 		      			<div class="sale-num" style="display: block;">已有<span class="wst-fred">{$sgf['appraiseNum']}</span>人评价</div>
 		      		</div>
@@ -183,12 +183,12 @@
 		      	<div class="p-name"><a target="_blank" href="{:Url('home/goods/detail','id='.$vo['goodsId'])}" class="wst-redlink" title="{$vo['goodsName']}">
 		      		{:WSTMSubstr($vo['goodsName'],0,13)}</a></div>
 		      	<div>
-		      		<div class="p-price">￥{:sprintf('%.1f',$vo['shopPrice'])}</div>
+		      		<div class="p-price">${:sprintf('%.1f',$vo['shopPrice'])}</div>
 		      		<div class="p-hsale">
 		      			<div class="sale-num" style="display: block;">成交数：<span class="wst-fred">{$vo['saleNum']}</span></div>
 		      		</div>
 
-		      		<div class="p-market">市场价￥{:sprintf('%.1f',$vo['marketPrice'])}</div>
+		      		<div class="p-market">市场价${:sprintf('%.1f',$vo['marketPrice'])}</div>
 		      		<div class="p-appraise">
 		      			<div class="sale-num" style="display: block;">已有<span class="wst-fred">{$vo['appraiseNum']}</span>人评价</div>
 		      		</div>

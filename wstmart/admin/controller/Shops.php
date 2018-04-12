@@ -63,7 +63,7 @@ class Shops extends Base{
     	$data['goodsCatList'] = model('goodsCats')->listQuery(0);
     	$data['accredList'] = model('accreds')->listQuery(0);
     	$data['bankList'] = model('banks')->listQuery();
-    	$data['areaList'] = model('areas')->listQuery(0);
+    	$data['areaList'] = model('areas')->listQuery(0);   	
     	return $this->fetch("edit",$data);
     }
     /**
@@ -112,7 +112,7 @@ class Shops extends Base{
     	$m = new M();
     	return $m->del();
     }
-
+    
     /**
      * 检测店铺编号是否存在
      */
@@ -125,7 +125,7 @@ class Shops extends Base{
     		return ['error'=>'对不起，该店铺编号已存在'];
     	}
     }
-
+    
     /**
      * 自营店铺后台
      */
@@ -142,14 +142,5 @@ class Shops extends Base{
     	}
     	header("Location: ".Url('home/shops/selfShop'));
     	exit();
-    }
-
-    /**
-     *打开 Google Map
-     */
-    public function maptest(){
-
-        return $this->fetch("maptest");
-
     }
 }

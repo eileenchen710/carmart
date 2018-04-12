@@ -12,7 +12,7 @@
     z-index: 9990;
     width: 35px;
     height: 100%;
-    
+
 }
 .toolbar-wrap a {
     text-decoration: none;
@@ -74,7 +74,7 @@
     font-style: normal;
     background-image: url("../img/right_cart.png");
     background-repeat: no-repeat;
-    
+
 }
 .tbar-panel-header .title em {
     display: inline-block;
@@ -393,7 +393,7 @@
     margin: 0px;
 	padding: 0px;
 	cursor: pointer;
-	
+
 }
 .tab-sub {
     position: absolute;

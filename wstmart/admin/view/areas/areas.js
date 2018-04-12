@@ -27,7 +27,7 @@ function initGrid(){
 			            h += "<a href='"+WST.U('admin/areas/index','parentId='+rowdata["areaId"])+"'>查看</a> ";
 		            }
 		            if(WST.GRANT.DQGL_02)h += "<a href='javascript:toEdit("+rowdata["areaId"]+","+rowdata["parentId"]+")'>修改</a> ";
-		            if(WST.GRANT.DQGL_03)h += "<a href='javascript:toDel("+rowdata["areaId"]+")'>删除</a> ";
+		            if(WST.GRANT.DQGL_03)h += "<a href='javascript:toDel("+rowdata["areaId"]+")'>删除</a> "; 
 		            return h;
 	        	}}
         ]
@@ -92,7 +92,7 @@ function editsBox(id){
 	    fields: {
 	    	areaName: {
 	    		tip: "请输入地区名称",
-	    		rule: '地区名称:required;length[~30];'
+	    		rule: '地区名称:required;length[~10];'
 	    	},
 		    areaKey: {
 	    		tip: "请输入排序字母",

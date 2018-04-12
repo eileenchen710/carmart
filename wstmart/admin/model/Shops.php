@@ -48,7 +48,7 @@ class Shops extends Base{
         }
         return WSTReturn('删除失败',-1);
 	}
-
+	
 	/**
 	 * 获取店铺信息
 	 */
@@ -86,7 +86,7 @@ class Shops extends Base{
 			return '';//一直都检测到那就不要强行添加了
 		}
 	}
-
+	
 	/**
 	 * 检测店铺编号是否存在
 	 */
@@ -97,7 +97,7 @@ class Shops extends Base{
 		if($num==0)return false;
 		return true;
 	}
-
+	
 
 	/**
 	 * 新增
@@ -200,8 +200,6 @@ class Shops extends Base{
 	        //获取地区
 	        $areaIds = model('Areas')->getParentIs($data['areaId']);
 		    if(!empty($areaIds))$data['areaIdPath'] = implode('_',$areaIds)."_";
-			//print $areaIds;
-
 		    $areaIds = model('Areas')->getParentIs($data['bankAreaId']);
 		    if(!empty($areaIds))$data['bankAreaIdPath'] = implode('_',$areaIds)."_";
 	        WSTUnset($data,'shopId,userId,dataFlag,createTime,applyId,goodsCatIds,accredIds,isSelf');
@@ -245,7 +243,7 @@ class Shops extends Base{
 	public function getAllShopId(){
 		return $this->where(['dataFlag'=>1,'shopStatus'=>1])->column('shopId');
 	}
-
+	
 	/**
 	 * 搜索经验范围的店铺
 	 */
@@ -261,7 +259,7 @@ class Shops extends Base{
 		return $this->alias('s')->join('__CAT_SHOPS__ cs','s.shopId=cs.shopId','inner')
 		            ->where($where)->field('shopName,s.shopId,shopSn')->select();
 	}
-
+	
     /**
 	 * 自营自动登录
 	 */
@@ -295,5 +293,5 @@ class Shops extends Base{
 		}
 		return WSTReturn("",-1);
 	}
-
+	
 }

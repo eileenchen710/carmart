@@ -24,7 +24,7 @@
 				{{# for(var a = 0; a < d[i].goods.length; a++){ }}
 			      <li class="als-item wst-favo-goods">
 					<div class="wst-favo-goodimg"><a href="javascript:getGoods({{ d[i].goods[a].goodsId }})"><img class="goodsImg2" data-original="__ROOT__/{{ d[i].goods[a].goodsImg }}" title="{{ d[i].goods[a].goodsName }}"/></a></div>
-					<span>￥{{ d[i].goods[a].shopPrice }}</span>
+					<span>${{ d[i].goods[a].shopPrice }}</span>
 				  </li>
 				{{# } }}
 			    </ul>

@@ -75,7 +75,7 @@ class Shops extends Base{
         $goodsName = input("param.goodsName");
         if(($data['shop']['shopId']==1 || $shopId==0) && $ct1==0 && !isset($goodsName))
             $this->redirect('shops/selfShop');
-
+        
     	if(empty($data['shop']))return $this->fetch('error_lost');
     	$data['shopcats'] = $f = model('ShopCats','model')->getShopCats($shopId);
     	$g = model('goods');
@@ -90,7 +90,7 @@ class Shops extends Base{
     	$this->assign('data',$data);
     	return $this->fetch('shop_home');
     }
-
+    
     /**
      * 查看店铺设置
      */
