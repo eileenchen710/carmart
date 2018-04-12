@@ -1,0 +1,30 @@
+[ 2018-04-12T00:07:51+08:00 ] ::1 ::1 GET /carmart/admin/shops/toEdit.html?id=0
+[ log ] localhost/carmart/admin/shops/toEdit.html?id=0 [运行时间：6.677890s][吞吐率：0.15req/s] [内存消耗：4,483.59kb] [文件加载：64]
+[ error ] [8]未定义变量: barea_0
+
+---------------------------------------------------------------
+[ 2018-04-12T00:07:54+08:00 ] ::1 ::1 GET /carmart/admin/shops/toEdit.html?id=0
+[ log ] localhost/carmart/admin/shops/toEdit.html?id=0 [运行时间：8.165789s][吞吐率：0.12req/s] [内存消耗：4,196.75kb] [文件加载：61]
+[ error ] [8]未定义变量: barea_0
+
+---------------------------------------------------------------
+[ 2018-04-12T00:08:03+08:00 ] ::1 ::1 GET /carmart/admin/shops/toEdit.html?id=0
+[ log ] localhost/carmart/admin/shops/toEdit.html?id=0 [运行时间：14.854512s][吞吐率：0.07req/s] [内存消耗：4,196.75kb] [文件加载：61]
+[ error ] [8]未定义变量: barea_0
+
+---------------------------------------------------------------
+[ 2018-04-12T00:08:12+08:00 ] ::1 ::1 GET /carmart/admin/shops/toEdit.html?id=0
+[ log ] localhost/carmart/admin/shops/toEdit.html?id=0 [运行时间：21.595325s][吞吐率：0.05req/s] [内存消耗：4,196.75kb] [文件加载：61]
+[ error ] [8]未定义变量: barea_0
+
+---------------------------------------------------------------
+[ 2018-04-12T00:08:20+08:00 ] ::1 ::1 GET /carmart/admin/shops/toEdit.html?id=0
+[ log ] localhost/carmart/admin/shops/toEdit.html?id=0 [运行时间：29.311129s][吞吐率：0.03req/s] [内存消耗：4,196.75kb] [文件加载：61]
+[ error ] [8]未定义变量: barea_0
+
+---------------------------------------------------------------
+[ 2018-04-12T12:37:12+08:00 ] 10.16.154.10 10.70.177.159 GET /carmart/admin/shops/toEdit.html?id=0
+[ log ] 10.16.154.10/carmart/admin/shops/toEdit.html?id=0 [运行时间：0.087764s][吞吐率：11.39req/s] [内存消耗：4,195.98kb] [文件加载：61]
+[ error ] [8]未定义变量: barea_0
+
+---------------------------------------------------------------
