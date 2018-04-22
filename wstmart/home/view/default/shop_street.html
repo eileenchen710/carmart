@@ -39,14 +39,14 @@
 			<div class="wst-shopstr-pr">
 				<span class="wst-lfloat" style="margin-left:3px;">卖家：<a class="company" target='_blank' href="{:url('home/shops/home',array('shopId'=>$v1['shopId']))}">{$v1['loginName']}</a></span>
 			</div>
-				<span class="wst-lfloat" style="margin-left:3px;">地址：<a target='_blank' href='https://www.google.com/maps/search/?api=1&query={$v1['shopAddress']}+{$v1['areas']['areaName2']}+{$v1['areas']['areaName1']}'>{$v1['shopAddress']},{$v1['areas']['areaName2']},{$v1['areas']['areaName1']}</a></span>
+				<span class="wst-lfloat" style="margin-left:3px;">地址：<a target='_blank' href='https://www.google.com/maps/search/?api=1&query={$v1['shopAddress']}+{$v1['shopSuburb']}+{$v1['shopState']}+{$v1['shopPostCode']}'>{$v1['shopAddress']},{$v1['shopSuburb']},{$v1['shopState']},{$v1['shopPostCode']}</a></span>
 			<div>
 			<div>
 				<iframe
 					width="600"
 					height="450"
 					frameborder="0" style="border:0"
-					src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAMIxb82Lk3jNlQ-LSxfCRMUTgV9BbRDdA&q={$v1['shopAddress']}+{$v1['areas']['areaName2']}+{$v1['areas']['areaName1']}" allowfullscreen>
+					src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAMIxb82Lk3jNlQ-LSxfCRMUTgV9BbRDdA&q={$v1['shopAddress']}+{$v1['shopSuburb']}+{$v1['shopState']}+{$v1['shopPostCode']}" allowfullscreen>
 				</iframe>
 			</div>
 			</div>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:8:{s:88:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_street.html";i:1523516678;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1523516678;s:93:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/self_shop_header.html";i:1523516678;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524122419;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header.html";i:1524377169;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/right_cart.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524296778;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:8:{s:88:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_street.html";i:1524381643;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1523516678;s:93:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/self_shop_header.html";i:1523516678;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524122419;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header.html";i:1524377169;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/right_cart.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524296778;}*/ ?>
 <!doctype html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -1001,14 +1001,14 @@ document.getElementById("locationImg").style.opacity = "0.5";
 			<div class="wst-shopstr-pr">
 				<span class="wst-lfloat" style="margin-left:3px;">卖家：<a class="company" target='_blank' href="<?php echo url('home/shops/home',array('shopId'=>$v1['shopId'])); ?>"><?php echo $v1['loginName']; ?></a></span>
 			</div>
-				<span class="wst-lfloat" style="margin-left:3px;">地址：<a target='_blank' href='https://www.google.com/maps/search/?api=1&query=<?php echo $v1['shopAddress']; ?>+<?php echo $v1['areas']['areaName2']; ?>+<?php echo $v1['areas']['areaName1']; ?>'><?php echo $v1['shopAddress']; ?>,<?php echo $v1['areas']['areaName2']; ?>,<?php echo $v1['areas']['areaName1']; ?></a></span>
+				<span class="wst-lfloat" style="margin-left:3px;">地址：<a target='_blank' href='https://www.google.com/maps/search/?api=1&query=<?php echo $v1['shopAddress']; ?>+<?php echo $v1['shopSuburb']; ?>+<?php echo $v1['shopState']; ?>+<?php echo $v1['shopPostCode']; ?>'><?php echo $v1['shopAddress']; ?>,<?php echo $v1['shopSuburb']; ?>,<?php echo $v1['shopState']; ?>,<?php echo $v1['shopPostCode']; ?></a></span>
 			<div>
 			<div>
 				<iframe
 					width="600"
 					height="450"
 					frameborder="0" style="border:0"
-					src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAMIxb82Lk3jNlQ-LSxfCRMUTgV9BbRDdA&q=<?php echo $v1['shopAddress']; ?>+<?php echo $v1['areas']['areaName2']; ?>+<?php echo $v1['areas']['areaName1']; ?>" allowfullscreen>
+					src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAMIxb82Lk3jNlQ-LSxfCRMUTgV9BbRDdA&q=<?php echo $v1['shopAddress']; ?>+<?php echo $v1['shopSuburb']; ?>+<?php echo $v1['shopState']; ?>+<?php echo $v1['shopPostCode']; ?>" allowfullscreen>
 				</iframe>
 			</div>
 			</div>

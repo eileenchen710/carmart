@@ -4,12 +4,50 @@
 <link href="__STYLE__/css/style.css?v={$v}" rel="stylesheet">
 <link href="__STATIC__/plugins/validator/jquery.validator.css?v={$v}" rel="stylesheet">
 <link href="__STYLE__/css/login.css?v={$v}" rel="stylesheet">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 {/block}
 {block name="nav"}
     {php}$liteTitle = "欢迎登录".WSTConf('CONF.mallName');{/php}
 	{include file="default/header_lite" /}
 {/block}
 {block name="main"}
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '1903571436321353',
+                cookie     : true,
+                xfbml      : true,
+                version    : 'v2.12'
+            });
+
+            FB.AppEvents.logPageView();
+
+        };
+    </script>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.12&appId=1903571436321353&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <script>
+    // 使用官方按钮登录完成后的回调函数
+    function chekcFBLoginStatus() {
+        console.log("line 1");
+        FB.getLoginStatus(function(response) {
+            console.log("line 2");
+          if (response.status === 'connected') {
+            alert(JSON.stringify(response));
+            console.log(JSON.stringify(response)); //将登录成功返回的用户ID等信息输出到控制台
+          } else {
+            alert('登录失败');
+          }
+        });
+    }
+    </script>
 	<div class="wst-container">
 	<div class="wst-login">
 	<div class="wst-login_l">
@@ -32,14 +70,14 @@
 				<td>
 					<div class="wst-login-code">
 					<input id="verifyCode" style="ime-mode:disabled" name="verifyCode"  class="ipt wst-login-codein" tabindex="6" autocomplete="off" maxlength="6" type="text" data-rule="验证码: required;" data-msg-required="请输入验证码" data-tip="请输入验证码" data-target="#verify"placeholder="验证码"/>
-					<img id='verifyImg' class="wst-login-codeim" src="{:url('home/users/getVerify')}" onclick='javascript:WST.getVerify("#verifyImg")' style="width:116px;border-top-right-radius:6px;border-bottom-right-radius:6px;"><span id="verify"></span>    	
+					<img id='verifyImg' class="wst-login-codeim" src="{:url('home/users/getVerify')}" onclick='javascript:WST.getVerify("#verifyImg")' style="width:116px;border-top-right-radius:6px;border-bottom-right-radius:6px;"><span id="verify"></span>
 				   	</div>
 				</td>
 			</tr>
 			<tr class="wst-login-tr">
 				<td colspan="2" style="padding-left:43px;">
 					<input id="rememberPwd" name="rememberPwd" class="ipt wst-login-ch" checked="checked" type="checkbox"/>
-			     	<label>记住密码</label>                                      
+			     	<label>记住密码</label>
 					<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;看不清？<a style="color:#69b7b5;" href="javascript:WST.getVerify('#verifyImg')">换一张</a></label>
 				</td>
 			</tr>
@@ -52,11 +90,13 @@
 			</tr>
 			</table>
 		</form>
-		 <span class="wst-login-three" style='display:none'>您还可以使用以下方式登录：</span>
+		 <span class="wst-login-three" style='display'>您还可以使用以下方式登录：</span>
 		 <a href="#" style='display:none'><img style='margin-right:10px' src="__STYLE__/img/btn_QQ.png"/></a>
 		 <a href="#" style='display:none'><img src="__STYLE__/img/btn_wechat.png"/></a>
-	</div>
-	<div class="wst-clear"></div>
+         <fb:login-button scope="public_profile,email" onlogin="chekcFBLoginStatus();"></fb:login-button>
+         <button id="customBtn" type="button">Google登录</button>
+         <input type="button" value="INS go" onclick="location.href='https://api.instagram.com/oauth/authorize/?client_id=508856d6cf96402a9c585a98f31779df&redirect_uri=localhost&response_type=code'">
+         <div class="wst-clear"></div>
 	</div>
 	</div>
 {/block}
@@ -64,4 +104,43 @@
 	<script type="text/javascript" src="__STATIC__/plugins/validator/jquery.validator.js?v={$v}"></script>
 	<script type="text/javascript" src="__STATIC__/plugins/validator/local/zh-CN.js?v={$v}"></script>
 	<script type='text/javascript' src='__STYLE__/js/login.js?v={$v}'></script>
+    <script>
+    var googleUser = {};
+    var startApp = function() {
+        gapi.load('auth2', function(){
+          // Retrieve the singleton for the GoogleAuth library and set up the client.
+          auth2 = gapi.auth2.init({
+            client_id: '811722774789-nfhqna93imm12tiedre6fb187jgn70ep.apps.googleusercontent.com', //客户端ID  
+            cookiepolicy: 'single_host_origin',
+            scope: 'profile' //可以请求除了默认的'profile' and 'email'之外的数据
+          });
+          attachSignin(document.getElementById('customBtn'));
+        });
+    };
+
+    function attachSignin(element) {
+        auth2.attachClickHandler(element, {},
+        function(googleUser) {
+          document.getElementById('name').innerText = "Signed in: " + googleUser.getBasicProfile().getName();
+        var profile = auth2.currentUser.get().getBasicProfile();
+        console.log('ID: ' + profile.getId());
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail());
+        }, function(error) {
+          console.log(JSON.stringify(error, undefined, 2));
+        });
+    }
+    startApp();
+
+    //注销
+    function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+            alert('用户注销成功');
+        });
+    }
+    </script>
 {/block}

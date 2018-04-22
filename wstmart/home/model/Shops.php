@@ -44,7 +44,7 @@ class Shops extends CShops{
     	->join('__FAVORITES__ f','f.userId = '.$userId.' and f.favoriteType=1 and f.targetId=s.shopId','left')
     	->where($where)
     	->order('s.shopId asc')
-    	->field('s.shopId,s.shopImg,s.shopName,s.areaId,s.shopAddress,s.shopTel,s.shopQQ,s.shopWangWang,s.shopCompany,ss.totalScore,ss.totalUsers,ss.goodsScore,ss.goodsUsers,ss.serviceScore,ss.serviceUsers,ss.timeScore,ss.timeUsers,.u.loginName,f.favoriteId,s.areaIdPath')
+    	->field('s.shopId,s.shopImg,s.shopName,s.areaId,s.shopSuburb,s.shopState,s.shopPostCode,s.shopAddress,s.shopTel,s.shopQQ,s.shopWangWang,s.shopCompany,ss.totalScore,ss.totalUsers,ss.goodsScore,ss.goodsUsers,ss.serviceScore,ss.serviceUsers,ss.timeScore,ss.timeUsers,.u.loginName,f.favoriteId,s.areaIdPath')
     	->paginate($pagesize)->toArray();
     	if(empty($page['Rows']))return $page;
     	$shopIds = [];
@@ -97,7 +97,8 @@ class Shops extends CShops{
 		foreach ($page['Rows'] as $key =>$v){
 			$page['Rows'][$key]['accreds'] = (isset($rccredMap[$v['shopId']]))?$rccredMap[$v['shopId']]:[];
 			$page['Rows'][$key]['catshops'] = (isset($goodsCatMap[$v['shopId']]))?implode(',',$goodsCatMap[$v['shopId']]):'';
-			$page['Rows'][$key]['areas'] = ['areaName1'=>$areaMap[$v['areaId']]['areaName1'],'areaName2'=>$areaMap[$v['areaId']]['areaName2'],'shopAddress'=>$v['shopAddress']];
+			//$page['Rows'][$key]['areas'] = ['areaName1'=>$areaMap[$v['areaId']]['areaName1'],'areaName2'=>$areaMap[$v['areaId']]['areaName2'],'shopAddress'=>$v['shopAddress']];
+            $page['Rows'][$key]['areas'] = ['shopSuburb'=>$v['shopSuburb'],'shopState'=>$v['shopState'],'shopPostCode'=>$v['shopPostCode'],'shopAddress'=>$v['shopAddress']];
         }
     	return $page;
     }

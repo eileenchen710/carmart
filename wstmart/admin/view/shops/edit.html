@@ -94,33 +94,32 @@
      <th>阿里旺旺：</th>
      <td><input type="text" id='shopWangWang' class='ipt' value="{$object['shopWangWang']}" maxLength='200'/></td>
   </tr>
-  <tr>
-     <th>所属区域<font color='red'>*</font>：</th>
-     <td>
-        <select id="area_0" class='ipt j-areas' level="0" onchange="WST.ITAreas({id:'area_0',val:this.value,isRequire:true,className:'j-areas'});">
-	      	<option value="">-请选择-</option>
-	      	{volist name="areaList" id="vo"}
-	        <option value="{$vo['areaId']}">{$vo['areaName']}</option>
-	        {/volist}
-	     </select>
-     </td>
-  </tr>
+
   <tr>
      <th>店铺详细地址<font color='red'>*</font>：</th>
      <td><input type="text" id='shopAddress' class='ipt' style='width:500px;' value="{$object['shopAddress']}" maxLength='50' data-rule="店铺详细地址: required;"/></td>
-     <!-- <td><button onclick="showinmap()">Click me</button></td> -->
   </tr>
-  <!-- <tr>
-      <td><p id ='address'></p></td>
-  </tr> -->
+  <tr>
+     <th>店铺区域<font color='red'>*</font>：</th>
+     <td><input type="text" id='shopSuburb' class='ipt' style='width:200px;' value="{$object['shopSuburb']}" maxLength='20' data-rule="店铺区域: required;"/></td>
+  </tr>
+  <tr>
+     <th>州<font color='red'>*</font>：</th>
+     <td><input type="text" id='shopState' class='ipt' style='width:100px;' value="{$object['shopState']}" maxLength='10' data-rule="州: required;"/></td>
+  </tr>
+  <tr>
+     <th>邮编<font color='red'>*</font>：</th>
+     <td><input type="text" id='shopPostCode' class='ipt' style='width:100px;' value="{$object['shopPostCode']}" maxLength='10' data-rule="邮编: required;"/></td>
+     <td><button onclick="showinmap()">在地图上显示</button></td>
+  </tr>
   <tr>
       <th>
       </th>
       <td>
-            <iframe
+            <iframe id = "googleMap"
                 width="400"
                 height="300"
-                frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAMIxb82Lk3jNlQ-LSxfCRMUTgV9BbRDdA&q=USYD" allowfullscreen>
+                frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAMIxb82Lk3jNlQ-LSxfCRMUTgV9BbRDdA&q={$object['shopAddress']}+","+{$object['shopSuburb']}+","+{$object['shopState']}+","+{$object['shopPostCode']}" allowfullscreen>
             </iframe>
        </td>
    </tr>
@@ -164,7 +163,7 @@
      </td>
   </tr>
   <tr>
-     <td colspan='2' class='head-ititle'>结算信息</td>
+     <!-- <td colspan='2' class='head-ititle'>结算信息</td>
   </tr>
   <tr>
      <th>所属银行<font color='red'>*</font>：</th>
@@ -195,7 +194,7 @@
   <tr>
      <th>持卡人<font color='red'>*</font>：</th>
      <td><input type="text" id='bankUserName' class='ipt' value="{$object['bankUserName']}" maxLength='50' data-rule="持卡人: required;"/></td>
-  </tr>
+  </tr> -->
   <tr>
      <td colspan='2' class='head-ititle'>审核状态</td>
   </tr>
@@ -223,22 +222,19 @@
 </table>
 </form>
 <script>
-$(function(){initEdit({serviceStartTime:'{:date("H:i",strtotime($object["serviceStartTime"]))}',serviceEndTime:'{:date("H:i",strtotime($object["serviceEndTime"]))}',areaId:'{$object["areaId"]}',areaIdPath:'{$object["areaIdPath"]}',bankAreaId:'{$object["bankAreaId"]}',bankAreaIdPath:'{$object["bankAreaIdPath"]}'});})
+$(function(){initEdit({serviceStartTime:'{:date("H:i",strtotime($object["serviceStartTime"]))}',serviceEndTime:'{:date("H:i",strtotime($object["serviceEndTime"]))}'});})
 </script>
-<!-- <script>
+<script>
     function showinmap(){
-
-    			var params = WST.getParams('.ipt');
-    			params.areaId = WST.ITGetAreaVal('j-areas');
-                window.alert(WST.ITGetAreaVal('j-areas'));
-
-        var vl = document.getElementById("area_0");
-        var index = vl.selectedIndex;
-        var val = vl.options[index].text;
-        var address = document.getElementById("shopaddress");
-        document.getElementById("address").innerHTML = document.getElementById("area_0").value;
+        var address = document.getElementById("shopAddress");
+        var suburb = document.getElementById("shopSuburb");
+        var state = document.getElementById("shopState");
+        var postCode = document.getElementById("shopPostCode");
+        var iframe = document.getElementById("googleMap");
+        var str = address.value+","+suburb.value+","+state.value+","+postCode.value;
+        iframe.src = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyAMIxb82Lk3jNlQ-LSxfCRMUTgV9BbRDdA&q='+str;
     }
-</script> -->
+</script>
 {/block}
 {block name="js"}
 <script type='text/javascript' src='__STATIC__/plugins/webuploader/webuploader.js?v={$v}'></script>

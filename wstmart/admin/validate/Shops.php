@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace wstmart\admin\validate;
 use think\Validate;
 /**
@@ -24,15 +24,15 @@ class Shops extends Validate{
         ['shopTel'  ,'require|max:40','请输入店铺联系电话|店铺联系电话不能超过20个字符'],
         ['isSelf'  ,'in:0,1','无效的自营店类型'],
         ['shopImg'  ,'require','请上传店铺图标'],
-        ['areaId'  ,'require','请选择店铺所在区域'],
+        //['areaId'  ,'require','请选择店铺所在区域'],
         ['shopAddress'  ,'require','请输入店铺详细地址'],
         ['isInvoice'  ,'in:0,1','无效的发票类型'],
         ['invoiceRemarks','checkInvoiceRemark:1','请输入发票说明'],
         ['shopAtive'  ,'in:0,1','无效的营业状态'],
-        ['bankId'  ,'require','请选择结算银行'],
-        ['bankAreaId'  ,'require','请选择开户所地区'],
-        ['bankNo'  ,'require','请选择银行账号'],
-        ['bankUserName'  ,'require|max:100','请输入持卡人名称|持卡人名称长度不能能超过50个字符'],
+        //['bankId'  ,'require','请选择结算银行'],
+        //['bankAreaId'  ,'require','请选择开户所地区'],
+        //['bankNo'  ,'require','请选择银行账号'],
+        //['bankUserName'  ,'require|max:100','请输入持卡人名称|持卡人名称长度不能能超过50个字符'],
         ['shopStatus'  ,'in:-1,1','无效的店铺状态'],
         ['statusDesc'  ,'checkStatusDesc:1','请输入店铺停止原因']
     ];
@@ -42,8 +42,8 @@ class Shops extends Validate{
                      'areaId','shopAddress','isInvoice','shopAtive','bankId','bankAreaId','bankNo','bankUserName','shopAtive'],
         'edit'  =>  ['shopName','shopkeeper','telephone','shopCompany','shopTel','isSelf','shopImg',
                      'areaId','shopAddress','isInvoice','shopAtive','bankId','bankAreaId','bankNo','bankUserName','shopAtive']
-    ]; 
-    
+    ];
+
     protected function checkShopSn($value){
     	$shopId = Input('post.shopId/d',0);
     	$key = Input('post.shopSn');
@@ -54,13 +54,13 @@ class Shops extends Validate{
     	}
     	return true;
     }
-    
+
     protected function checkInvoiceRemark($value){
     	$isInvoice = Input('post.isInvoice/d',0);
     	$key = Input('post.invoiceRemarks');
     	return ($isInvoice==1 && $key=='')?'请输入发票说明':true;
     }
-    
+
     protected function checkStatusDesc($value){
     	$shopStatus = Input('post.shopStatus/d',0);
     	$key = Input('post.statusDesc');
