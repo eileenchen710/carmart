@@ -22,7 +22,7 @@
 
 	  		<p class="shop-ct1-ct2">
 	  			{volist name="$cat1['children']" id="v1" key="k1"  }
-	  			<a href="{:url('home/shops/home',['shopId'=>$data['shop']['shopId'],'ct1'=>$cat1['catId'],'ct2'=>$v1['catId']])}">{$v1['catName']}</a> 
+	  			<a href="{:url('home/shops/home',['shopId'=>$data['shop']['shopId'],'ct1'=>$cat1['catId'],'ct2'=>$v1['catId']])}">{$v1['catName']}</a>
 	  			{/volist}
 	  		</p>
 		 </div>
@@ -75,13 +75,13 @@
 					<p class="s-rec-goods-desc"><a href='{:Url("home/goods/detail","id=".$vo["goodsId"])}' target='_blank'>{$vo['goodsName']}</a></p>
 					<div class="s-rec-goods-bottom">
 					   <p class="s-rec-goods-price">价格:<span>${$vo['shopPrice']}</span></p>
-					   <a href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a>
+					   <!-- <a href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a> -->
 					</div>
 				</li>
 				{/volist}
 			</ul>
 			<div class="wst-clear"></div>
-		</div> 
+		</div>
 
 		<div class="s-rec-goods-list" id="fl_f_1_pl" style="display:none;">
 			<ul class="s-rec-goods-list">
@@ -93,7 +93,7 @@
 					<p class="s-rec-goods-desc"><a href='{:Url("home/goods/detail","id=".$hot["goodsId"])}' target='_blank'>{$hot['goodsName']}</a></p>
 					<div class="s-rec-goods-bottom">
 					   <p class="s-rec-goods-price">价格:<span>${$hot['shopPrice']}</span></p>
-					   <a href="javascript:WST.addCart({$hot['goodsId']});">加入购物车</a>
+					   <!-- <a href="javascript:WST.addCart({$hot['goodsId']});">加入购物车</a> -->
 					</div>
 				</li>
 				{/volist}
@@ -119,7 +119,7 @@
 				{/volist}
 				<li class="more"><a href="{:url('home/shops/home',['shopId'=>$data['shop']['shopId'],'ct1'=>$cat1['catId']])}">>></a></li>
 			</ul>
-			
+
 		</div>
 
 
@@ -136,14 +136,14 @@
 		      	<div class="img">
 		      		<a target="_blank" href="{:Url('home/goods/detail','id='.$sgf['goodsId'])}" title="{$sgf['goodsName']}">
 		      		<img class='goodsImg' data-original="__ROOT__/{:WSTImg($sgf['goodsImg'])}" alt="{$sgf['goodsName']}" title="{$sgf['goodsName']}"/></a>
-		      		<span class="s-add-cart" onclick="WST.addCart({$sgf['goodsId']})">加入购物车</span>
+		      		<!-- <span class="s-add-cart" onclick="WST.addCart({$sgf['goodsId']})">加入购物车</span> -->
 		      	</div>
 		      	<div class="p-name"><a target="_blank" href="{:Url('home/goods/detail','id='.$sgf['goodsId'])}" class="wst-redlink" title="{$sgf['goodsName']}">
 		      		{:WSTMSubstr($sgf['goodsName'],0,13)}</a></div>
 		      	<div>
 		      		<div class="p-price">${:sprintf('%.1f',$sgf['shopPrice'])}</div>
 		      		<div class="p-hsale">
-		      			<div class="sale-num" style="display: block;">成交数：<span class="wst-fred">{$sgf['saleNum']}</span></div>
+		      			<!-- <div class="sale-num" style="display: block;">成交数：<span class="wst-fred">{$sgf['saleNum']}</span></div> -->
 		      		</div>
 
 		      		<div class="p-market">市场价${:sprintf('%.1f',$sgf['marketPrice'])}</div>
@@ -164,28 +164,28 @@
 	</div>
 	{/volist}
 
-		
+
 	</div>
 
 	{/* 您最近浏览的商品 */}
 	{if cookie("history_goods")!=''}
 	<div class="history-box">
 		<div class="history-title">
-		<p>您最近浏览了以下商品</p> 
+		<p>您最近浏览了以下商品</p>
 		</div>
 		<div class="history-goods-list">
 			{wst:goods type='history'  num='5'}
 		      <div class="s-goods s-goods-h">
 		      	<div class="img">
 		      		<a target="_blank" href="{:Url('home/goods/detail','id='.$vo['goodsId'])}" title="{$vo['goodsName']}"><img class='goodsImg' data-original="__ROOT__/{:WSTImg($vo['goodsImg'])}" alt="{$vo['goodsName']}" title="{$vo['goodsName']}"/></a>
-		      		<span class="s-add-cart" onclick="WST.addCart({$vo['goodsId']})">加入购物车</a>
+		      		<!-- <span class="s-add-cart" onclick="WST.addCart({$vo['goodsId']})">加入购物车</a> -->
 		      	</div>
 		      	<div class="p-name"><a target="_blank" href="{:Url('home/goods/detail','id='.$vo['goodsId'])}" class="wst-redlink" title="{$vo['goodsName']}">
 		      		{:WSTMSubstr($vo['goodsName'],0,13)}</a></div>
 		      	<div>
 		      		<div class="p-price">${:sprintf('%.1f',$vo['shopPrice'])}</div>
 		      		<div class="p-hsale">
-		      			<div class="sale-num" style="display: block;">成交数：<span class="wst-fred">{$vo['saleNum']}</span></div>
+		      			<!-- <div class="sale-num" style="display: block;">成交数：<span class="wst-fred">{$vo['saleNum']}</span></div> -->
 		      		</div>
 
 		      		<div class="p-market">市场价${:sprintf('%.1f',$vo['marketPrice'])}</div>

@@ -8,16 +8,16 @@
 <script type="text/javascript" src="__STATIC__/js/jquery.min.js?v={$v}"></script>
 <script type="text/javascript" src="__STATIC__/plugins/layer/layer.js?v={$v}"></script>
 <script type="text/javascript" src="__STATIC__/plugins/lazyload/jquery.lazyload.min.js?v={$v}"></script>
-	  
+
 <script type='text/javascript' src='__STATIC__/js/common.js?v={$v}'></script>
 {block name="depend_common_js"}{/block}
 <script type='text/javascript' src='__STYLE__/js/common.js?v={$v}'></script>
 <script>
 window.conf = {
-		"ROOT"      : "__ROOT__", 
-		"APP"       : "__APP__", 
-		"STATIC"    : "__STATIC__", 
-		"SUFFIX"    : "{:config('url_html_suffix')}", 
+		"ROOT"      : "__ROOT__",
+		"APP"       : "__APP__",
+		"STATIC"    : "__STATIC__",
+		"SUFFIX"    : "{:config('url_html_suffix')}",
 		"SMS_VERFY" : "{:WSTConf('CONF.smsVerfy')}",
     	"PHONE_VERFY" : "{:WSTConf('CONF.phoneVerfy')}",
     	"GOODS_LOGO"  : "{:WSTConf('CONF.goodsLogo')}",
@@ -39,8 +39,8 @@ $(function() {
 <div class='wst-lite-bac'>
 <div class='wst-lite-container'>
    <div class='wst-logo'><a href='{$Request.root.true}'><img src="__ROOT__/{:WSTConf('CONF.mallLogo')}" height="80" width='160'></a></div>
-   <div class="wst-lite-tit"><span>买家中心</span><a class="wst-lite-in" href='{$Request.root.true}'>返回商城首页</a></div>
-   <div class="wst-lite-cart">
+   <div class="wst-lite-tit"><span>用户中心</span><a class="wst-lite-in" href='{$Request.root.true}'>返回首页</a></div>
+   <!-- <div class="wst-lite-cart">
    	<a href="{:url('home/carts/index')}" target="_blank"><span class="word j-word">共 <span class="num" id="goodsTotalNum">0</span> 件商品</span></a>
    	<div class="wst-lite-carts hide">
    		<div id="list-carts"></div>
@@ -48,7 +48,7 @@ $(function() {
    		<div id="list-carts3"></div>
 	   	<div class="wst-clear"></div>
    	</div>
-   </div>
+   </div> -->
 <script id="list-cart" type="text/html">
 {{# for(var i = 0; i < d.list.length; i++){ }}
 	<div class="goods" id="j-goods{{ d.list[i].cartId }}">
@@ -61,10 +61,10 @@ $(function() {
    <div class="wst-lite-sea">
       <div class='search'>
       	  <input type="hidden" id="search-type" value="{:isset($keytype)?1:0}"/>
-          
+
       	  <ul class="j-search-box">
             <li class="j-search-type">
-              搜<span>{if isset($keytype)}店铺{else}商品{/if}</span>&nbsp;<i class="arrow"> </i>
+              搜<span>{if isset($keytype)}店铺{else}优惠{/if}</span>&nbsp;<i class="arrow"> </i>
             </li>
             <li class="j-type-list">
               {if isset($keytype)}
@@ -76,7 +76,7 @@ $(function() {
           </ul>
 
 	      <input type="text" id='search-ipt' class='search-ipt' value='{:isset($keyword)?$keyword:""}'/>
-	      <div id='search-btn' class="search-btn" onclick='javascript:WST.search(this.value)'></div>
+	      <!-- <div id='search-btn' class="search-btn" onclick='javascript:WST.search(this.value)'></div> -->
       </div>
    </div>
    <div class="wst-clear"></div>

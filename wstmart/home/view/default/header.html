@@ -11,7 +11,7 @@
 {/wst:ads}
 {/if}
 
-
+<link href="__STYLE__/css/location.css" rel="stylesheet">
 
 <div class='wst-search-container'>
    <div class='wst-logo'>
@@ -24,20 +24,28 @@
       	  <input type="hidden" id="search-type" value="{:isset($keytype)?1:0}"/>
           <ul class="j-search-box">
         	  <li class="j-search-type">
-              搜<span>{if isset($keytype)}店铺{else}商品{/if}</span>&nbsp;<i class="arrow"> </i>
+              搜<span>{if isset($keytype)}店铺{else}优惠{/if}</span>&nbsp;<i class="arrow"> </i>
             </li>
         	  <li class="j-type-list">
         	  	{if isset($keytype)}
-              <div data="0">商品</div>
+              <div data="0">优惠</div>
               {else}
         	  	<div data="1">店铺</div>
               {/if}
         	  </li>
+
+
           </ul>
 	      <input type="text" id='search-ipt' class='search-ipt' placeholder='{:WSTConf("CONF.adsGoodsWordsSearch")}' value='{:isset($keyword)?$keyword:""}'/>
 	      <input type='hidden' id='adsGoodsWordsSearch' value='{:WSTConf("CONF.adsGoodsWordsSearch")}'>
 	      <input type='hidden' id='adsShopWordsSearch' value='{:WSTConf("CONF.adsShopWordsSearch")}'>
-	      <div id='search-btn' class="search-btn" onclick='javascript:WST.search(this.value)'>搜索</div>
+
+
+
+
+
+              <!-- <div id='search-btn' class="search-btn" onclick='javascript:WST.search(this.value)'>搜索</div> -->
+
       </div>
       <div class="wst-search-keys">
       {php}$searchKeys = WSTSearchKeys();{/php}
@@ -47,7 +55,29 @@
       {/volist}
       </div>
    </div>
-   <div class="wst-cart-box">
+
+
+   <script language="javascript">
+function showPic(){
+document.getElementById("locationImg").src = "__ROOT__/wstmart/home/view/default/img/location-hover.png"
+document.getElementById("locationImg").style.opacity = "1";
+}
+function hiddenPic(){
+document.getElementById("locationImg").src = "__ROOT__/wstmart/home/view/default/img/location.png"
+document.getElementById("locationImg").style.opacity = "0.5";
+}
+</script>
+
+<div class="wst-search-location">
+<div class="j-search-location">
+  <img id="locationImg" src="__ROOT__/wstmart/home/view/default/img/location.png" width="20px" style="margin-top:8px;margin-left:-10px; opacity:0.5"/>
+<input type="text" id='search-location' class='search-location' onmouseout="hiddenPic();" onmousemove="showPic();" placeholder='Sydney' value='{:isset($keyword)?$keyword:""}'></input>
+</div>
+<div id='search-btn' class="search-btn" onclick='javascript:WST.search(this.value)'>搜索</div>
+</div>
+
+
+   <!-- <div class="wst-cart-box">
    <a href="{:url('home/carts/index')}" target="_blank"><span class="word j-word">共 <span class="num" id="goodsTotalNum">0</span> 件商品</span></a>
    	<div class="wst-cart-boxs hide">
    		<div id="list-carts"></div>
@@ -55,7 +85,7 @@
    		<div id="list-carts3"></div>
 	   	<div class="wst-clear"></div>
    	</div>
-   </div>
+   </div> -->
 {/* 购物车 */}
 <script id="list-cart" type="text/html">
 {{# for(var i = 0; i < d.list.length; i++){ }}
@@ -133,13 +163,21 @@
       {/* 横栏菜单 */}
       <div id="wst-nav-items">
            <ul>
-               {volist name=":WSTNavigations(0)" id='vo'}
+               <!-- {volist name=":WSTNavigations(0)" id='vo'}
                <li class="fore1">
                     <a href="{$vo['navUrl']}" {if $vo['isOpen']==1}target="_blank"{/if}>{$vo['navTitle']}</a>
                </li>
+               {/volist} -->
+               {volist name=":WSTNavigations(0)" id="vo" key="l" length="4"}
+               <li class="fore1">
+                    <a href="#c{$l-1}">{$vo['navTitle']}</a>
+               </li>
                {/volist}
+
+
            </ul>
       </div>
+
       <!-- <div class='wst-right-panel' {if !isset($hideCategory)}style="display:none" {/if}>
         <div class="index-user-tab">
           <div id="wst-right-photo">

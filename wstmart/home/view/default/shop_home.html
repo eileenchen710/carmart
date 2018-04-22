@@ -79,7 +79,7 @@
 			</li>
 			{/volist}
 		</ul>
-		<!-- <a href="javascript:;" class="ctrl-slide ck-prev" ></a> 
+		<!-- <a href="javascript:;" class="ctrl-slide ck-prev" ></a>
 		<a href="javascript:;" class="ctrl-slide ck-next" ></a> -->
 		<div class="ck-slidebox">
 			<div class="slideWrap">
@@ -160,9 +160,9 @@
 					<div class="wst-shop-rect">
 					<span>${$re['shopPrice']}</span>
 					{if($re['goodsStock'])}
-					<a class="wst-shop-recta" href="javascript:WST.addCart({$re['goodsId']})">加入购物车</a>
+					<!-- <a class="wst-shop-recta" href="javascript:WST.addCart({$re['goodsId']})">加入购物车</a> -->
 					{else}
-					<a class="wst-shop-recta2" href="javascript:void(0);">暂无商品</a>
+					<!-- <a class="wst-shop-recta2" href="javascript:void(0);">暂无商品</a> -->
 					{/if}
 					</div>
 				</div>
@@ -189,9 +189,9 @@
 			<div class="wst-shop-listg">
 				{volist name="$data['list']['Rows']" id="li"}
 				<div class="wst-shop-goods">
-					<div class="wst-shop-goimg"><a href="{:url('home/goods/detail',array('id'=>$li['goodsId']))}" target="_blank"><img class="goodsImg" data-original="__ROOT__/{$li['goodsImg']}" title="{$li['goodsName']}"></a><a href="javascript:WST.addCart({$li['goodsId']});"><span class="js-cart">加入购物车</span></a></div>
+					<!-- <div class="wst-shop-goimg"><a href="{:url('home/goods/detail',array('id'=>$li['goodsId']))}" target="_blank"><img class="goodsImg" data-original="__ROOT__/{$li['goodsImg']}" title="{$li['goodsName']}"></a><a href="javascript:WST.addCart({$li['goodsId']});"><span class="js-cart">加入购物车</span></a></div> -->
 					<p class="wst-shop-gonam"><a href="{:url('home/goods/detail',array('id'=>$li['goodsId']))}" target="_blank">{:WSTMSubstr($li['goodsName'],0,15)}</a></p>
-					<p class="wst-shop-goodp1"><span class="wst-shop-goodpr">${$li['shopPrice']}</span><span class="wst-rfloat">成交数：<span class="wst-shop-goodpr2">{$li['saleNum']}</span></span></p>
+					<!-- <p class="wst-shop-goodp1"><span class="wst-shop-goodpr">${$li['shopPrice']}</span><span class="wst-rfloat">成交数：<span class="wst-shop-goodpr2">{$li['saleNum']}</span></span></p> -->
 					<p class="wst-shop-goodp2"><span class="wst-shop-goodpr3">市场价：${$li['marketPrice']}</span><span class="wst-rfloat">已有<span class="wst-shop-goodpr4">{$li['appraiseNum']}</span>人评价</span></p>
 				</div>
 				{/volist}
@@ -231,7 +231,7 @@ $(function(){
 	        	}else{
 	        		location.href = '?page='+e.curr;
 	        	}
-	            
+
 	        }
 	    }
 	});

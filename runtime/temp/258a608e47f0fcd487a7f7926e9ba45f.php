@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:8:{s:82:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/index.html";i:1509883700;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1509883700;s:93:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/self_shop_header.html";i:1509883700;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1509883700;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1509883698;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header.html";i:1509883698;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/right_cart.html";i:1509883698;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1509883700;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:8:{s:82:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/index.html";i:1524296527;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1523516678;s:93:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/self_shop_header.html";i:1523516678;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524122419;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header.html";i:1524377169;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/right_cart.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524296778;}*/ ?>
 <!doctype html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -31,10 +31,10 @@
 
 <script>
 window.conf = {
-		"ROOT"      : "__ROOT__", 
-		"APP"       : "__APP__", 
-		"STATIC"    : "__STATIC__", 
-		"SUFFIX"    : "<?php echo config('url_html_suffix'); ?>", 
+		"ROOT"      : "__ROOT__",
+		"APP"       : "__APP__",
+		"STATIC"    : "__STATIC__",
+		"SUFFIX"    : "<?php echo config('url_html_suffix'); ?>",
 		"SMS_VERFY" : "<?php echo WSTConf('CONF.smsVerfy'); ?>",
     	"SMS_OPEN"  : "<?php echo WSTConf('CONF.smsOpen'); ?>",
     	"GOODS_LOGO": "<?php echo WSTConf('CONF.goodsLogo'); ?>",
@@ -64,7 +64,7 @@ $(function() {
 			  	<div class="wst-tagt">
 			  	   <div class="userImg" >
 				  	<img class='usersImg' data-original="__ROOT__/<?php echo session('WST_USER.userPhoto'); ?>"/>
-				   </div>	
+				   </div>
 				  <div class="wst-tagt-n">
 				    <div>
 					  	<span class="wst-tagt-na"><?php echo session('WST_USER.userName')?session('WST_USER.userName'):session('WST_USER.loginName'); ?></span>
@@ -99,7 +99,7 @@ $(function() {
 			</li>
 			<?php else: ?>
 			<li class="drop-info">
-			  <div>欢迎来到<?php echo WSTMSubstr(WSTConf('CONF.mallName'),0,13); ?><a href="<?php echo Url('home/users/login'); ?>">&nbsp;&nbsp;请&nbsp;登录</a></div>
+			  <div><?php echo WSTMSubstr(WSTConf('CONF.mallName'),0,13); ?><a href="<?php echo Url('home/users/login'); ?>">&nbsp;&nbsp;请&nbsp;登录</a></div>
 			</li>
 			<li class="spacer">|</li>
 			<li class="drop-info">
@@ -108,7 +108,7 @@ $(function() {
 			<?php endif; ?>
 		</ul>
 		<ul class="headrf" style='float:right;'>
-		    <li class="j-dorpdown">
+		    <!-- <li class="j-dorpdown">
 				<div class="drop-down" style="padding-left:0px;">
 					<a href="<?php echo Url('home/users/index'); ?>" target="_blank">我的订单<i class="di-right"><s>◇</s></i></a>
 				</div>
@@ -117,9 +117,9 @@ $(function() {
 				   <div><a href='<?php echo Url("home/orders/waitReceive"); ?>' onclick='WST.position(5,0)'>待发货订单</a></div>
 				   <div><a href='<?php echo Url("home/orders/waitAppraise"); ?>' onclick='WST.position(6,0)'>待评价订单</a></div>
 				</div>
-			</li>	
-			
-			<li class="spacer">|</li>
+			</li> -->
+
+			<!-- <li class="spacer">|</li>
 			<li class="j-dorpdown">
 				<div class="drop-down drop-down2 pdr5"><i class="di-left"></i><a href="#" target="_blank">手机商城</a></div>
 				<div class='j-dorpdown-layer sweep-list'>
@@ -130,7 +130,7 @@ $(function() {
 					   </div>
 				   </div>
 				</div>
-			</li>
+			</li> -->
 			<li class="spacer">|</li>
 			<li class="j-dorpdown">
 				<div class="drop-down" style="padding:0 5px;"><a href="#" target="_blank">关注我们</a></div>
@@ -362,6 +362,7 @@ function goShop(id){
 }
 </script>
 <script type='text/javascript' src='__STYLE__/js/qrcode.js?v=<?php echo $v; ?>'></script>
+
 <?php if(!isset($_COOKIE['ads_cookie'])): $wstTagAds =  model("Tags")->listAds("index-top-ads",99,86400); foreach($wstTagAds as $key=>$vo){?>
 <div class="index-top-ads">
   <a href="<?php echo $vo['adURL']; ?>" <?php if(($vo['adURL']!='')): ?>onclick="WST.recordClick(<?php echo $vo['adId']; ?>)"<?php endif; ?> onfocus="this.blur();"><img src="__ROOT__/<?php echo $vo['adFile']; ?>"></a>
@@ -445,7 +446,7 @@ function goShop(id){
 			  	<div class="wst-tagt">
 			  	   <div class="userImg" >
 				  	<img class='usersImg' data-original="__ROOT__/<?php echo session('WST_USER.userPhoto'); ?>"/>
-				   </div>	
+				   </div>
 				  <div class="wst-tagt-n">
 				    <div>
 					  	<span class="wst-tagt-na"><?php echo session('WST_USER.userName')?session('WST_USER.userName'):session('WST_USER.loginName'); ?></span>
@@ -480,7 +481,7 @@ function goShop(id){
 			</li>
 			<?php else: ?>
 			<li class="drop-info">
-			  <div>欢迎来到<?php echo WSTMSubstr(WSTConf('CONF.mallName'),0,13); ?><a href="<?php echo Url('home/users/login'); ?>">&nbsp;&nbsp;请&nbsp;登录</a></div>
+			  <div><?php echo WSTMSubstr(WSTConf('CONF.mallName'),0,13); ?><a href="<?php echo Url('home/users/login'); ?>">&nbsp;&nbsp;请&nbsp;登录</a></div>
 			</li>
 			<li class="spacer">|</li>
 			<li class="drop-info">
@@ -489,7 +490,7 @@ function goShop(id){
 			<?php endif; ?>
 		</ul>
 		<ul class="headrf" style='float:right;'>
-		    <li class="j-dorpdown">
+		    <!-- <li class="j-dorpdown">
 				<div class="drop-down" style="padding-left:0px;">
 					<a href="<?php echo Url('home/users/index'); ?>" target="_blank">我的订单<i class="di-right"><s>◇</s></i></a>
 				</div>
@@ -498,9 +499,9 @@ function goShop(id){
 				   <div><a href='<?php echo Url("home/orders/waitReceive"); ?>' onclick='WST.position(5,0)'>待发货订单</a></div>
 				   <div><a href='<?php echo Url("home/orders/waitAppraise"); ?>' onclick='WST.position(6,0)'>待评价订单</a></div>
 				</div>
-			</li>	
-			
-			<li class="spacer">|</li>
+			</li> -->
+
+			<!-- <li class="spacer">|</li>
 			<li class="j-dorpdown">
 				<div class="drop-down drop-down2 pdr5"><i class="di-left"></i><a href="#" target="_blank">手机商城</a></div>
 				<div class='j-dorpdown-layer sweep-list'>
@@ -511,7 +512,7 @@ function goShop(id){
 					   </div>
 				   </div>
 				</div>
-			</li>
+			</li> -->
 			<li class="spacer">|</li>
 			<li class="j-dorpdown">
 				<div class="drop-down" style="padding:0 5px;"><a href="#" target="_blank">关注我们</a></div>
@@ -743,6 +744,7 @@ function goShop(id){
 }
 </script>
 <script type='text/javascript' src='__STYLE__/js/qrcode.js?v=<?php echo $v; ?>'></script>
+
 <?php if(!isset($_COOKIE['ads_cookie'])): $wstTagAds =  model("Tags")->listAds("index-top-ads",99,86400); foreach($wstTagAds as $key=>$tads){if(($tads['adFile']!='')): ?>
 <div class="index-top-ads">
   <a href="<?php echo $tads['adURL']; ?>" <?php if(($tads['isOpen'])): ?>target='_blank'<?php endif; if(($tads['adURL']!='')): ?>onclick="WST.recordClick(<?php echo $tads['adId']; ?>)"<?php endif; ?> onfocus="this.blur();">
@@ -751,7 +753,7 @@ function goShop(id){
 </div>
 <?php endif; } endif; ?>
 
-
+<link href="__STYLE__/css/location.css" rel="stylesheet">
 
 <div class='wst-search-container'>
    <div class='wst-logo'>
@@ -764,20 +766,28 @@ function goShop(id){
       	  <input type="hidden" id="search-type" value="<?php echo isset($keytype)?1:0; ?>"/>
           <ul class="j-search-box">
         	  <li class="j-search-type">
-              搜<span><?php if(isset($keytype)): ?>店铺<?php else: ?>商品<?php endif; ?></span>&nbsp;<i class="arrow"> </i>
+              搜<span><?php if(isset($keytype)): ?>店铺<?php else: ?>优惠<?php endif; ?></span>&nbsp;<i class="arrow"> </i>
             </li>
         	  <li class="j-type-list">
         	  	<?php if(isset($keytype)): ?>
-              <div data="0">商品</div>
+              <div data="0">优惠</div>
               <?php else: ?>
         	  	<div data="1">店铺</div>
               <?php endif; ?>
         	  </li>
+
+
           </ul>
 	      <input type="text" id='search-ipt' class='search-ipt' placeholder='<?php echo WSTConf("CONF.adsGoodsWordsSearch"); ?>' value='<?php echo isset($keyword)?$keyword:""; ?>'/>
 	      <input type='hidden' id='adsGoodsWordsSearch' value='<?php echo WSTConf("CONF.adsGoodsWordsSearch"); ?>'>
 	      <input type='hidden' id='adsShopWordsSearch' value='<?php echo WSTConf("CONF.adsShopWordsSearch"); ?>'>
-	      <div id='search-btn' class="search-btn" onclick='javascript:WST.search(this.value)'>搜索</div>
+
+
+
+
+
+              <!-- <div id='search-btn' class="search-btn" onclick='javascript:WST.search(this.value)'>搜索</div> -->
+
       </div>
       <div class="wst-search-keys">
       <?php $searchKeys = WSTSearchKeys(); if(is_array($searchKeys) || $searchKeys instanceof \think\Collection): $i = 0; $__LIST__ = $searchKeys;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
@@ -785,7 +795,29 @@ function goShop(id){
        <?php if($i< count($searchKeys)): ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php endif; endforeach; endif; else: echo "" ;endif; ?>
       </div>
    </div>
-   <div class="wst-cart-box">
+
+
+   <script language="javascript">
+function showPic(){
+document.getElementById("locationImg").src = "__ROOT__/wstmart/home/view/default/img/location-hover.png"
+document.getElementById("locationImg").style.opacity = "1";
+}
+function hiddenPic(){
+document.getElementById("locationImg").src = "__ROOT__/wstmart/home/view/default/img/location.png"
+document.getElementById("locationImg").style.opacity = "0.5";
+}
+</script>
+
+<div class="wst-search-location">
+<div class="j-search-location">
+  <img id="locationImg" src="__ROOT__/wstmart/home/view/default/img/location.png" width="20px" style="margin-top:8px;margin-left:-10px; opacity:0.5"/>
+<input type="text" id='search-location' class='search-location' onmouseout="hiddenPic();" onmousemove="showPic();" placeholder='Sydney' value='<?php echo isset($keyword)?$keyword:""; ?>'></input>
+</div>
+<div id='search-btn' class="search-btn" onclick='javascript:WST.search(this.value)'>搜索</div>
+</div>
+
+
+   <!-- <div class="wst-cart-box">
    <a href="<?php echo url('home/carts/index'); ?>" target="_blank"><span class="word j-word">共 <span class="num" id="goodsTotalNum">0</span> 件商品</span></a>
    	<div class="wst-cart-boxs hide">
    		<div id="list-carts"></div>
@@ -793,14 +825,14 @@ function goShop(id){
    		<div id="list-carts3"></div>
 	   	<div class="wst-clear"></div>
    	</div>
-   </div>
+   </div> -->
 
 <script id="list-cart" type="text/html">
 {{# for(var i = 0; i < d.list.length; i++){ }}
 	<div class="goods" id="j-goods{{ d.list[i].cartId }}">
 	   	<div class="imgs"><a href="__ROOT__/home/goods/detail/id/{{d.list[i].goodsId }}"><img class="goodsImgc" data-original="__ROOT__/{{ d.list[i].goodsImg }}" title="{{ d.list[i].goodsName }}"></a></div>
 	   	<div class="number"><p><a  href="__ROOT__/home/goods/detail/id/{{d.list[i].goodsId }}">{{WST.cutStr(d.list[i].goodsName,26)}}</a></p><p>数量：{{ d.list[i].cartNum }}</p></div>
-	   	<div class="price"><p>￥{{ d.list[i].shopPrice }}</p><span><a href="javascript:WST.delCheckCart({{ d.list[i].cartId }})">删除</a></span></div>
+	   	<div class="price"><p>${{ d.list[i].shopPrice }}</p><span><a href="javascript:WST.delCheckCart({{ d.list[i].cartId }})">删除</a></span></div>
 	</div>
 {{# } }}
 </script>
@@ -810,7 +842,7 @@ function goShop(id){
 <div class="wst-nav-menus">
    <div class="nav-w" style="position: relative;">
       <div class="w-spacer"></div>
-      <div class="dorpdown <?php if(isset($hideCategory)): ?>j-index<?php endif; ?>" id="wst-categorys">
+      <!-- <div class="dorpdown <?php if(isset($hideCategory)): ?>j-index<?php endif; ?>" id="wst-categorys">
          <div class="dt j-cate-dt">
              <a href="<?php echo Url('home/goods/lists'); ?>" target="_blank">全部商品分类</a>
          </div>
@@ -822,7 +854,7 @@ function goShop(id){
                       <div class="<?php if(($key>=12)): ?> over-cat-icon <?php else: ?> cat-icon-<?php echo $k; endif; ?>"></div>
                       <a href="<?php echo Url('home/goods/lists','cat='.$vo['catId']); ?>" target="_blank"><?php echo $vo['catName']; ?></a>
                      </h3>
-                     <i>&gt;</i> 
+                     <i>&gt;</i>
                  </div>
                  <?php endforeach; endif; else: echo "" ;endif; ?>
              </div>
@@ -862,18 +894,26 @@ function goShop(id){
                   <?php endforeach; endif; else: echo "" ;endif; ?>
              </div>
         </div>
-      </div>
+      </div> -->
       
       <div id="wst-nav-items">
            <ul>
-               <?php $_result=WSTNavigations(0);if(is_array($_result) || $_result instanceof \think\Collection): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+               <!-- <?php $_result=WSTNavigations(0);if(is_array($_result) || $_result instanceof \think\Collection): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                <li class="fore1">
                     <a href="<?php echo $vo['navUrl']; ?>" <?php if($vo['isOpen']==1): ?>target="_blank"<?php endif; ?>><?php echo $vo['navTitle']; ?></a>
                </li>
+               <?php endforeach; endif; else: echo "" ;endif; ?> -->
+               <?php $_result=WSTNavigations(0);if(is_array($_result) || $_result instanceof \think\Collection): $l = 0;$__LIST__ = is_array($_result) ? array_slice($_result,0,4, true) : $_result->slice(0,4, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($l % 2 );++$l;?>
+               <li class="fore1">
+                    <a href="#c<?php echo $l-1; ?>"><?php echo $vo['navTitle']; ?></a>
+               </li>
                <?php endforeach; endif; else: echo "" ;endif; ?>
+
+
            </ul>
       </div>
-      <div class='wst-right-panel' <?php if(!isset($hideCategory)): ?>style="display:none" <?php endif; ?>>
+
+      <!-- <div class='wst-right-panel' <?php if(!isset($hideCategory)): ?>style="display:none" <?php endif; ?>>
         <div class="index-user-tab">
           <div id="wst-right-photo">
   		  	 <a href="<?php echo url('home/users/index'); ?>"><img class="usersImg" data-original="__ROOT__/<?php echo session('WST_USER.userPhoto'); ?>"/></a>
@@ -892,7 +932,7 @@ function goShop(id){
             </a>
             <a href="<?php echo Url('home/users/regist'); ?>"><div class="wst-right-pic"><img src="__STYLE__/img/icon_register.png" /></div>
               <p class="wst-right-text">注册</p>
-            </a> 
+            </a>
             <div class="wst-clear"></div>
             </div>
 
@@ -918,12 +958,12 @@ function goShop(id){
           </a>
           <?php } ?>
         </div>
-      </div>
-      
+      </div> -->
+
       <span class="wst-clear">
-        
+
       </span>
-       
+
     </div>
 </div>
 <div class="wst-clear"></div>
@@ -957,11 +997,11 @@ function goShop(id){
 		<ul class="rec">
 				<li class="rec-item j-rec-selected" id="fl_f_0" onmouseover="gpanelOver1(this);">
 					<em></em>
-					<a href="javascript:void(0)">商品推荐</a>
+					<a href="javascript:void(0)">汽车保养</a>
 				</li>
-				<li class="rec-item" id="fl_f_1" onmouseover="gpanelOver1(this);"><em></em><a href="javascript:void(0)">最新上架</a></li>
+				<li class="rec-item" id="fl_f_1" onmouseover="gpanelOver1(this);"><em></em><a href="javascript:void(0)">汽车美容</a></li>
 				<li class="rec-item" id="fl_f_2" onmouseover="gpanelOver1(this);"><em></em><a href="javascript:void(0)">精品促销</a></li>
-				<li class="rec-item" id="fl_f_3" onmouseover="gpanelOver1(this);"><em></em><a href="javascript:void(0)">热销商品</a></li>
+				<li class="rec-item" id="fl_f_3" onmouseover="gpanelOver1(this);"><em></em><a href="javascript:void(0)">轮胎</a></li>
 		</ul>
 		
 		<div class="rec-goods-list" id="fl_f_0_pl">
@@ -973,14 +1013,14 @@ function goShop(id){
 					</a>
 					<p class="rec-goods-desc"><a href='<?php echo Url("home/goods/detail","id=".$vo["goodsId"]); ?>' target='_blank'><?php echo $vo['goodsName']; ?></a></p>
 					<div class="rec-goods-bottom">
-					   <p class="rec-goods-price">价格:<span>￥<?php echo $vo['shopPrice']; ?></span></p>
-					   <a href="javascript:WST.addCart(<?php echo $vo['goodsId']; ?>);">加入购物车</a>
+					   <p class="rec-goods-price">价格:<span>$<?php echo $vo['shopPrice']; ?></span></p>
+					   <!-- <a href="javascript:WST.addCart(<?php echo $vo['goodsId']; ?>);">加入购物车</a> -->
 					</div>
 				</li>
 				<?php } ?>
 			</ul>
 			<div class="wst-clear"></div>
-		</div> 
+		</div>
 		
 		<div class="rec-goods-list hide" id="fl_f_1_pl">
 			<ul class="rec-goods-list">
@@ -991,8 +1031,8 @@ function goShop(id){
 					</a>
 					<p class="rec-goods-desc"><a href='<?php echo Url("home/goods/detail","id=".$vo["goodsId"]); ?>' target='_blank'><?php echo $vo['goodsName']; ?></a></p>
 					<div class="rec-goods-bottom">
-					  <p class="rec-goods-price">价格:<span>￥<?php echo $vo['shopPrice']; ?></span></p>
-					  <a href="javascript:WST.addCart(<?php echo $vo['goodsId']; ?>);">加入购物车</a>
+					  <p class="rec-goods-price">价格:<span>$<?php echo $vo['shopPrice']; ?></span></p>
+					  <!-- <a href="javascript:WST.addCart(<?php echo $vo['goodsId']; ?>);">加入购物车</a> -->
 					</div>
 				</li>
 				<?php } ?>
@@ -1009,8 +1049,8 @@ function goShop(id){
 					</a>
 					<p class="rec-goods-desc"><a href='<?php echo Url("home/goods/detail","id=".$vo["goodsId"]); ?>' target='_blank'><?php echo $vo['goodsName']; ?></a></p>
 					<div class="rec-goods-bottom">
-					   <p class="rec-goods-price">价格:<span>￥<?php echo $vo['shopPrice']; ?></span></p>
-					   <a href="javascript:WST.addCart(<?php echo $vo['goodsId']; ?>);">加入购物车</a>
+					   <p class="rec-goods-price">价格:<span>$<?php echo $vo['shopPrice']; ?></span></p>
+					   <!-- <a href="javascript:WST.addCart(<?php echo $vo['goodsId']; ?>);">加入购物车</a> -->
 				    </div>
 				</li>
 				<?php } ?>
@@ -1027,8 +1067,8 @@ function goShop(id){
 					</a>
 					<p class="rec-goods-desc"><a href='<?php echo Url("home/goods/detail","id=".$vo["goodsId"]); ?>' target='_blank'><?php echo $vo['goodsName']; ?></a></p>
 					<div class="rec-goods-bottom">
-					   <p class="rec-goods-price">价格:<span>￥<?php echo $vo['shopPrice']; ?></span></p>
-					   <a href="javascript:WST.addCart(<?php echo $vo['goodsId']; ?>);">加入购物车</a>
+					   <p class="rec-goods-price">价格:<span>$<?php echo $vo['shopPrice']; ?></span></p>
+					   <!-- <a href="javascript:WST.addCart(<?php echo $vo['goodsId']; ?>);">加入购物车</a> -->
 					</div>
 				</li>
 				<?php } ?>
@@ -1108,11 +1148,11 @@ function goShop(id){
 		      	<div class="img"><a target='_blank' href="<?php echo Url('home/goods/detail','id='.$cs['goodsId']); ?>" title="<?php echo $cs['goodsName']; ?>"><img title="<?php echo $cs['goodsName']; ?>" class='goodsImg' data-original="__ROOT__/<?php echo $cs['goodsImg']; ?>"/></a></div>
 		      	<div class="p-name"><a target='_blank' href="<?php echo Url('home/goods/detail','id='.$cs['goodsId']); ?>" class="wst-redlink" title="<?php echo $cs['goodsName']; ?>"><?php echo WSTMSubstr($cs['goodsName'],0,33); ?></a></div>
 		      	<div>
-		      		<div class="p-price">￥<?php echo $cs['shopPrice']; ?></div>
-		      		<div class="p-hsale">
+		      		<div class="p-price">$<?php echo $cs['shopPrice']; ?></div>
+		      		<!-- <div class="p-hsale">
 		      			<div class="sale-num">成交数：<span class="wst-fred"><?php echo $cs['saleNum']; ?></span></div>
 		      			<a class="f-add-cart" style="display:none;" href="javascript:WST.addCart(<?php echo $cs['goodsId']; ?>);">加入购物车</a>
-		      		</div>
+		      		</div> -->
 		      		<div class='wst-clear'></div>
 		      	</div>
 		      </div>
@@ -1120,7 +1160,7 @@ function goShop(id){
 		     <div class='wst-clear'></div>
 		   	</div>
 			<div class="wst-clear"></div>
-		</div> 
+		</div>
 
 		
 		<?php if(is_array($vo['children']) || $vo['children'] instanceof \think\Collection): $l2 = 0; $__LIST__ = $vo['children'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo1): $mod = ($l2 % 2 );++$l2;?>
@@ -1132,10 +1172,10 @@ function goShop(id){
 		      	<div class="img"><a target='_blank' href="<?php echo Url('home/goods/detail','id='.$vo2['goodsId']); ?>" title="<?php echo $vo2['goodsName']; ?>"><img title="<?php echo $vo2['goodsName']; ?>" class='goodsImg' data-original="__ROOT__/<?php echo $vo2['goodsImg']; ?>"/></a></div>
 		      	<div class="p-name"><a target='_blank' href="<?php echo Url('home/goods/detail','id='.$vo2['goodsId']); ?>" class="wst-redlink" title="<?php echo $vo2['goodsName']; ?>"><?php echo WSTMSubstr($vo2['goodsName'],0,33); ?></a></div>
 		      	<div>
-		      		<div class="p-price">￥<?php echo $vo2['shopPrice']; ?></div>
+		      		<div class="p-price">$<?php echo $vo2['shopPrice']; ?></div>
 		      		<div class="p-hsale">
-		      			<div class="sale-num">成交数：<span class="wst-fred"><?php echo $vo2['saleNum']; ?></span></div>
-		      			<a class="f-add-cart" style="display:none;" href="javascript:WST.addCart(<?php echo $vo2['goodsId']; ?>);">加入购物车</a>
+		      			<!-- <div class="sale-num">成交数：<span class="wst-fred"><?php echo $vo2['saleNum']; ?></span></div>
+		      			<a class="f-add-cart" style="display:none;" href="javascript:WST.addCart(<?php echo $vo2['goodsId']; ?>);">加入购物车</a> -->
 		      		</div>
 		      		<div class='wst-clear'></div>
 		      	</div>
@@ -1146,7 +1186,7 @@ function goShop(id){
 		</div>
 		<?php endforeach; endif; else: echo "" ;endif; ?>
 		<div class="wst-clear"></div>
-		
+		<!-- 
 		<div class="floor-bottom">
 			<p>商品排行</p>
 				<ul class="floor-bottom-goods style-main" id="styleMain<?php echo $l; ?>">
@@ -1155,27 +1195,83 @@ function goShop(id){
 				    <a href="<?php echo url('home/goods/detail',['id'=>$gr['goodsId']]); ?>"><img class='fImg' data-original="__ROOT__/<?php echo $gr['goodsImg']; ?>"></a>
 				    <div>
 					   <p class="floor-goods-title"><a href="<?php echo url('home/goods/detail',['id'=>$gr['goodsId']]); ?>"><?php echo WSTMSubstr($gr['goodsName'],0,13); ?></a></p>
-					   <span>￥<?php echo sprintf('%.1f',$gr['shopPrice']); ?>&nbsp;&nbsp;<em>￥<?php echo sprintf('%.1f',$gr['marketPrice']); ?></em></span>
+					   <span>$<?php echo sprintf('%.1f',$gr['shopPrice']); ?>&nbsp;&nbsp;<em>$<?php echo sprintf('%.1f',$gr['marketPrice']); ?></em></span>
 					   <br />
 					   <a class="floor-buy" href="javascript:WST.addCart(<?php echo $gr['goodsId']; ?>)">加入购物车</a>
 					</div>
 				  </li>
 				  <?php } ?>
 				</ul>
+		</div> -->
+
+		<div class="floor-bottom">
+			<?php
+			switch ($l)
+			{
+				case 1:
+				echo '<div id="car-logo-list">
+				<a href="home/goods/lists/cat/366/brand/23.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada0796b89c2.png" height="90" width="90" style="margin-left:20px; margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/366/brand/25.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada09d4dadc6.jpg" height="100" width="100" style="margin-left:30px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/366/brand/29.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada0a1d94131.png" height="100" width="100" style="margin-left:30px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/366/brand/33.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada0a692826c.png" height="100" width="100" style="margin-left:30px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/366/brand/31.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada0a4494672.png" height="100" width="100" style="margin-left:30px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/366/brand/35.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada0aa96930f.png" height="100" width="100" style="margin-left:30px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/366/brand/22.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada078796ed6.jpg" height="90" width="90" style="margin-left:30px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/366/brand/34.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada0a7d07d00.jpg" height="100" width="100" style="margin-left:30px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/366/brand/30.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada0a3281b7f.jpg" height="100" width="100" style="margin-left:30px;margin-top:5px;"/></a>
+			</div>';
+				break;
+
+				case 2:
+				echo "";
+				break;
+
+				case 3:
+				echo '<div id="tyre-logo-list">
+				<a href="home/goods/lists/cat/368/brand/12.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9dddcc5cc7.png" height="50" width="180" style="margin-left:30px; margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/368/brand/13.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9ddf85e3df.png" height="50" width="180" style="margin-left:50px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/368/brand/14.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9de0f477ef.png" height="50" width="180" style="margin-left:50px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/368/brand/17.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9de5baa6b5.png" height="50" width="180" style="margin-left:50px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/368/brand/15.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9de27b582c.jpg" height="50" width="180" style="margin-left:50px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/368/brand/16.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9de45d826c.png" height="50" width="180" style="margin-left:30px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/368/brand/19.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9de970f711.png" height="50" width="180" style="margin-left:50px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/368/brand/18.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9de7719cce.png" height="50" width="180" style="margin-left:50px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/368/brand/20.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9deac14f80.png" height="50" width="180" style="margin-left:50px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/368/brand/21.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9dec5650fc.png" height="50" width="180" style="margin-left:50px;margin-top:5px;"/></a>
+			</div>';
+				break;
+			}
+			?>
+
+			<!-- <p><?php echo $l; ?>F</p>
+				<ul class="floor-bottom-goods style-main" id="styleMain<?php echo $l; ?>">
+					<?php $wstTagGoods =  model("Tags")->listGoods("recom",$vo['catId'],10,86400); foreach($wstTagGoods as $key=>$gr){?>
+					<li>
+						<a href="<?php echo url('home/goods/detail',['id'=>$gr['goodsId']]); ?>"><img class='fImg' data-original="__ROOT__/<?php echo $gr['goodsImg']; ?>"></a>
+						<div>
+						 <p class="floor-goods-title"><a href="<?php echo url('home/goods/detail',['id'=>$gr['goodsId']]); ?>"><?php echo WSTMSubstr($gr['goodsName'],0,13); ?></a></p>
+						 <span>$<?php echo sprintf('%.1f',$gr['shopPrice']); ?>&nbsp;&nbsp;<em>$<?php echo sprintf('%.1f',$gr['marketPrice']); ?></em></span>
+						 <br />
+						 <a class="floor-buy" href="javascript:WST.addCart(<?php echo $gr['goodsId']; ?>)">加入购物车</a>
+					</div>
+					</li>
+					<?php } ?>
+				</ul> -->
 		</div>
+
 	</div>
 	<?php endforeach; endif; else: echo "" ;endif; ?>
 	</div>
 </div>
 <div id="screen-left-nav" style="display:none;">
 	<ul>
-		<?php $__FOR_START_1121028390__=1;$__FOR_END_1121028390__=$l+1;for($i=$__FOR_START_1121028390__;$i < $__FOR_END_1121028390__;$i+=1){  if ($i>10)break;  ?>
+		<?php $__FOR_START_1914630858__=1;$__FOR_END_1914630858__=$l+1;for($i=$__FOR_START_1914630858__;$i < $__FOR_END_1914630858__;$i+=1){  if ($i>10)break;  ?>
 		<li class="lnav" id="F<?php echo $i; ?>" ><a href="javascript:;" onfocus="this.blur();" ><?php echo $i; ?>F</a></li>
 		<?php } ?>
 	</ul>
 </div>
 
-<link href="__STYLE__/css/right_cart.css?v=<?php echo $v; ?>" rel="stylesheet">
+<!-- <link href="__STYLE__/css/right_cart.css?v=<?php echo $v; ?>" rel="stylesheet">
 <div class="j-global-toolbar">
 	<div class="toolbar-wrap j-wrap">
 		<div class="toolbar">
@@ -1224,7 +1320,7 @@ function goShop(id){
 									          <a target="_blank" title="{{(goods.goodsName+((specs!='')?"【"+specs+"】":""))}}" href="{{WST.U('home/goods/detail','id='+goods.goodsId)}}">{{WST.cutStr(goods.goodsName,22)}}<br/>{{specs}}</a>
 									      </div>
 									      <div class="p-price">
-									          <strong>¥<span id='gprice_{{goods.cartId}}'>{{goods.shopPrice}}</span></strong> 
+									          <strong>¥<span id='gprice_{{goods.cartId}}'>{{goods.shopPrice}}</span></strong>
 									          <div class="wst-rfloat">
 									             <a href="#none" class="buy-btn" id="buy-reduce_{{goods.cartId}}" onclick="javascript:WST.changeIptNum(-1,'#buyNum','#buy-reduce,#buy-add','{{goods.cartId}}','statRightCartMoney')">-</a>
 									             <input type="text" id="buyNum_{{goods.cartId}}" class="right-cart-buy-num" value="{{goods.cartNum}}" data-max="{{goods.goodsStock}}" data-min="1" onkeyup="WST.changeIptNum(0,'#buyNum','#buy-reduce,#buy-add',{{goods.cartId}},'statRightCartMoney')" autocomplete="off"  onkeypress="return WST.isNumberKey(event);" maxlength="6"/>
@@ -1233,9 +1329,9 @@ function goShop(id){
 									     </div>
 									      <span onclick="javascript:delRightCart(this,{{goods.cartId}});" dataid="{{shop.shopId}}|{{goods.cartId}}" class="goods-remove" title="删除"></span>
 									 </div>
-								 </div>    
-								 {{# } } }} 
-                                 </script>   	
+								 </div>
+								 {{# } } }}
+                                 </script>
 							</div>
 						</div>
 					</div>
@@ -1262,7 +1358,7 @@ function goShop(id){
 					</div>
 					<div class="tbar-panel-footer j-panel-footer"></div>
 				</div>
-				
+
 				<div style="visibility: hidden;" class="j-content toolbar-panel tbar-panel-history toolbar-animate-in">
 					<h3 class="tbar-panel-header j-panel-header">
 						<a href="#none" class="title"> <i></i> <em class="title">我的足迹</em> </a>
@@ -1273,14 +1369,14 @@ function goShop(id){
 							<div class="jt-history-wrap">
 								<ul id='history-goods-panel'></ul>
 								<script id="list-history-goods" type="text/html">
-								{{# 
-                                 for(var i = 0; i < d.length; i++){ 
+								{{#
+                                 for(var i = 0; i < d.length; i++){
                                   d[i].goodsImg = WST.conf.ROOT+"/"+d[i].goodsImg.replace('.','_thumb.');
                                  }}
 								   <li class="jth-item">
 										<a target='_blank' href="{{WST.U('home/goods/detail','id='+d[i].goodsId)}}" class="img-wrap"><img src="{{d[i].goodsImg}}" height="100" width="100"> </a>
 										<a class="add-cart-button" href="javascript:WST.addCart({{d[i].goodsId}});">加入购物车</a>
-										<a href="#none" class="price">￥{{d[i].shopPrice}}</a>
+										<a href="#none" class="price">${{d[i].shopPrice}}</a>
 									</li>
 								{{# } }}
                                 </script>
@@ -1290,9 +1386,9 @@ function goShop(id){
 					<div class="tbar-panel-footer j-panel-footer"></div>
 				</div>
 			</div>
-			
+
 			<div class="toolbar-header"></div>
-			
+
 			<div class="toolbar-tabs j-tab">
 				<div class="toolbar-tab tbar-tab-cart">
 					<i class="tab-ico"></i>
@@ -1302,7 +1398,7 @@ function goShop(id){
 				<div class="toolbar-tab tbar-tab-follow" style='display:none'>
 					<i class="tab-ico"></i>
 					<em class="tab-text">我的关注</em>
-					<span class="tab-sub j-count hide">0</span> 
+					<span class="tab-sub j-count hide">0</span>
 				</div>
 				<div class=" toolbar-tab tbar-tab-history ">
 					<i class="tab-ico"></i>
@@ -1313,41 +1409,42 @@ function goShop(id){
 				  <a target='_blank' href='<?php echo Url("home/messages/index"); ?>' onclick='WST.position(49,0)'>
 					<i class="tab-ico"></i>
 					<em class="tab-text">我的消息</em>
-					<span class="tab-sub j-message-count hide"></span> 
+					<span class="tab-sub j-message-count hide"></span>
 				  </a>
 				</div>
 			</div>
-			
+
 			<div class="toolbar-footer">
 				<div class="toolbar-tab tbar-tab-top"> <a href="#"> <i class="tab-ico  "></i> <em class="footer-tab-text">顶部</em> </a> </div>
 				<div class=" toolbar-tab tbar-tab-feedback"  style='display:none'> <a href="#" target="_blank"> <i class="tab-ico"></i> <em class="footer-tab-text ">反馈</em> </a> </div>
 			</div>
 			<div class="toolbar-mini"></div>
 		</div>
-		<div id="j-toolbar-load-hook"></div>		
+		<div id="j-toolbar-load-hook"></div>
 	</div>
 </div>
-<script type='text/javascript' src='__STYLE__/js/right_cart.js?v=<?php echo $v; ?>'></script>
+<script type='text/javascript' src='__STYLE__/js/right_cart.js?v=<?php echo $v; ?>'></script> -->
+
 
 
 	<div style="border-top: 1px solid #df2003;padding-bottom:25px;margin-top:35px;min-width:1200px;"></div>
 <div class="wst-footer-flink">
 	<div class="wst-footer" >
 
-		<div class="wst-footer-cld-box">
+		<!-- <div class="wst-footer-cld-box">
 			<div class="wst-footer-fl" style="text-align: left;padding-left:10px;">友情链接</div>
 
 			<div style="padding-left:60px;">
 				<?php $wstTagFriendlink =  model("Tags")->listFriendlink(99,86400); foreach($wstTagFriendlink as $key=>$vo){?>
-				<div style="float:left;"><a href="<?php echo $vo['friendlinkUrl']; ?>"  style="font-size:16px;color:#887878;font-weight:bold;" target="_blank"><?php echo $vo["friendlinkName"]; ?></a>&nbsp;&nbsp;</div> 
+				<div style="float:left;"><a href="<?php echo $vo['friendlinkUrl']; ?>"  style="font-size:16px;color:#887878;font-weight:bold;" target="_blank"><?php echo $vo["friendlinkName"]; ?></a>&nbsp;&nbsp;</div>
 				<?php } ?>
 				<div class="wst-clear"></div>
 			</div>
-		</div>
+		</div> -->
 
 	</div>
 </div>
-<ul class="wst-footer-info">
+<!-- <ul class="wst-footer-info">
 	<li><div class="wst-footer-info-img"><img src="__STYLE__/img/icon_play.png"></div>
 		<div class="wst-footer-info-text">
 			<h1>支付宝支付</h1>
@@ -1378,7 +1475,7 @@ function goShop(id){
 			<p>400城市送货上门</p>
 		</div>
 	</li>
-</ul>
+</ul> -->
 <div class="wst-footer-help">
 	<div class="wst-footer">
 		<div class="wst-footer-hp-ck1">

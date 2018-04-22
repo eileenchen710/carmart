@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:88:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shops/index.html";i:1509883700;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shops/base.html";i:1509883700;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1509883700;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1509883698;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1509883700;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:88:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shops/index.html";i:1523516678;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shops/base.html";i:1524321815;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524122419;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524296778;}*/ ?>
 <!doctype html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,17 +12,17 @@
 
 <script type="text/javascript" src="__STATIC__/js/jquery.min.js?v=<?php echo $v; ?>"></script>
 <script type="text/javascript" src="__STATIC__/plugins/layer/layer.js?v=<?php echo $v; ?>"></script>
-	  
+
 <script type='text/javascript' src='__STATIC__/js/common.js?v=<?php echo $v; ?>'></script>
 
 <script type='text/javascript' src='__STYLE__/js/common.js?v=<?php echo $v; ?>'></script>
 <script type='text/javascript' src='__ROOT__/static/plugins/lazyload/jquery.lazyload.min.js?v=<?php echo $v; ?>'></script>
 <script>
 window.conf = {
-		"ROOT"      : "__ROOT__", 
-		"APP"       : "__APP__", 
-		"STATIC"    : "__STATIC__", 
-		"SUFFIX"    : "<?php echo config('url_html_suffix'); ?>", 
+		"ROOT"      : "__ROOT__",
+		"APP"       : "__APP__",
+		"STATIC"    : "__STATIC__",
+		"SUFFIX"    : "<?php echo config('url_html_suffix'); ?>",
 		"SMS_VERFY" : "<?php echo WSTConf('CONF.smsVerfy'); ?>",
     	"PHONE_VERFY" : "<?php echo WSTConf('CONF.phoneVerfy'); ?>",
     	"GOODS_LOGO"  : "<?php echo WSTConf('CONF.goodsLogo'); ?>",
@@ -53,7 +53,7 @@ $(function() {
 			  	<div class="wst-tagt">
 			  	   <div class="userImg" >
 				  	<img class='usersImg' data-original="__ROOT__/<?php echo session('WST_USER.userPhoto'); ?>"/>
-				   </div>	
+				   </div>
 				  <div class="wst-tagt-n">
 				    <div>
 					  	<span class="wst-tagt-na"><?php echo session('WST_USER.userName')?session('WST_USER.userName'):session('WST_USER.loginName'); ?></span>
@@ -88,7 +88,7 @@ $(function() {
 			</li>
 			<?php else: ?>
 			<li class="drop-info">
-			  <div>欢迎来到<?php echo WSTMSubstr(WSTConf('CONF.mallName'),0,13); ?><a href="<?php echo Url('home/users/login'); ?>">&nbsp;&nbsp;请&nbsp;登录</a></div>
+			  <div><?php echo WSTMSubstr(WSTConf('CONF.mallName'),0,13); ?><a href="<?php echo Url('home/users/login'); ?>">&nbsp;&nbsp;请&nbsp;登录</a></div>
 			</li>
 			<li class="spacer">|</li>
 			<li class="drop-info">
@@ -97,7 +97,7 @@ $(function() {
 			<?php endif; ?>
 		</ul>
 		<ul class="headrf" style='float:right;'>
-		    <li class="j-dorpdown">
+		    <!-- <li class="j-dorpdown">
 				<div class="drop-down" style="padding-left:0px;">
 					<a href="<?php echo Url('home/users/index'); ?>" target="_blank">我的订单<i class="di-right"><s>◇</s></i></a>
 				</div>
@@ -106,9 +106,9 @@ $(function() {
 				   <div><a href='<?php echo Url("home/orders/waitReceive"); ?>' onclick='WST.position(5,0)'>待发货订单</a></div>
 				   <div><a href='<?php echo Url("home/orders/waitAppraise"); ?>' onclick='WST.position(6,0)'>待评价订单</a></div>
 				</div>
-			</li>	
-			
-			<li class="spacer">|</li>
+			</li> -->
+
+			<!-- <li class="spacer">|</li>
 			<li class="j-dorpdown">
 				<div class="drop-down drop-down2 pdr5"><i class="di-left"></i><a href="#" target="_blank">手机商城</a></div>
 				<div class='j-dorpdown-layer sweep-list'>
@@ -119,7 +119,7 @@ $(function() {
 					   </div>
 				   </div>
 				</div>
-			</li>
+			</li> -->
 			<li class="spacer">|</li>
 			<li class="j-dorpdown">
 				<div class="drop-down" style="padding:0 5px;"><a href="#" target="_blank">关注我们</a></div>
@@ -351,6 +351,7 @@ function goShop(id){
 }
 </script>
 <script type='text/javascript' src='__STYLE__/js/qrcode.js?v=<?php echo $v; ?>'></script>
+
 <div class='wst-lite-bac'>
 <div class='wst-lite-container'>
    <div class='wst-logo'><a href='<?php echo \think\Request::instance()->root(true); ?>'><img src="__ROOT__/<?php echo WSTConf('CONF.mallLogo'); ?>" height="80" width='160'></a></div>
@@ -361,7 +362,7 @@ function goShop(id){
 
       	  <ul class="j-search-box">
             <li class="j-search-type">
-              搜<span><?php if(isset($keytype)): ?>店铺<?php else: ?>商品<?php endif; ?></span>&nbsp;<i class="arrow"> </i>
+              搜<span><?php if(isset($keytype)): ?>店铺<?php else: ?>优惠<?php endif; ?></span>&nbsp;<i class="arrow"> </i>
             </li>
             <li class="j-type-list">
               <?php if(isset($keytype)): ?>
@@ -371,9 +372,9 @@ function goShop(id){
               <?php endif; ?>
             </li>
           </ul>
-          
+
 	      <input type="text" id='search-ipt' class='search-ipt' value='<?php echo isset($keyword)?$keyword:""; ?>'/>
-	      <div id='search-btn' class="search-btn" onclick='javascript:WST.search(this.value)'></div>
+	      <!-- <div id='search-btn' class="search-btn" onclick='javascript:WST.search(this.value)'></div> -->
       </div>
    </div>
    <div class="wst-clear"></div>
@@ -429,9 +430,9 @@ function goShop(id){
 	<div class="wst-shop-eva">
 		<p>商品评分</p>
 		<div class="wst-shop-evai">
-		<?php $__FOR_START_690663814__=0;$__FOR_END_690663814__=$data['shop']['scores']['goodsScore'];for($i=$__FOR_START_690663814__;$i < $__FOR_END_690663814__;$i+=1){ ?>
+		<?php $__FOR_START_774404372__=0;$__FOR_END_774404372__=$data['shop']['scores']['goodsScore'];for($i=$__FOR_START_774404372__;$i < $__FOR_END_774404372__;$i+=1){ ?>
 			<img src="__STATIC__/plugins/raty/img/star-on.png">
-		<?php } $__FOR_START_1723126148__=1;$__FOR_END_1723126148__=6-$data['shop']['scores']['goodsScore'];for($i=$__FOR_START_1723126148__;$i < $__FOR_END_1723126148__;$i+=1){ ?>
+		<?php } $__FOR_START_1989719569__=1;$__FOR_END_1989719569__=6-$data['shop']['scores']['goodsScore'];for($i=$__FOR_START_1989719569__;$i < $__FOR_END_1989719569__;$i+=1){ ?>
 			<img src="__STATIC__/plugins/raty/img/star-off.png">
 		<?php } ?>
 		</div>
@@ -439,9 +440,9 @@ function goShop(id){
 	<div class="wst-shop-eva">
 		<p>时效评分</p>
 		<div class="wst-shop-evai">
-		<?php $__FOR_START_1519501685__=0;$__FOR_END_1519501685__=$data['shop']['scores']['timeScore'];for($i=$__FOR_START_1519501685__;$i < $__FOR_END_1519501685__;$i+=1){ ?>
+		<?php $__FOR_START_2013631541__=0;$__FOR_END_2013631541__=$data['shop']['scores']['timeScore'];for($i=$__FOR_START_2013631541__;$i < $__FOR_END_2013631541__;$i+=1){ ?>
 			<img src="__STATIC__/plugins/raty/img/star-on.png">
-		<?php } $__FOR_START_479995530__=1;$__FOR_END_479995530__=6-$data['shop']['scores']['timeScore'];for($i=$__FOR_START_479995530__;$i < $__FOR_END_479995530__;$i+=1){ ?>
+		<?php } $__FOR_START_1204997821__=1;$__FOR_END_1204997821__=6-$data['shop']['scores']['timeScore'];for($i=$__FOR_START_1204997821__;$i < $__FOR_END_1204997821__;$i+=1){ ?>
 			<img src="__STATIC__/plugins/raty/img/star-off.png">
 		<?php } ?>
 		</div>
@@ -449,9 +450,9 @@ function goShop(id){
 	<div class="wst-shop-eva">
 		<p>服务评分</p>
 		<div class="wst-shop-evai">
-		<?php $__FOR_START_2042600450__=0;$__FOR_END_2042600450__=$data['shop']['scores']['serviceScore'];for($i=$__FOR_START_2042600450__;$i < $__FOR_END_2042600450__;$i+=1){ ?>
+		<?php $__FOR_START_1250682143__=0;$__FOR_END_1250682143__=$data['shop']['scores']['serviceScore'];for($i=$__FOR_START_1250682143__;$i < $__FOR_END_1250682143__;$i+=1){ ?>
 			<img src="__STATIC__/plugins/raty/img/star-on.png">
-		<?php } $__FOR_START_1326048203__=1;$__FOR_END_1326048203__=6-$data['shop']['scores']['serviceScore'];for($i=$__FOR_START_1326048203__;$i < $__FOR_END_1326048203__;$i+=1){ ?>
+		<?php } $__FOR_START_1679315689__=1;$__FOR_END_1679315689__=6-$data['shop']['scores']['serviceScore'];for($i=$__FOR_START_1679315689__;$i < $__FOR_END_1679315689__;$i+=1){ ?>
 			<img src="__STATIC__/plugins/raty/img/star-off.png">
 		<?php } ?>
 		</div>
@@ -474,20 +475,20 @@ function goShop(id){
 <div class="wst-footer-flink">
 	<div class="wst-footer" >
 
-		<div class="wst-footer-cld-box">
+		<!-- <div class="wst-footer-cld-box">
 			<div class="wst-footer-fl" style="text-align: left;padding-left:10px;">友情链接</div>
 
 			<div style="padding-left:60px;">
 				<?php $wstTagFriendlink =  model("Tags")->listFriendlink(99,86400); foreach($wstTagFriendlink as $key=>$vo){?>
-				<div style="float:left;"><a href="<?php echo $vo['friendlinkUrl']; ?>"  style="font-size:16px;color:#887878;font-weight:bold;" target="_blank"><?php echo $vo["friendlinkName"]; ?></a>&nbsp;&nbsp;</div> 
+				<div style="float:left;"><a href="<?php echo $vo['friendlinkUrl']; ?>"  style="font-size:16px;color:#887878;font-weight:bold;" target="_blank"><?php echo $vo["friendlinkName"]; ?></a>&nbsp;&nbsp;</div>
 				<?php } ?>
 				<div class="wst-clear"></div>
 			</div>
-		</div>
+		</div> -->
 
 	</div>
 </div>
-<ul class="wst-footer-info">
+<!-- <ul class="wst-footer-info">
 	<li><div class="wst-footer-info-img"><img src="__STYLE__/img/icon_play.png"></div>
 		<div class="wst-footer-info-text">
 			<h1>支付宝支付</h1>
@@ -518,7 +519,7 @@ function goShop(id){
 			<p>400城市送货上门</p>
 		</div>
 	</li>
-</ul>
+</ul> -->
 <div class="wst-footer-help">
 	<div class="wst-footer">
 		<div class="wst-footer-hp-ck1">

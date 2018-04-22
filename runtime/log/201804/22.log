@@ -1,0 +1,110 @@
+[ 2018-04-22T13:56:21+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.576241s][吞吐率：1.74req/s] [内存消耗：2,511.81kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:56:24+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.037843s][吞吐率：26.42req/s] [内存消耗：2,511.77kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:56:24+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.033791s][吞吐率：29.59req/s] [内存消耗：2,511.82kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:56:26+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.045183s][吞吐率：22.13req/s] [内存消耗：2,511.81kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:56:34+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.031599s][吞吐率：31.65req/s] [内存消耗：2,511.77kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:56:34+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.034662s][吞吐率：28.85req/s] [内存消耗：2,511.82kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:56:36+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.030872s][吞吐率：32.39req/s] [内存消耗：2,511.81kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:56:44+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.042826s][吞吐率：23.35req/s] [内存消耗：2,511.77kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:56:44+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.033293s][吞吐率：30.04req/s] [内存消耗：2,511.82kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:56:46+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.045837s][吞吐率：21.82req/s] [内存消耗：2,511.81kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:56:54+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.031589s][吞吐率：31.66req/s] [内存消耗：2,511.77kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:56:54+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.030046s][吞吐率：33.28req/s] [内存消耗：2,511.82kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:56:54+08:00 ] ::1 ::1 GET /carmart/
+[ log ] localhost/carmart/ [运行时间：0.034754s][吞吐率：28.77req/s] [内存消耗：2,393.05kb] [文件加载：52]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:56:56+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.030052s][吞吐率：33.28req/s] [内存消耗：2,511.81kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:57:04+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.035309s][吞吐率：28.32req/s] [内存消耗：2,511.77kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:57:06+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.031823s][吞吐率：31.42req/s] [内存消耗：2,511.81kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:57:14+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.442396s][吞吐率：2.26req/s] [内存消耗：2,511.77kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:57:16+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.033842s][吞吐率：29.55req/s] [内存消耗：2,511.81kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:57:24+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.034597s][吞吐率：28.90req/s] [内存消耗：2,511.77kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:57:26+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.029294s][吞吐率：34.14req/s] [内存消耗：2,511.81kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:57:34+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.035610s][吞吐率：28.08req/s] [内存消耗：2,511.77kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------
+[ 2018-04-22T13:57:36+08:00 ] ::1 ::1 POST /carmart/home/index/getSysMessages.html
+[ log ] localhost/carmart/home/index/getSysMessages.html [运行时间：0.027991s][吞吐率：35.73req/s] [内存消耗：2,511.81kb] [文件加载：54]
+[ error ] [2002]SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known
+
+---------------------------------------------------------------

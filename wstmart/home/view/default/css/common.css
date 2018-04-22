@@ -137,7 +137,7 @@ input[type=button]{cursor:pointer}
 
 .wst-lite-container{height:auto;}
 .wst-logo{margin:5px 5px 5px 0px;float:left;height:auto;}
-.wst-search-box{float:left;position: relative;width: 750px;}
+.wst-search-box{float:left;position: relative;width: 580px;}
 .wst-search{border:2px solid #e23c3d;height: 36px;margin-left: 50px;margin-top: 50px;position: relative;}
 .wst-search .j-search-type{width:78px;top:0;line-height:36px;position: absolute;padding:0;border-right:2px solid #e23c3d;border-left:2px solid #e23c3d;cursor: pointer;left:-2px;text-align:center;}
 .wst-search .j-type-list{width:70px;top:35px;line-height:36px;position: absolute;padding:0 4px;border:2px solid #e23c3d;cursor: pointer;background-color: #fff;left:-2px;z-index: 100;border-top:0;display: none;text-align: center;}
@@ -186,9 +186,9 @@ input[type=button]{cursor:pointer}
     line-height: 18px;
     overflow: hidden;
     padding: 0;
-    width: 560px;
+    width: 420px;
     height:36px;
-    border:36px;outline:none;padding-left: 84px;}
+    border:36px;outline:none;padding-left: 94px;}
 .wst-search .search-btn{
 	background-color: #e23c3d;
     color: #ffffff;

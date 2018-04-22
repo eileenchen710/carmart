@@ -112,7 +112,7 @@ class Goods extends Base{
 		$rs['status'] = 1;
 		return $rs;
 	}
-	
+
 	/**
 	 * 跳去新增页面
 	 */
@@ -124,8 +124,8 @@ class Goods extends Base{
     	$object['goodsImg'] = WSTConf('CONF.goodsLogo');
     	$data = ['object'=>$object,'src'=>'add'];
     	return $this->fetch('shops/goods/edit',$data);
-    } 
-    
+    }
+
     /**
      * 新增商品
      */
@@ -133,7 +133,7 @@ class Goods extends Base{
     	$m = new M();
     	return $m->add();
     }
-    
+
     /**
      * 跳去编辑页面
      */
@@ -144,7 +144,7 @@ class Goods extends Base{
     	$data = ['object'=>$object,'src'=>input('src')];
     	return $this->fetch('shops/goods/edit',$data);
     }
-    
+
     /**
      * 编辑商品
      */
@@ -208,15 +208,15 @@ class Goods extends Base{
             $data['areaInfo'] = $selectArea;
 
             $data['area2'] = $aModel->listQuery($areaIds[2]); // 广东的下级
- 
+
             $data['area3'] = $aModel->listQuery($areaIds[1]); // 广州的下级
         }
-        
+
 
     	$data['goodsPage'] = $m->pageQuery();
     	return $this->fetch("goods_search",$data);
     }
-    
+
     /**
      * 获取商品列表
      */
@@ -262,12 +262,12 @@ class Goods extends Base{
             $data['areaInfo'] = $selectArea;
 
             $data['area2'] = $aModel->listQuery($areaIds[2]); // 广东的下级
- 
+
             $data['area3'] = $aModel->listQuery($areaIds[1]); // 广州的下级
         }
-        
 
-        
+
+
 
     	$vs = input('vs');
     	$vs = ($vs!='')?explode(',',$vs):[];
@@ -322,7 +322,7 @@ class Goods extends Base{
     	$data['goodsPage'] = $m->pageQuery($goodsCatIds);
     	return $this->fetch("goods_list",$data);
     }
-    
+
     /**
      * 查看商品详情
      */
@@ -334,7 +334,7 @@ class Goods extends Base{
     	    $history = is_array($history)?$history:[];
             array_unshift($history, (string)$goods['goodsId']);
             $history = array_values(array_unique($history));
-            
+
 			if(!empty($history)){
 				cookie("history_goods",$history,25920000);
 			}
@@ -347,7 +347,7 @@ class Goods extends Base{
             }
 	    	$this->assign('goods',$goods);
 	    	$this->assign('shop',$goods['shop']);
-	    	return $this->fetch("goods_detail");
+	    	return $this->fetch("deals_detail");
     	}else{
     		return $this->fetch("error_lost");
     	}
@@ -374,7 +374,7 @@ class Goods extends Base{
     	$m = new M();
     	return $m->editwarnStock();
     }
-    
+
 	/**
 	 * 获取商品浏览记录
 	 */

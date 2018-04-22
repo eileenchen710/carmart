@@ -115,7 +115,7 @@
 			<div class="wst-clear"></div>
 		</div>
 	</div>
-    <!-- {/* 楼层商品 */}
+    {/* 楼层商品 */}
 	{volist name="$floors" id="vo" key="l" length="10"}
 	{/* 楼层顶部广告 */}
 	{php}$adsCode = "ads-".$l."-1";{/php}
@@ -196,10 +196,10 @@
 		      	<div class="p-name"><a target='_blank' href="{:Url('home/goods/detail','id='.$cs['goodsId'])}" class="wst-redlink" title="{$cs['goodsName']}">{:WSTMSubstr($cs['goodsName'],0,33)}</a></div>
 		      	<div>
 		      		<div class="p-price">${$cs['shopPrice']}</div>
-		      		<div class="p-hsale">
+		      		<!-- <div class="p-hsale">
 		      			<div class="sale-num">成交数：<span class="wst-fred">{$cs['saleNum']}</span></div>
 		      			<a class="f-add-cart" style="display:none;" href="javascript:WST.addCart({$cs['goodsId']});">加入购物车</a>
-		      		</div>
+		      		</div> -->
 		      		<div class='wst-clear'></div>
 		      	</div>
 		      </div>
@@ -221,8 +221,8 @@
 		      	<div>
 		      		<div class="p-price">${$vo2['shopPrice']}</div>
 		      		<div class="p-hsale">
-		      			<div class="sale-num">成交数：<span class="wst-fred">{$vo2['saleNum']}</span></div>
-		      			<a class="f-add-cart" style="display:none;" href="javascript:WST.addCart({$vo2['goodsId']});">加入购物车</a>
+		      			<!-- <div class="sale-num">成交数：<span class="wst-fred">{$vo2['saleNum']}</span></div>
+		      			<a class="f-add-cart" style="display:none;" href="javascript:WST.addCart({$vo2['goodsId']});">加入购物车</a> -->
 		      		</div>
 		      		<div class='wst-clear'></div>
 		      	</div>
@@ -233,7 +233,7 @@
 		</div>
 		{/volist}
 		<div class="wst-clear"></div>
-		{/* 商品排行 */}
+		<!-- {/* 商品排行 */}
 		<div class="floor-bottom">
 			<p>商品排行</p>
 				<ul class="floor-bottom-goods style-main" id="styleMain{$l}">
@@ -249,9 +249,65 @@
 				  </li>
 				  {/wst:goods}
 				</ul>
+		</div> -->
+
+		<div class="floor-bottom">
+			<?php
+			switch ($l)
+			{
+				case 1:
+				echo '<div id="car-logo-list">
+				<a href="home/goods/lists/cat/366/brand/23.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada0796b89c2.png" height="90" width="90" style="margin-left:20px; margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/366/brand/25.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada09d4dadc6.jpg" height="100" width="100" style="margin-left:30px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/366/brand/29.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada0a1d94131.png" height="100" width="100" style="margin-left:30px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/366/brand/33.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada0a692826c.png" height="100" width="100" style="margin-left:30px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/366/brand/31.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada0a4494672.png" height="100" width="100" style="margin-left:30px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/366/brand/35.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada0aa96930f.png" height="100" width="100" style="margin-left:30px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/366/brand/22.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada078796ed6.jpg" height="90" width="90" style="margin-left:30px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/366/brand/34.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada0a7d07d00.jpg" height="100" width="100" style="margin-left:30px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/366/brand/30.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada0a3281b7f.jpg" height="100" width="100" style="margin-left:30px;margin-top:5px;"/></a>
+			</div>';
+				break;
+
+				case 2:
+				echo "";
+				break;
+
+				case 3:
+				echo '<div id="tyre-logo-list">
+				<a href="home/goods/lists/cat/368/brand/12.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9dddcc5cc7.png" height="50" width="180" style="margin-left:30px; margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/368/brand/13.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9ddf85e3df.png" height="50" width="180" style="margin-left:50px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/368/brand/14.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9de0f477ef.png" height="50" width="180" style="margin-left:50px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/368/brand/17.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9de5baa6b5.png" height="50" width="180" style="margin-left:50px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/368/brand/15.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9de27b582c.jpg" height="50" width="180" style="margin-left:50px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/368/brand/16.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9de45d826c.png" height="50" width="180" style="margin-left:30px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/368/brand/19.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9de970f711.png" height="50" width="180" style="margin-left:50px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/368/brand/18.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9de7719cce.png" height="50" width="180" style="margin-left:50px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/368/brand/20.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9deac14f80.png" height="50" width="180" style="margin-left:50px;margin-top:5px;"/></a>
+				<a href="home/goods/lists/cat/368/brand/21.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ad9dec5650fc.png" height="50" width="180" style="margin-left:50px;margin-top:5px;"/></a>
+			</div>';
+				break;
+			}
+			?>
+
+			<!-- <p>{$l}F</p>
+				<ul class="floor-bottom-goods style-main" id="styleMain{$l}">
+					{wst:goods type='recom' cat="vo['catId']" cache="86400" num='10' id='gr'}
+					<li>
+						<a href="{:url('home/goods/detail',['id'=>$gr['goodsId']])}"><img class='fImg' data-original="__ROOT__/{$gr['goodsImg']}"></a>
+						<div>
+						 <p class="floor-goods-title"><a href="{:url('home/goods/detail',['id'=>$gr['goodsId']])}">{:WSTMSubstr($gr['goodsName'],0,13)}</a></p>
+						 <span>${:sprintf('%.1f',$gr['shopPrice'])}&nbsp;&nbsp;<em>${:sprintf('%.1f',$gr['marketPrice'])}</em></span>
+						 <br />
+						 <a class="floor-buy" href="javascript:WST.addCart({$gr['goodsId']})">加入购物车</a>
+					</div>
+					</li>
+					{/wst:goods}
+				</ul> -->
 		</div>
+
 	</div>
-	{/volist} -->
+	{/volist}
 	</div>
 </div>
 <div id="screen-left-nav" style="display:none;">

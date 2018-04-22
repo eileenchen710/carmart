@@ -21,10 +21,10 @@
       <li class="item">
      	<div class="img"><a target='_blank' href='{:Url("home/goods/detail","id=".$vo["goodsId"])}'><img class='goodsImg' data-original="__ROOT__/{:WSTImg($vo['goodsImg'])}" title="{$vo['goodsName']}" alt="{$vo['goodsName']}" /></a></div>
      	<div class="des">
-     		<div class="p-sale">已售{$vo['saleNum']}件</div>
+     		<!-- <div class="p-sale">已售{$vo['saleNum']}件</div> -->
      		<div class="p-name"><a target='_blank' href='{:Url("home/goods/detail","id=".$vo["goodsId"])}'>{$vo['goodsName']}</a></div>
      		<div class="p-price">${$vo['shopPrice']}</div>
-     		<div class="p-buy"><a href="javascript:WST.addCart({$vo['goodsId']})">加入购物车</a></div>
+     		<!-- <div class="p-buy"><a href="javascript:WST.addCart({$vo['goodsId']})">加入购物车</a></div> -->
      	</div>
       </li>
      {/wst:goods}
@@ -111,7 +111,7 @@
 					{/if}
 
 
-					
+
 		     	 </ul>
 		     	</div>
 		     	 <ul class="area-box" id="fl_1_1_pl" style="display:none;">
@@ -171,7 +171,7 @@
 	      	<div>
 	      		<div class="p-price">${$vo['shopPrice']}</div>
 	      		<div class="p-hsale">
-	      			<div class="sale-num">成交数：<span class="wst-fred">{$vo['saleNum']}</span></div>
+	      			<!-- <div class="sale-num">成交数：<span class="wst-fred">{$vo['saleNum']}</span></div> -->
 		      		<a class="p-add-cart" style="display:none;" href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a>
 	      		</div>
 	      		<div class='wst-clear'></div>
@@ -183,14 +183,14 @@
 	      	</div>
 	      	<div class="p-shop"><a href="{:Url('home/shops/home','shopId='.$vo['shopId'])}" target='_blank' class="wst-redlink">{$vo['shopName']}</a></div>
 	      </div>
-	      
+
 	      {/volist}
 	     <div class='wst-clear'></div>
 	   	</div>
 	   	<div style="width:980px;">
 	  		<div id="wst-pager"></div>
 		</div>
-		
+
 	</div>
 	<div class='wst-clear'></div>
 	{else}
@@ -206,7 +206,7 @@
 	      	<div>
 	      		<div class="p-price">${$rvo['shopPrice']}</div>
 	      		<div class="p-hsale">
-	      			<div class="sale-num">成交数：<span class="wst-fred">{$rvo['saleNum']}</span></div>
+	      			<!-- <div class="sale-num">成交数：<span class="wst-fred">{$rvo['saleNum']}</span></div> -->
 		      		<a class="p-add-cart" style="display:none;" href="javascript:WST.addCart({$rvo['goodsId']});">加入购物车</a>
 	      		</div>
 	      		<div class='wst-clear'></div>
@@ -260,7 +260,7 @@ laypage({
     curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
         var page = location.search.match(/page=(\d+)/);
         return page ? page[1] : 1;
-    }(), 
+    }(),
     jump: function(e, first){ //触发分页后的回调
         if(!first){ //一定要加此判断，否则初始时会无限刷新
         	var nuewurl = WST.splitURL("page");
@@ -270,7 +270,7 @@ laypage({
         	}else{
         		location.href = '?page='+e.curr;
         	}
-            
+
         }
     }
 });
