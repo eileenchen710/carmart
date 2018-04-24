@@ -1,6 +1,7 @@
 body,p,td,th,div {
   line-height:130%;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  /* font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; */
+  font-family: "Hiragino Sans GB", "Microsoft YaHei", 黑体, Helvetica, Arial, Tahoma, sans-serif;
 }
 body,p,td,th,div {
   color: #192E32;
@@ -14,7 +15,8 @@ body {
     margin: 0px;
     padding: 0px;
     text-align:center;
-    font:15px 宋体, Arial, Helvetica, sans-serif;
+    /* font:15px 宋体, Arial, Helvetica, sans-serif; */
+    font: 15px "Hiragino Sans GB", "Microsoft YaHei", 黑体, Helvetica, Arial, Tahoma, sans-serif;
     background: -webkit-linear-gradient(#ffffff, #189cd4); /* Safari 5.1 - 6.0 */
     background: -o-linear-gradient(#ffffff, #189cd4); /* Opera 11.1 - 12.0 */
     background: -moz-linear-gradient(#ffffff, #189cd4); /* Firefox 3.6 - 15 */
@@ -94,7 +96,7 @@ p{margin:2px;font-size:15px;line-height:25px;}
   right: 0;
 }
 input, textarea, select {
-  font:12px 宋体, Arial, Helvetica, sans-serif;
+  font:12px "microsoft yahei", Arial, Helvetica, sans-serif;
 }
 a { text-decoration:none; }
 input.p, label {

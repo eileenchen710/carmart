@@ -396,9 +396,9 @@ a.wst-lite-in:hover{
 	background:#ffffff;
 	margin:20px 35px 0px 0px;
 }
-.wst-lite-sea .search{border:2px solid #e23c3d;height: 35px;position: relative;}
-.wst-lite-sea .search .j-search-type{width:78px;top:0;line-height:36px;position: absolute;padding:0;border-right:2px solid #e23c3d;border-left:2px solid #e23c3d;cursor: pointer;left:-2px;text-align:center;}
-.wst-lite-sea .search .j-type-list{width:70px;top:35px;line-height:36px;position: absolute;padding:0 4px;border:2px solid #e23c3d;cursor: pointer;background-color: #fff;left:-2px;z-index: 100;border-top:0;display: none;text-align: center;}
+.wst-lite-sea .search{border:2px solid #4a566c;height: 35px;position: relative;}
+.wst-lite-sea .search .j-search-type{width:78px;top:0;line-height:36px;position: absolute;padding:0;border-right:2px solid #4a566c;border-left:2px solid #4a566c;cursor: pointer;left:-2px;text-align:center;}
+.wst-lite-sea .search .j-type-list{width:70px;top:35px;line-height:36px;position: absolute;padding:0 4px;border:2px solid #4a566c;cursor: pointer;background-color: #fff;left:-2px;z-index: 100;border-top:0;display: none;text-align: center;}
 .wst-lite-sea .search .j-search-type i {
   top: 15px;
   right: 6px;
@@ -413,7 +413,7 @@ a.wst-lite-in:hover{
 .wst-lite-sea .search .j-search-type s{  position: relative;
   top: -17px;
   text-decoration: none;}
-.wst-lite-sea .search .j-type-list div:hover{color: #e23c3d}
+.wst-lite-sea .search .j-type-list div:hover{color: #4a566c}
 .wst-lite-sea .search .search-ipt{border: 0 none;
     color: #565656;
     float: left;
@@ -456,9 +456,9 @@ a.wst-lite-in:hover{
 .wst-lite-cart .goods .number{float:left;width:50%;}
 .wst-lite-cart .goods .number p{float:left;width:92%;margin-top:10px;padding-left:10px;}
 .wst-lite-cart .goods .price{float:right;text-align:right;}
-.wst-lite-cart .goods .price p{float:right;width:100%;line-height:20px;font-weight: bold;color: #df2003;}
+.wst-lite-cart .goods .price p{float:right;width:100%;line-height:20px;font-weight: bold;color: #4a566c;}
 .wst-lite-cart .goods.price span{float:right;width:100%;line-height:20px;}
-.wst-lite-cart .goods .price span a:hover,.wst-lite-cart .goods .number p a:hover{color: #df2003;}
+.wst-lite-cart .goods .price span a:hover,.wst-lite-cart .goods .number p a:hover{color: #4a566c;}
 .wst-lite-cart .comm{float:left;width:100%;font-weight: bold;line-height:32px;}
 .wst-lite-cart .comm span{font-size:15px;color: #E45050;}
 .wst-lite-cart .comm .span2{float:right;margin-right:10px;}

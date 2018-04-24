@@ -58,17 +58,17 @@ WST.searchIpt = function(){
 	$('.j-search-box').hover(function(){
 		$(".j-type-list").show();
 		$(this).find('i').removeClass('arrow').addClass('over');
-		$(this).css({"border-left":"2px solid #e23c3d"});
+		$(this).css({"border-left":"2px solid #4a566c"});
 	},function(){
 		$(".j-type-list").hide();
-		$(this).css({"border-left":"2px solid #e23c3d"});
+		$(this).css({"border-left":"2px solid #4a566c"});
 		$(this).find('i').removeClass('over').addClass('arrow');
 	});
 
 	$('j-type-list').hover(function(){
 		$(".j-type-list").show();
 		$(this).find('i').removeClass('arrow').addClass('over');
-		$(this).css({"border-left":"2px solid #e23c3d"});
+		$(this).css({"border-left":"2px solid #4a566c"});
 	});
 
 	$(".j-type-list div").click(function(){
@@ -197,7 +197,7 @@ WST.Sidebar = function(){
     });
     
     $('.fore2').hover(function(){
-	$(this).children('dt').css('background-color','#ff6a53');
+	$(this).children('dt').css('background-color','#4a566c');
 	},function(){
 		$(this).children('dt').css('background-color','');
 	});

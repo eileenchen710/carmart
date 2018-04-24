@@ -1,10 +1,8 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:89:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/deals_detail.html";i:1523774728;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header.html";i:1524377169;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524122419;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/right_cart.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524296778;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:89:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/deals_detail.html";i:1524409454;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1524545620;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header.html";i:1524564734;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524548358;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/right_cart.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524504273;}*/ ?>
 <!doctype html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title><?php echo $goods['goodsName']; ?> - <?php echo WSTConf('CONF.mallName'); ?><?php echo WSTConf('CONF.mallTitle'); ?></title>
-<meta name="auther" content="WSTMart,www.wstmart.net" />
-<meta name="copyright" content="Copyright©2016-2066 Powered By WSTMart" />
 
 <meta name="description" content="<?php echo $goods['goodsName']; ?>">
 <meta name="Keywords" content="<?php echo $goods['goodsSeoKeywords']; ?>">
@@ -427,7 +425,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 
 <div class="wst-search-location">
 <div class="j-search-location">
-  <img id="locationImg" src="__ROOT__/wstmart/home/view/default/img/location.png" width="20px" style="margin-top:8px;margin-left:-10px; opacity:0.5"/>
+  <img id="locationImg" src="__ROOT__/wstmart/home/view/default/img/location.png" width="20px" style="margin-top:0px;margin-left:-10px; opacity:0.5"/>
 <input type="text" id='search-location' class='search-location' onmouseout="hiddenPic();" onmousemove="showPic();" placeholder='Sydney' value='<?php echo isset($keyword)?$keyword:""; ?>'></input>
 </div>
 <div id='search-btn' class="search-btn" onclick='javascript:WST.search(this.value)'>搜索</div>
@@ -589,7 +587,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 
 <div class='wst-w' style='border-bottom:1px solid #ddd;'>
 <div class='wst-filters'>
-   <div class='item' style="border-left:2px solid #df2003;padding-left: 8px;">
+   <div class='item' style="border-left:2px solid #4a566c;padding-left: 8px;">
       <a class='link' href='__ROOT__'>首页</a>
       <i class="arrow">></i>
    </div>
@@ -646,9 +644,9 @@ document.getElementById("locationImg").style.opacity = "0.5";
              <div class='item'>
                <div class='dt'>商品评分：</div>
                <div class='dd'>
-		        <?php $__FOR_START_1776494897__=0;$__FOR_END_1776494897__=$goods['scores']['totalScores'];for($i=$__FOR_START_1776494897__;$i < $__FOR_END_1776494897__;$i+=1){ ?>
+		        <?php $__FOR_START_409890529__=0;$__FOR_END_409890529__=$goods['scores']['totalScores'];for($i=$__FOR_START_409890529__;$i < $__FOR_END_409890529__;$i+=1){ ?>
 					<img src="__STATIC__/plugins/raty/img/star-on.png">
-				<?php } $__FOR_START_1626116418__=1;$__FOR_END_1626116418__=6-$goods['scores']['totalScores'];for($i=$__FOR_START_1626116418__;$i < $__FOR_END_1626116418__;$i+=1){ ?>
+				<?php } $__FOR_START_1792648987__=1;$__FOR_END_1792648987__=6-$goods['scores']['totalScores'];for($i=$__FOR_START_1792648987__;$i < $__FOR_END_1792648987__;$i+=1){ ?>
 					<img src="__STATIC__/plugins/raty/img/star-off.png">
 				<?php } ?>
 				<div class='appraise'>累计评价：<span class='appraise-num'><?php echo $goods['appraiseNum']; ?></span></div>
@@ -1072,130 +1070,105 @@ document.getElementById("locationImg").style.opacity = "0.5";
 
 
 
-	<div style="border-top: 1px solid #df2003;padding-bottom:25px;margin-top:35px;min-width:1200px;"></div>
+	<link href="__STYLE__/css/footer.css" rel="stylesheet">
+<!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File            BUG  -->
+  <link href="__STYLE__/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+  <!-- Libraries CSS Files -->
+  <link href="__STYLE__/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+<div style="border-top: 1px solid #fff;padding-bottom:25px;margin-top:35px;min-width:1200px;"></div>
 <div class="wst-footer-flink">
 	<div class="wst-footer" >
 
-		<!-- <div class="wst-footer-cld-box">
-			<div class="wst-footer-fl" style="text-align: left;padding-left:10px;">友情链接</div>
 
-			<div style="padding-left:60px;">
-				<?php $wstTagFriendlink =  model("Tags")->listFriendlink(99,86400); foreach($wstTagFriendlink as $key=>$vo){?>
-				<div style="float:left;"><a href="<?php echo $vo['friendlinkUrl']; ?>"  style="font-size:16px;color:#887878;font-weight:bold;" target="_blank"><?php echo $vo["friendlinkName"]; ?></a>&nbsp;&nbsp;</div>
-				<?php } ?>
-				<div class="wst-clear"></div>
-			</div>
-		</div> -->
+
 
 	</div>
 </div>
-<!-- <ul class="wst-footer-info">
-	<li><div class="wst-footer-info-img"><img src="__STYLE__/img/icon_play.png"></div>
-		<div class="wst-footer-info-text">
-			<h1>支付宝支付</h1>
-			<p>支付宝签约商家</p>
-		</div>
-	</li>
-	<li><div class="wst-footer-info-img"><img src="__STYLE__/img/icon_zhengpin.png"></div>
-		<div class="wst-footer-info-text">
-			<h1>正品保证</h1>
-			<p>100%原产地</p>
-		</div>
-	</li>
-	<li><div class="wst-footer-info-img"><img src="__STYLE__/img/icon_thwy.png"></div>
-		<div class="wst-footer-info-text">
-			<h1>退货无忧</h1>
-			<p>前天退货保障</p>
-		</div>
-	</li>
-	<li><div class="wst-footer-info-img"><img src="__STYLE__/img/icon_mfps.png"></div>
-		<div class="wst-footer-info-text">
-			<h1>免费配送</h1>
-			<p>满98元包邮</p>
-		</div>
-	</li>
-	<li><div class="wst-footer-info-img"><img src="__STYLE__/img/icon_hdfk.png"></div>
-		<div class="wst-footer-info-text">
-			<h1>货到付款</h1>
-			<p>400城市送货上门</p>
-		</div>
-	</li>
-</ul> -->
-<div class="wst-footer-help">
-	<div class="wst-footer">
-		<div class="wst-footer-hp-ck1">
-			<?php $_result=WSTHelps(5,6);if(is_array($_result) || $_result instanceof \think\Collection): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo1): $mod = ($i % 2 );++$i;?>
-			<div class="wst-footer-wz-ca">
-				<div class="wst-footer-wz-pt">
-					<span class="wst-footer-wz-pn"><?php echo $vo1["catName"]; ?></span>
-					<div style='margin-left:10px;'>
-						<?php if(is_array($vo1['articlecats']) || $vo1['articlecats'] instanceof \think\Collection): $i = 0; $__LIST__ = $vo1['articlecats'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($i % 2 );++$i;?>
-						<a href="<?php echo Url('Home/Helpcenter/view',array('id'=>$vo2['articleId'])); ?>"><?php echo WSTMSubstr($vo2['articleTitle'],0,8); ?></a><br/>
-						<?php endforeach; endif; else: echo "" ;endif; ?>
+
+<!--==========================
+		Footer
+	============================-->
+	<footer id="footer">
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-lg-3 col-md-6 footer-info">
+						<h3>XX养车网</h3>
+						<p></br>创立于悉尼，XX养车是深受欢迎的汽车养护优惠信息平台，我们希望客户，养车找XX，一点不辛苦！
+						</p>
 					</div>
+
+					<div class="col-lg-3 col-md-6 footer-links">
+						<h4>相关链接</h4>
+						<ul>
+							<li><i class="ion-ios-arrow-right"></i> <a href="home">首页</a></li>
+							<li><i class="ion-ios-arrow-right"></i> <a href="#">我们的团队</a></li>
+							<li><i class="ion-ios-arrow-right"></i> <a href="#">F&Q</a></li>
+							<li><i class="ion-ios-arrow-right"></i> <a href="#">关于我们</a></li>
+							<li><i class="ion-ios-arrow-right"></i> <a href="#">友情链接</a></li>
+						</ul>
+					</div>
+
+					<div class="col-lg-3 col-md-6 footer-contact">
+						<h4>联系我们</h4>
+						<p><strong>地址：</strong>
+							Suite 1506 <br>
+							Level 15, 323 Castlereagh St<br>
+							Sydney NSW 2000 <br>
+							<strong>电话：</strong> (02) 8373 5326<br>
+							<strong>邮箱：</strong> info.sydney@juriscorlegal.com.au<br>
+						</p>
+
+						<div class="social-links">
+							<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+							<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+							<a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+							<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+						</div>
+
+					</div>
+
+					<div class="col-lg-3 col-md-6 footer-newsletter">
+						<h4>订阅服务</h4>
+						<p>订阅 XX养车网 新闻邮件，了解更多汽车养护优惠资讯。
+						</p>
+						<form action="" method="post">
+							<input type="email" name="email"><input type="submit"  value="Subscribe">
+						</form>
+					</div>
+
 				</div>
 			</div>
-			<?php endforeach; endif; else: echo "" ;endif; ?>
-
-			<div class="wst-contact">
-				<ul>
-					<li style="height:30px;">
-						<div class="icon-phone"></div><p class="call-wst">服务热线：</p>
-					</li>
-					<li style="height:38px;">
-						<?php if((WSTConf('CONF.serviceTel')!='')): ?><p class="email-wst"><?php echo WSTConf('CONF.serviceTel'); ?></p><?php endif; ?>
-					</li>
-					<li style="height:85px;">
-						<div class="qr-code" style="position:relative;">
-							<img src="__STYLE__/img/wst_qr_code.jpg" style="height:110px;">
-							<div class="focus-wst">
-							    <?php if((WSTConf('CONF.serviceQQ')!='')): ?>
-								<p class="focus-wst-qr">在线客服：</p>
-								<p class="focus-wst-qra">
-						          <a href="tencent://message/?uin=<?php echo WSTConf('CONF.serviceQQ'); ?>&Site=QQ交谈&Menu=yes">
-									  <img border="0" src="http://wpa.qq.com/pa?p=1:<?php echo WSTConf('CONF.serviceQQ'); ?>:7" alt="QQ交谈" width="71" height="24" />
-								  </a>
-								</p>
-          						<?php endif; if((WSTConf('CONF.serviceEmail')!='')): ?>
-								<p class="focus-wst-qr">商城邮箱：</p>
-								<p class="focus-wst-qre"><?php echo WSTConf('CONF.serviceEmail'); ?></p>
-								<?php endif; ?>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-
-
-			<div class="wst-clear"></div>
 		</div>
 
-	    <div class="wst-footer-hp-ck3">
-	        <div class="links">
-	           <?php $navs = WSTNavigations(1); if(is_array($navs) || $navs instanceof \think\Collection): $i = 0; $__LIST__ = $navs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-               <a href="<?php echo $vo['navUrl']; ?>" <?php if($vo['isOpen']==1): ?>target="_blank"<?php endif; ?>><?php echo $vo['navTitle']; ?></a>
-               <?php if($i< count($navs)): ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php endif; endforeach; endif; else: echo "" ;endif; ?>
-	        </div>
-	        <div class="copyright">
-	        <?php 
-	        	if(WSTConf('CONF.mallFooter')!=''){
-	         		echo htmlspecialchars_decode(WSTConf('CONF.mallFooter'));
-	        	}
-	         
-				if(WSTConf('CONF.visitStatistics')!=''){
-					echo htmlspecialchars_decode(WSTConf('CONF.visitStatistics'))."<br/>";
-			    }
-			 if(WSTConf('CONF.mallLicense') == ''): ?>
-	        <div>
-				Copyright©2016 Powered By <a target="_blank" href="http://www.wstmart.net">WSTMart</a>
+		<div class="container">
+			<div class="copyright">
+				&copy; Copyright <strong>Juris Cor Legal 2018</strong>. All Rights Reserved
 			</div>
-			<?php else: ?>
-				<div id="wst-mallLicense" data='1' style="display:none;">Copyright©2016 Powered By <a target="_blank" href="http://www.wstmart.net">WSTMart</a></div>
-	        <?php endif; ?>
-	        </div>
-	    </div>
-	</div>
-</div>
+			<div class="credits">
+				<!--
+					All the links in the footer should remain intact.
+					You can delete the links only if you purchased the pro version.
+					Licensing information: https://bootstrapmade.com/license/
+					Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
+				-->
+				悉尼XX养车网，澳大利亚最专业的汽车养护信息平台
+			</div>
+		</div>
+	</footer><!-- #footer -->
+
+
+
+	<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
 
 

@@ -438,9 +438,9 @@ a.wst-lite-in:hover{
 	background:#ffffff;
 	margin-top:20px;
 }
-.wst-lite-sea .search{border:2px solid #e23c3d;height: 35px;position: relative;}
-.wst-lite-sea .search .j-search-type{width:78px;top:0;line-height:36px;position: absolute;padding:0;border-right:2px solid #e23c3d;border-left:2px solid #e23c3d;cursor: pointer;left:-2px;text-align:center;}
-.wst-lite-sea .search .j-type-list{width:70px;top:35px;line-height:36px;position: absolute;padding:0 4px;border:2px solid #e23c3d;cursor: pointer;background-color: #fff;left:-2px;z-index: 100;border-top:0;display: none;text-align: center;}
+.wst-lite-sea .search{border:2px solid #4a566c;height: 35px;position: relative;}
+.wst-lite-sea .search .j-search-type{width:78px;top:0;line-height:36px;position: absolute;padding:0;border-right:2px solid #4a566c;border-left:2px solid #4a566c;cursor: pointer;left:-2px;text-align:center;}
+.wst-lite-sea .search .j-type-list{width:70px;top:35px;line-height:36px;position: absolute;padding:0 4px;border:2px solid #4a566c;cursor: pointer;background-color: #fff;left:-2px;z-index: 100;border-top:0;display: none;text-align: center;}
 .wst-lite-sea .search .j-search-type i {
   top: 15px;
   right: 6px;
@@ -455,8 +455,8 @@ a.wst-lite-in:hover{
 .wst-lite-sea .search .j-search-type s{  position: relative;
   top: -17px;
   text-decoration: none;}
-.wst-lite-sea .search .j-type-list div:hover{color: #e23c3d}
-.wst-lite-sea .search .search-ipt{border: 2px solid #e23c3d;
+.wst-lite-sea .search .j-type-list div:hover{color: #4a566c}
+.wst-lite-sea .search .search-ipt{border: 2px solid #4a566c;
     color: #565656;
     float: left;
     font-family: Microsoft Yahei;
@@ -592,7 +592,7 @@ a.wst-lite-in:hover{
 	line-height:28px;
 	padding:0px 28px;
 	color:#ffffff;
-	background:#df2003;
+	background:#4a566c;
 }
 .wst-shop-tbar{height: 45px;margin:15px 0 0 0px;clear:both;padding:0px 10px;}
 .wst-shop-content{padding:2px;clear:both;margin-top:10px;}

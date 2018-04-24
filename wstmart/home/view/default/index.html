@@ -6,6 +6,9 @@
 {/block}
 {block name="css"}
 <link href="__STYLE__/css/index.css?v={$v}" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
 {/block}
 {block name="main"}
 {/* 横栏广告  */}
@@ -36,11 +39,12 @@
 		<ul class="rec">
 				<li class="rec-item j-rec-selected" id="fl_f_0" onmouseover="gpanelOver1(this);">
 					<em></em>
-					<a href="javascript:void(0)">汽车保养</a>
+					<!-- <a href="javascript:void(0)">汽车保养</a> -->
+					<a href="#c1">汽车保养</a>
 				</li>
-				<li class="rec-item" id="fl_f_1" onmouseover="gpanelOver1(this);"><em></em><a href="javascript:void(0)">汽车美容</a></li>
+				<li class="rec-item" id="fl_f_1" onmouseover="gpanelOver1(this);"><em></em><a href="#c2">汽车美容</a></li>
 				<li class="rec-item" id="fl_f_2" onmouseover="gpanelOver1(this);"><em></em><a href="javascript:void(0)">精品促销</a></li>
-				<li class="rec-item" id="fl_f_3" onmouseover="gpanelOver1(this);"><em></em><a href="javascript:void(0)">轮胎</a></li>
+				<li class="rec-item" id="fl_f_3" onmouseover="gpanelOver1(this);"><em></em><a href="#c3">轮胎</a></li>
 		</ul>
 		{/* 推荐商品  */}
 		<div class="rec-goods-list" id="fl_f_0_pl">
@@ -52,7 +56,7 @@
 					</a>
 					<p class="rec-goods-desc"><a href='{:Url("home/goods/detail","id=".$vo["goodsId"])}' target='_blank'>{$vo['goodsName']}</a></p>
 					<div class="rec-goods-bottom">
-					   <p class="rec-goods-price">价格:<span>${$vo['shopPrice']}</span></p>
+					   <p class="rec-goods-price">价格: <span>${$vo['shopPrice']}</span></p>
 					   <!-- <a href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a> -->
 					</div>
 				</li>
@@ -70,7 +74,7 @@
 					</a>
 					<p class="rec-goods-desc"><a href='{:Url("home/goods/detail","id=".$vo["goodsId"])}' target='_blank'>{$vo['goodsName']}</a></p>
 					<div class="rec-goods-bottom">
-					  <p class="rec-goods-price">价格:<span>${$vo['shopPrice']}</span></p>
+					  <p class="rec-goods-price">价格: <span>${$vo['shopPrice']}</span></p>
 					  <!-- <a href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a> -->
 					</div>
 				</li>
@@ -88,7 +92,7 @@
 					</a>
 					<p class="rec-goods-desc"><a href='{:Url("home/goods/detail","id=".$vo["goodsId"])}' target='_blank'>{$vo['goodsName']}</a></p>
 					<div class="rec-goods-bottom">
-					   <p class="rec-goods-price">价格:<span>${$vo['shopPrice']}</span></p>
+					   <p class="rec-goods-price">价格: <span>${$vo['shopPrice']}</span></p>
 					   <!-- <a href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a> -->
 				    </div>
 				</li>
@@ -106,7 +110,7 @@
 					</a>
 					<p class="rec-goods-desc"><a href='{:Url("home/goods/detail","id=".$vo["goodsId"])}' target='_blank'>{$vo['goodsName']}</a></p>
 					<div class="rec-goods-bottom">
-					   <p class="rec-goods-price">价格:<span>${$vo['shopPrice']}</span></p>
+					   <p class="rec-goods-price">价格: <span>${$vo['shopPrice']}</span></p>
 					   <!-- <a href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a> -->
 					</div>
 				</li>

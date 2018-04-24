@@ -1,5 +1,5 @@
 ﻿@CHARSET "UTF-8";
-body{color:#666;font:12px/150% Arial,Verdana,"宋体"}
+body{color:#666;font:12px/150% "Microsoft YaHei", 黑体, Helvetica, Arial, Tahoma, sans-serif;}
 *{padding:0;margin:0;font-size: 13px;}
 ol,ul {list-style: none}
 a {color:#666;text-decoration: none;}
@@ -14,7 +14,7 @@ input[type=button]{cursor:pointer}
 .wst-hide{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;padding: 4px 5px;}
 .wst-redlink{width:100%;display:block;cursor:pointer}
 .wst-redlink:hover{color:red;}
-.wst-fred{color:#df2003;}
+.wst-fred{color:#4a566c;}
 .wst-align-center{text-align: center;}
 .wst-align-left{text-align: left;}
 .wst-align-right{text-align: right;}
@@ -38,6 +38,7 @@ input[type=button]{cursor:pointer}
 /***layout**/
 .wst-header{margin:0 auto;width: 100%;border-bottom:1px solid #eee;background:#fafafa;}
 .wst-header ul li{float: left;}
+/* .wst-w,.wst-main{margin:0 auto;width: 100%;} */
 .wst-w,.wst-main{margin:0 auto;width: 100%;padding-bottom:5px;margin-bottom:5px;}
 .wst-footer{text-align:center;line-height:25px;width:1210px;margin:0 auto;}
 /*** top ads ***/
@@ -103,7 +104,7 @@ input[type=button]{cursor:pointer}
 .pdr5{padding-right: 5px!important;}
 
 .wst-header .wst-nav .j-dorpdown-layer div{text-align: center;}
-.wst-header .wst-nav .j-dorpdown-layer div a:hover,.wst-header .wst-nav .drop-down a:hover{color:#df2003;}
+.wst-header .wst-nav .j-dorpdown-layer div a:hover,.wst-header .wst-nav .drop-down a:hover{color:#4a566c;}
 .wst-header .wst-nav .drop-down{position:relative;padding:0px 18px;}
 
 .wst-header .wst-nav .drop-down1{background:url(../img/img_icon.png) -13px -33px no-repeat;}
@@ -138,9 +139,9 @@ input[type=button]{cursor:pointer}
 .wst-lite-container{height:auto;}
 .wst-logo{margin:5px 5px 5px 0px;float:left;height:auto;}
 .wst-search-box{float:left;position: relative;width: 580px;}
-.wst-search{border:2px solid #e23c3d;height: 36px;margin-left: 50px;margin-top: 50px;position: relative;}
-.wst-search .j-search-type{width:78px;top:0;line-height:36px;position: absolute;padding:0;border-right:2px solid #e23c3d;border-left:2px solid #e23c3d;cursor: pointer;left:-2px;text-align:center;}
-.wst-search .j-type-list{width:70px;top:35px;line-height:36px;position: absolute;padding:0 4px;border:2px solid #e23c3d;cursor: pointer;background-color: #fff;left:-2px;z-index: 100;border-top:0;display: none;text-align: center;}
+.wst-search{border:2px solid #4a566c;height: 36px;margin-left: 50px;margin-top: 50px;position: relative; letter-spacing: 1px;}
+.wst-search .j-search-type{width:80px;top:0;line-height:34px;position: absolute;padding:0;border-right:2px solid #4a566c;border-left:2px solid #4a566c;cursor: pointer;left:-2px;text-align:center;}
+.wst-search .j-type-list{width:80px;top:35px;line-height:36px;position: absolute;padding:0 4px;border:2px solid #4a566c;cursor: pointer;background-color: #fff;left:-2px;z-index: 100;border-top:0;display: none;text-align: center;}
 
 .wst-search .j-search-type i {
 	color: #6a6a6a;
@@ -177,7 +178,7 @@ input[type=button]{cursor:pointer}
 .wst-search .j-search-type s{  position: relative;
   top: -17px;
   text-decoration: none;}
-.wst-search .j-type-list div:hover{color: #e23c3d}
+.wst-search .j-type-list div:hover{color: #4a566c}
 .wst-search .search-ipt{border: 0 none;
     color: #565656;
     float: left;
@@ -186,11 +187,10 @@ input[type=button]{cursor:pointer}
     line-height: 18px;
     overflow: hidden;
     padding: 0;
-    width: 420px;
-    height:36px;
+    width: 500px;
     border:36px;outline:none;padding-left: 94px;}
 .wst-search .search-btn{
-	background-color: #e23c3d;
+	background-color: #4a566c;
     color: #ffffff;
     cursor: pointer;
     font-size: 15px;
@@ -313,11 +313,11 @@ input[type=button]{cursor:pointer}
 .wst-cart-box .goods .number{float:left;width:50%;}
 .wst-cart-box .goods .number p{float:left;width:92%;margin-top:10px;padding-left:10px;}
 .wst-cart-box .goods .price{float:right;text-align:right;}
-.wst-cart-box .goods .price p{float:right;width:100%;line-height:20px;font-weight: bold;color: #df2003;}
+.wst-cart-box .goods .price p{float:right;width:100%;line-height:20px;font-weight: bold;color: #4a566c;}
 .wst-cart-box .goods .price span{float:right;width:100%;line-height:20px;}
-.wst-cart-box .goods .price span a:hover,.wst-cart-box .goods .number p a:hover{color: #df2003;}
+.wst-cart-box .goods .price span a:hover,.wst-cart-box .goods .number p a:hover{color: #4a566c;}
 .wst-cart-box .comm{float:left;width:100%;font-weight: bold;line-height:32px;}
-.wst-cart-box .comm span{font-size:15px;color: #df2003;}
+.wst-cart-box .comm span{font-size:15px;color: #4a566c;}
 .wst-cart-box .comm .span2{float:right;margin-right:10px;}
 .wst-cart-box .btn {
   color: #fff;
@@ -381,9 +381,11 @@ input[type=button]{cursor:pointer}
 .wst-table td{height: 35px;}
 
 /*************************************footer***********************************************/
-.wst-footer-help{background-color: #F7F7F7;min-width: 1200px;}
+.wst-footer-help{background-color: #4a566c;min-width: 1200px;}
+.wst-footer-help a{color: #ddd;}
+.wst-footer-help span{color: #ccc;font-size: 20px;}
 .wst-footer-frd{color:#e23e3d;font-weight:bolder;font-size:18px;}
-.wst-footer-pno{color:red;font-weight:bolder;font-size:18px;}
+.wst-footer-pno{color:#4a566c;font-weight:bolder;font-size:18px;}
 .wst-footer{
 	text-align:center;line-height:25px;width:1200px;margin:0 auto;
 }
@@ -434,7 +436,7 @@ input[type=button]{cursor:pointer}
 
 /*sidebar category***/
 .wst-nav-menus {
-    border-bottom: 2px solid #df2003;
+    border-bottom: 2px solid #4a566c;
     height: 36px;
     margin:0 auto;
     min-width:1200px;
@@ -449,7 +451,7 @@ input[type=button]{cursor:pointer}
     top:2px;
 }
 #wst-categorys .dt a {
-    background: #DF2003 none repeat scroll 0 0;
+    background: #4a566c none repeat scroll 0 0;
     color: #fff;
     display: block;
     font: 400 15px/36px "microsoft yahei";
@@ -459,7 +461,7 @@ input[type=button]{cursor:pointer}
     width: 190px;
 }
 #wst-categorys .dd {
-    background: #FF6A53 none repeat scroll 0 0;
+    background: #4a566c none repeat scroll 0 0;
     min-height: 400px;
 }
 #wst-categorys .dd-inner .item {
@@ -584,7 +586,7 @@ input[type=button]{cursor:pointer}
     white-space: nowrap;
 }
 #wst-categorys .subitems dd a:hover {
-    color:#DF2003;
+    color:#4a566c;
     text-decoration:underline;
 }
 
@@ -623,9 +625,10 @@ input[type=button]{cursor:pointer}
 }
 #wst-nav-items a {
     color: #333;
-    font: 400 15px/36px "microsoft yahei";
+    font: 400 15px/36px "Helvetica";
     height: 36px;
     padding: 0 20px;
+    letter-spacing: 2px;
     text-align: center;
     text-decoration: none;
 }

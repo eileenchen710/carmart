@@ -2,8 +2,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>{block name="title"}{:WSTConf('CONF.mallTitle')}{/block}</title>
-<meta name="auther" content="WSTMart,www.wstmart.net" />
-<meta name="copyright" content="Copyright©2016-2066 Powered By WSTMart" />
 {block name="meta"}{/block}
 <link href="__STYLE__/css/common.css?v={$v}" rel="stylesheet">
 {block name="css"}{/block}
@@ -15,10 +13,10 @@
 <script type='text/javascript' src='__STYLE__/js/common.js?v={$v}'></script>
 <script>
 window.conf = {
-		"ROOT"      : "__ROOT__", 
-		"APP"       : "__APP__", 
-		"STATIC"    : "__STATIC__", 
-		"SUFFIX"    : "{:config('url_html_suffix')}", 
+		"ROOT"      : "__ROOT__",
+		"APP"       : "__APP__",
+		"STATIC"    : "__STATIC__",
+		"SUFFIX"    : "{:config('url_html_suffix')}",
 		"SMS_VERFY" : "{:WSTConf('CONF.smsVerfy')}",
     	"SMS_OPEN"  : "{:WSTConf('CONF.smsOpen')}",
     	"GOODS_LOGO": "{:WSTConf('CONF.goodsLogo')}",

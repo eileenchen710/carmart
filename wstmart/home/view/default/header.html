@@ -70,7 +70,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 
 <div class="wst-search-location">
 <div class="j-search-location">
-  <img id="locationImg" src="__ROOT__/wstmart/home/view/default/img/location.png" width="20px" style="margin-top:8px;margin-left:-10px; opacity:0.5"/>
+  <img id="locationImg" src="__ROOT__/wstmart/home/view/default/img/location.png" width="20px" style="margin-top:0px;margin-left:-10px; opacity:0.5"/>
 <input type="text" id='search-location' class='search-location' onmouseout="hiddenPic();" onmousemove="showPic();" placeholder='Sydney' value='{:isset($keyword)?$keyword:""}'></input>
 </div>
 <div id='search-btn' class="search-btn" onclick='javascript:WST.search(this.value)'>搜索</div>
@@ -99,10 +99,10 @@ document.getElementById("locationImg").style.opacity = "0.5";
 </div>
 <div class="wst-clear"></div>
 {/* 左侧菜单栏 */}
-<div class="wst-nav-menus">
+<!-- <div class="wst-nav-menus">
    <div class="nav-w" style="position: relative;">
       <div class="w-spacer"></div>
-      <!-- <div class="dorpdown {if isset($hideCategory)}j-index{/if}" id="wst-categorys">
+      <div class="dorpdown {if isset($hideCategory)}j-index{/if}" id="wst-categorys">
          <div class="dt j-cate-dt">
              <a href="{:Url('home/goods/lists')}" target="_blank">全部商品分类</a>
          </div>
@@ -159,15 +159,15 @@ document.getElementById("locationImg").style.opacity = "0.5";
                   {/volist}
              </div>
         </div>
-      </div> -->
+      </div>
       {/* 横栏菜单 */}
       <div id="wst-nav-items">
            <ul>
-               <!-- {volist name=":WSTNavigations(0)" id='vo'}
+               {volist name=":WSTNavigations(0)" id='vo'}
                <li class="fore1">
                     <a href="{$vo['navUrl']}" {if $vo['isOpen']==1}target="_blank"{/if}>{$vo['navTitle']}</a>
                </li>
-               {/volist} -->
+               {/volist}
                {volist name=":WSTNavigations(0)" id="vo" key="l" length="4"}
                <li class="fore1">
                     <a href="#c{$l-1}">{$vo['navTitle']}</a>
@@ -178,7 +178,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
            </ul>
       </div>
 
-      <!-- <div class='wst-right-panel' {if !isset($hideCategory)}style="display:none" {/if}>
+      <div class='wst-right-panel' {if !isset($hideCategory)}style="display:none" {/if}>
         <div class="index-user-tab">
           <div id="wst-right-photo">
   		  	 <a href="{:url('home/users/index')}"><img class="usersImg" data-original="__ROOT__/{:session('WST_USER.userPhoto')}"/></a>
@@ -223,12 +223,12 @@ document.getElementById("locationImg").style.opacity = "0.5";
           </a>
           {/wst:ads}
         </div>
-      </div> -->
+      </div>
 
       <span class="wst-clear">
 
       </span>
 
     </div>
-</div>
+</div> -->
 <div class="wst-clear"></div>

@@ -1,10 +1,8 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:8:{s:82:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/index.html";i:1524296527;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1523516678;s:93:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/self_shop_header.html";i:1523516678;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524122419;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header.html";i:1524377169;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/right_cart.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524296778;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:8:{s:82:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/index.html";i:1524570280;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1524545620;s:93:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/self_shop_header.html";i:1523516678;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524548358;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header.html";i:1524569045;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/right_cart.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524504273;}*/ ?>
 <!doctype html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title><?php echo WSTConf('CONF.mallName'); ?>-<?php echo WSTConf('CONF.mallSlogan'); ?><?php echo WSTConf('CONF.mallTitle'); ?></title>
-<meta name="auther" content="WSTMart,www.wstmart.net" />
-<meta name="copyright" content="Copyright©2016-2066 Powered By WSTMart" />
 
 <meta name="description" content="<?php echo WSTConf('CONF.seoMallDesc'); ?>">
 <meta name="Keywords" content="<?php echo WSTConf('CONF.seoMallKeywords'); ?>">
@@ -12,6 +10,9 @@
 <link href="__STYLE__/css/common.css?v=<?php echo $v; ?>" rel="stylesheet">
 
 <link href="__STYLE__/css/index.css?v=<?php echo $v; ?>" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
 
 <script type="text/javascript" src="__STATIC__/js/jquery.min.js?v=<?php echo $v; ?>"></script>
 <script type="text/javascript" src="__STATIC__/plugins/layer/layer.js?v=<?php echo $v; ?>"></script>
@@ -810,7 +811,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 
 <div class="wst-search-location">
 <div class="j-search-location">
-  <img id="locationImg" src="__ROOT__/wstmart/home/view/default/img/location.png" width="20px" style="margin-top:8px;margin-left:-10px; opacity:0.5"/>
+  <img id="locationImg" src="__ROOT__/wstmart/home/view/default/img/location.png" width="20px" style="margin-top:0px;margin-left:-10px; opacity:0.5"/>
 <input type="text" id='search-location' class='search-location' onmouseout="hiddenPic();" onmousemove="showPic();" placeholder='Sydney' value='<?php echo isset($keyword)?$keyword:""; ?>'></input>
 </div>
 <div id='search-btn' class="search-btn" onclick='javascript:WST.search(this.value)'>搜索</div>
@@ -839,10 +840,10 @@ document.getElementById("locationImg").style.opacity = "0.5";
 </div>
 <div class="wst-clear"></div>
 
-<div class="wst-nav-menus">
+<!-- <div class="wst-nav-menus">
    <div class="nav-w" style="position: relative;">
       <div class="w-spacer"></div>
-      <!-- <div class="dorpdown <?php if(isset($hideCategory)): ?>j-index<?php endif; ?>" id="wst-categorys">
+      <div class="dorpdown <?php if(isset($hideCategory)): ?>j-index<?php endif; ?>" id="wst-categorys">
          <div class="dt j-cate-dt">
              <a href="<?php echo Url('home/goods/lists'); ?>" target="_blank">全部商品分类</a>
          </div>
@@ -894,16 +895,15 @@ document.getElementById("locationImg").style.opacity = "0.5";
                   <?php endforeach; endif; else: echo "" ;endif; ?>
              </div>
         </div>
-      </div> -->
+      </div>
       
       <div id="wst-nav-items">
            <ul>
-               <!-- <?php $_result=WSTNavigations(0);if(is_array($_result) || $_result instanceof \think\Collection): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+               <?php $_result=WSTNavigations(0);if(is_array($_result) || $_result instanceof \think\Collection): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                <li class="fore1">
                     <a href="<?php echo $vo['navUrl']; ?>" <?php if($vo['isOpen']==1): ?>target="_blank"<?php endif; ?>><?php echo $vo['navTitle']; ?></a>
                </li>
-               <?php endforeach; endif; else: echo "" ;endif; ?> -->
-               <?php $_result=WSTNavigations(0);if(is_array($_result) || $_result instanceof \think\Collection): $l = 0;$__LIST__ = is_array($_result) ? array_slice($_result,0,4, true) : $_result->slice(0,4, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($l % 2 );++$l;?>
+               <?php endforeach; endif; else: echo "" ;endif; $_result=WSTNavigations(0);if(is_array($_result) || $_result instanceof \think\Collection): $l = 0;$__LIST__ = is_array($_result) ? array_slice($_result,0,4, true) : $_result->slice(0,4, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($l % 2 );++$l;?>
                <li class="fore1">
                     <a href="#c<?php echo $l-1; ?>"><?php echo $vo['navTitle']; ?></a>
                </li>
@@ -913,7 +913,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
            </ul>
       </div>
 
-      <!-- <div class='wst-right-panel' <?php if(!isset($hideCategory)): ?>style="display:none" <?php endif; ?>>
+      <div class='wst-right-panel' <?php if(!isset($hideCategory)): ?>style="display:none" <?php endif; ?>>
         <div class="index-user-tab">
           <div id="wst-right-photo">
   		  	 <a href="<?php echo url('home/users/index'); ?>"><img class="usersImg" data-original="__ROOT__/<?php echo session('WST_USER.userPhoto'); ?>"/></a>
@@ -958,14 +958,14 @@ document.getElementById("locationImg").style.opacity = "0.5";
           </a>
           <?php } ?>
         </div>
-      </div> -->
+      </div>
 
       <span class="wst-clear">
 
       </span>
 
     </div>
-</div>
+</div> -->
 <div class="wst-clear"></div>
 
 	<?php endif; ?>
@@ -997,11 +997,12 @@ document.getElementById("locationImg").style.opacity = "0.5";
 		<ul class="rec">
 				<li class="rec-item j-rec-selected" id="fl_f_0" onmouseover="gpanelOver1(this);">
 					<em></em>
-					<a href="javascript:void(0)">汽车保养</a>
+					<!-- <a href="javascript:void(0)">汽车保养</a> -->
+					<a href="#c1">汽车保养</a>
 				</li>
-				<li class="rec-item" id="fl_f_1" onmouseover="gpanelOver1(this);"><em></em><a href="javascript:void(0)">汽车美容</a></li>
+				<li class="rec-item" id="fl_f_1" onmouseover="gpanelOver1(this);"><em></em><a href="#c2">汽车美容</a></li>
 				<li class="rec-item" id="fl_f_2" onmouseover="gpanelOver1(this);"><em></em><a href="javascript:void(0)">精品促销</a></li>
-				<li class="rec-item" id="fl_f_3" onmouseover="gpanelOver1(this);"><em></em><a href="javascript:void(0)">轮胎</a></li>
+				<li class="rec-item" id="fl_f_3" onmouseover="gpanelOver1(this);"><em></em><a href="#c3">轮胎</a></li>
 		</ul>
 		
 		<div class="rec-goods-list" id="fl_f_0_pl">
@@ -1013,7 +1014,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 					</a>
 					<p class="rec-goods-desc"><a href='<?php echo Url("home/goods/detail","id=".$vo["goodsId"]); ?>' target='_blank'><?php echo $vo['goodsName']; ?></a></p>
 					<div class="rec-goods-bottom">
-					   <p class="rec-goods-price">价格:<span>$<?php echo $vo['shopPrice']; ?></span></p>
+					   <p class="rec-goods-price">价格: <span>$<?php echo $vo['shopPrice']; ?></span></p>
 					   <!-- <a href="javascript:WST.addCart(<?php echo $vo['goodsId']; ?>);">加入购物车</a> -->
 					</div>
 				</li>
@@ -1031,7 +1032,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 					</a>
 					<p class="rec-goods-desc"><a href='<?php echo Url("home/goods/detail","id=".$vo["goodsId"]); ?>' target='_blank'><?php echo $vo['goodsName']; ?></a></p>
 					<div class="rec-goods-bottom">
-					  <p class="rec-goods-price">价格:<span>$<?php echo $vo['shopPrice']; ?></span></p>
+					  <p class="rec-goods-price">价格: <span>$<?php echo $vo['shopPrice']; ?></span></p>
 					  <!-- <a href="javascript:WST.addCart(<?php echo $vo['goodsId']; ?>);">加入购物车</a> -->
 					</div>
 				</li>
@@ -1049,7 +1050,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 					</a>
 					<p class="rec-goods-desc"><a href='<?php echo Url("home/goods/detail","id=".$vo["goodsId"]); ?>' target='_blank'><?php echo $vo['goodsName']; ?></a></p>
 					<div class="rec-goods-bottom">
-					   <p class="rec-goods-price">价格:<span>$<?php echo $vo['shopPrice']; ?></span></p>
+					   <p class="rec-goods-price">价格: <span>$<?php echo $vo['shopPrice']; ?></span></p>
 					   <!-- <a href="javascript:WST.addCart(<?php echo $vo['goodsId']; ?>);">加入购物车</a> -->
 				    </div>
 				</li>
@@ -1067,7 +1068,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 					</a>
 					<p class="rec-goods-desc"><a href='<?php echo Url("home/goods/detail","id=".$vo["goodsId"]); ?>' target='_blank'><?php echo $vo['goodsName']; ?></a></p>
 					<div class="rec-goods-bottom">
-					   <p class="rec-goods-price">价格:<span>$<?php echo $vo['shopPrice']; ?></span></p>
+					   <p class="rec-goods-price">价格: <span>$<?php echo $vo['shopPrice']; ?></span></p>
 					   <!-- <a href="javascript:WST.addCart(<?php echo $vo['goodsId']; ?>);">加入购物车</a> -->
 					</div>
 				</li>
@@ -1265,7 +1266,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 </div>
 <div id="screen-left-nav" style="display:none;">
 	<ul>
-		<?php $__FOR_START_1914630858__=1;$__FOR_END_1914630858__=$l+1;for($i=$__FOR_START_1914630858__;$i < $__FOR_END_1914630858__;$i+=1){  if ($i>10)break;  ?>
+		<?php $__FOR_START_786820915__=1;$__FOR_END_786820915__=$l+1;for($i=$__FOR_START_786820915__;$i < $__FOR_END_786820915__;$i+=1){  if ($i>10)break;  ?>
 		<li class="lnav" id="F<?php echo $i; ?>" ><a href="javascript:;" onfocus="this.blur();" ><?php echo $i; ?>F</a></li>
 		<?php } ?>
 	</ul>
@@ -1427,130 +1428,105 @@ document.getElementById("locationImg").style.opacity = "0.5";
 
 
 
-	<div style="border-top: 1px solid #df2003;padding-bottom:25px;margin-top:35px;min-width:1200px;"></div>
+	<link href="__STYLE__/css/footer.css" rel="stylesheet">
+<!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File            BUG  -->
+  <link href="__STYLE__/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+  <!-- Libraries CSS Files -->
+  <link href="__STYLE__/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+<div style="border-top: 1px solid #fff;padding-bottom:25px;margin-top:35px;min-width:1200px;"></div>
 <div class="wst-footer-flink">
 	<div class="wst-footer" >
 
-		<!-- <div class="wst-footer-cld-box">
-			<div class="wst-footer-fl" style="text-align: left;padding-left:10px;">友情链接</div>
 
-			<div style="padding-left:60px;">
-				<?php $wstTagFriendlink =  model("Tags")->listFriendlink(99,86400); foreach($wstTagFriendlink as $key=>$vo){?>
-				<div style="float:left;"><a href="<?php echo $vo['friendlinkUrl']; ?>"  style="font-size:16px;color:#887878;font-weight:bold;" target="_blank"><?php echo $vo["friendlinkName"]; ?></a>&nbsp;&nbsp;</div>
-				<?php } ?>
-				<div class="wst-clear"></div>
-			</div>
-		</div> -->
+
 
 	</div>
 </div>
-<!-- <ul class="wst-footer-info">
-	<li><div class="wst-footer-info-img"><img src="__STYLE__/img/icon_play.png"></div>
-		<div class="wst-footer-info-text">
-			<h1>支付宝支付</h1>
-			<p>支付宝签约商家</p>
-		</div>
-	</li>
-	<li><div class="wst-footer-info-img"><img src="__STYLE__/img/icon_zhengpin.png"></div>
-		<div class="wst-footer-info-text">
-			<h1>正品保证</h1>
-			<p>100%原产地</p>
-		</div>
-	</li>
-	<li><div class="wst-footer-info-img"><img src="__STYLE__/img/icon_thwy.png"></div>
-		<div class="wst-footer-info-text">
-			<h1>退货无忧</h1>
-			<p>前天退货保障</p>
-		</div>
-	</li>
-	<li><div class="wst-footer-info-img"><img src="__STYLE__/img/icon_mfps.png"></div>
-		<div class="wst-footer-info-text">
-			<h1>免费配送</h1>
-			<p>满98元包邮</p>
-		</div>
-	</li>
-	<li><div class="wst-footer-info-img"><img src="__STYLE__/img/icon_hdfk.png"></div>
-		<div class="wst-footer-info-text">
-			<h1>货到付款</h1>
-			<p>400城市送货上门</p>
-		</div>
-	</li>
-</ul> -->
-<div class="wst-footer-help">
-	<div class="wst-footer">
-		<div class="wst-footer-hp-ck1">
-			<?php $_result=WSTHelps(5,6);if(is_array($_result) || $_result instanceof \think\Collection): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo1): $mod = ($i % 2 );++$i;?>
-			<div class="wst-footer-wz-ca">
-				<div class="wst-footer-wz-pt">
-					<span class="wst-footer-wz-pn"><?php echo $vo1["catName"]; ?></span>
-					<div style='margin-left:10px;'>
-						<?php if(is_array($vo1['articlecats']) || $vo1['articlecats'] instanceof \think\Collection): $i = 0; $__LIST__ = $vo1['articlecats'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($i % 2 );++$i;?>
-						<a href="<?php echo Url('Home/Helpcenter/view',array('id'=>$vo2['articleId'])); ?>"><?php echo WSTMSubstr($vo2['articleTitle'],0,8); ?></a><br/>
-						<?php endforeach; endif; else: echo "" ;endif; ?>
+
+<!--==========================
+		Footer
+	============================-->
+	<footer id="footer">
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-lg-3 col-md-6 footer-info">
+						<h3>XX养车网</h3>
+						<p></br>创立于悉尼，XX养车是深受欢迎的汽车养护优惠信息平台，我们希望客户，养车找XX，一点不辛苦！
+						</p>
 					</div>
+
+					<div class="col-lg-3 col-md-6 footer-links">
+						<h4>相关链接</h4>
+						<ul>
+							<li><i class="ion-ios-arrow-right"></i> <a href="home">首页</a></li>
+							<li><i class="ion-ios-arrow-right"></i> <a href="#">我们的团队</a></li>
+							<li><i class="ion-ios-arrow-right"></i> <a href="#">F&Q</a></li>
+							<li><i class="ion-ios-arrow-right"></i> <a href="#">关于我们</a></li>
+							<li><i class="ion-ios-arrow-right"></i> <a href="#">友情链接</a></li>
+						</ul>
+					</div>
+
+					<div class="col-lg-3 col-md-6 footer-contact">
+						<h4>联系我们</h4>
+						<p><strong>地址：</strong>
+							Suite 1506 <br>
+							Level 15, 323 Castlereagh St<br>
+							Sydney NSW 2000 <br>
+							<strong>电话：</strong> (02) 8373 5326<br>
+							<strong>邮箱：</strong> info.sydney@juriscorlegal.com.au<br>
+						</p>
+
+						<div class="social-links">
+							<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+							<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+							<a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+							<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+						</div>
+
+					</div>
+
+					<div class="col-lg-3 col-md-6 footer-newsletter">
+						<h4>订阅服务</h4>
+						<p>订阅 XX养车网 新闻邮件，了解更多汽车养护优惠资讯。
+						</p>
+						<form action="" method="post">
+							<input type="email" name="email"><input type="submit"  value="Subscribe">
+						</form>
+					</div>
+
 				</div>
 			</div>
-			<?php endforeach; endif; else: echo "" ;endif; ?>
-
-			<div class="wst-contact">
-				<ul>
-					<li style="height:30px;">
-						<div class="icon-phone"></div><p class="call-wst">服务热线：</p>
-					</li>
-					<li style="height:38px;">
-						<?php if((WSTConf('CONF.serviceTel')!='')): ?><p class="email-wst"><?php echo WSTConf('CONF.serviceTel'); ?></p><?php endif; ?>
-					</li>
-					<li style="height:85px;">
-						<div class="qr-code" style="position:relative;">
-							<img src="__STYLE__/img/wst_qr_code.jpg" style="height:110px;">
-							<div class="focus-wst">
-							    <?php if((WSTConf('CONF.serviceQQ')!='')): ?>
-								<p class="focus-wst-qr">在线客服：</p>
-								<p class="focus-wst-qra">
-						          <a href="tencent://message/?uin=<?php echo WSTConf('CONF.serviceQQ'); ?>&Site=QQ交谈&Menu=yes">
-									  <img border="0" src="http://wpa.qq.com/pa?p=1:<?php echo WSTConf('CONF.serviceQQ'); ?>:7" alt="QQ交谈" width="71" height="24" />
-								  </a>
-								</p>
-          						<?php endif; if((WSTConf('CONF.serviceEmail')!='')): ?>
-								<p class="focus-wst-qr">商城邮箱：</p>
-								<p class="focus-wst-qre"><?php echo WSTConf('CONF.serviceEmail'); ?></p>
-								<?php endif; ?>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-
-
-			<div class="wst-clear"></div>
 		</div>
 
-	    <div class="wst-footer-hp-ck3">
-	        <div class="links">
-	           <?php $navs = WSTNavigations(1); if(is_array($navs) || $navs instanceof \think\Collection): $i = 0; $__LIST__ = $navs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-               <a href="<?php echo $vo['navUrl']; ?>" <?php if($vo['isOpen']==1): ?>target="_blank"<?php endif; ?>><?php echo $vo['navTitle']; ?></a>
-               <?php if($i< count($navs)): ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php endif; endforeach; endif; else: echo "" ;endif; ?>
-	        </div>
-	        <div class="copyright">
-	        <?php 
-	        	if(WSTConf('CONF.mallFooter')!=''){
-	         		echo htmlspecialchars_decode(WSTConf('CONF.mallFooter'));
-	        	}
-	         
-				if(WSTConf('CONF.visitStatistics')!=''){
-					echo htmlspecialchars_decode(WSTConf('CONF.visitStatistics'))."<br/>";
-			    }
-			 if(WSTConf('CONF.mallLicense') == ''): ?>
-	        <div>
-				Copyright©2016 Powered By <a target="_blank" href="http://www.wstmart.net">WSTMart</a>
+		<div class="container">
+			<div class="copyright">
+				&copy; Copyright <strong>Juris Cor Legal 2018</strong>. All Rights Reserved
 			</div>
-			<?php else: ?>
-				<div id="wst-mallLicense" data='1' style="display:none;">Copyright©2016 Powered By <a target="_blank" href="http://www.wstmart.net">WSTMart</a></div>
-	        <?php endif; ?>
-	        </div>
-	    </div>
-	</div>
-</div>
+			<div class="credits">
+				<!--
+					All the links in the footer should remain intact.
+					You can delete the links only if you purchased the pro version.
+					Licensing information: https://bootstrapmade.com/license/
+					Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
+				-->
+				悉尼XX养车网，澳大利亚最专业的汽车养护信息平台
+			</div>
+		</div>
+	</footer><!-- #footer -->
+
+
+
+	<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
 
 
