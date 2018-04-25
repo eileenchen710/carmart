@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/user_login.html";i:1524545296;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1524545620;s:88:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_lite.html";i:1524545162;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524548358;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524504273;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/user_login.html";i:1524545296;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1524545620;s:88:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_lite.html";i:1524545162;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524574404;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524504273;}*/ ?>
 <!doctype html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -60,7 +60,11 @@ $(function() {
 			  <div class="wst-tag dorpdown-user">
 			  	<div class="wst-tagt">
 			  	   <div class="userImg" >
+               <?php if(session('WST_USER.userPhoto')): ?>
 				  	<img class='usersImg' data-original="__ROOT__/<?php echo session('WST_USER.userPhoto'); ?>"/>
+            <?php else: ?>
+              <img class="usersImg" src="__ROOT__/<?php echo WSTConf('CONF.userLogo'); ?>" height='150' width="150" />
+            <?php endif; ?>
 				   </div>
 				  <div class="wst-tagt-n">
 				    <div>

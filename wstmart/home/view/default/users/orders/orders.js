@@ -20,7 +20,7 @@ function waitPayByPage(p){
 		        	 cont: 'pager', 
 		        	 pages:json.TotalPage, 
 		        	 curr: json.CurrentPage,
-		        	 skin: '#e23e3d',
+		        	 skin: '#3b4e56',
 		        	 groups: 3,
 		        	 jump: function(e, first){
 		        		 if(!first){
@@ -56,7 +56,7 @@ function waitReceiveByPage(p){
 		        	 cont: 'pager', 
 		        	 pages:json.TotalPage, 
 		        	 curr: json.CurrentPage,
-		        	 skin: '#e23e3d',
+		        	 skin: '#3b4e56',
 		        	 groups: 3,
 		        	 jump: function(e, first){
 		        		 if(!first){
@@ -107,7 +107,7 @@ function waitAppraiseByPage(p){
 		        	 cont: 'pager', 
 		        	 pages:json.TotalPage, 
 		        	 curr: json.CurrentPage,
-		        	 skin: '#e23e3d',
+		        	 skin: '#3b4e56',
 		        	 groups: 3,
 		        	 jump: function(e, first){
 		        		 if(!first){
@@ -143,7 +143,7 @@ function finishByPage(p){
 		        	 cont: 'pager', 
 		        	 pages:json.TotalPage, 
 		        	 curr: json.CurrentPage,
-		        	 skin: '#e23e3d',
+		        	 skin: '#3b4e56',
 		        	 groups: 3,
 		        	 jump: function(e, first){
 		        		 if(!first){
@@ -257,7 +257,7 @@ function cancelByPage(p){
 		        	 cont: 'pager', 
 		        	 pages:json.TotalPage, 
 		        	 curr: json.CurrentPage,
-		        	 skin: '#e23e3d',
+		        	 skin: '#3b4e56',
 		        	 groups: 3,
 		        	 jump: function(e, first){
 		        		 if(!first){
@@ -293,7 +293,7 @@ function abnormalByPage(p){
 		        	 cont: 'pager', 
 		        	 pages:json.TotalPage, 
 		        	 curr: json.CurrentPage,
-		        	 skin: '#e23e3d',
+		        	 skin: '#3b4e56',
 		        	 groups: 3,
 		        	 jump: function(e, first){
 		        		 if(!first){
@@ -516,7 +516,7 @@ function userAppraise(p){
                cont: 'pager', 
                pages:json.data.TotalPage, 
                curr: json.data.CurrentPage,
-               skin: '#e23e3d',
+               skin: '#3b4e56',
                groups: 3,
                jump: function(e, first){
                     if(!first){
@@ -622,7 +622,7 @@ function complainByPage(p){
                cont: 'pager', 
                pages:json.TotalPage, 
                curr: json.CurrentPage,
-               skin: '#e23e3d',
+               skin: '#3b4e56',
                groups: 3,
                jump: function(e, first){
                     if(!first){

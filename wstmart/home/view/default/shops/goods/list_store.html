@@ -19,13 +19,13 @@
 </div>
 <div class="wst-clear"></div>
 <form id='editform' autocomplete='off'>
-<div class="wst-body"> 
+<div class="wst-body">
         <div class="s-menu">
             <a href='javascript:;' onclick="changeSale(1,'store')" class="s-sale-up"><span>上架</span></a>
-            <a href='javascript:void(0);' onclick="changeGoodsStatus('isRecom','store')" class="s-rec"><span>推荐</span></a>
-            <a href='javascript:void(0);' onclick="changeGoodsStatus('isNew','store')" class="s-new"><span>新品</span></a>
+            <a href='javascript:void(0);' onclick="changeGoodsStatus('isRecom','store')" class="s-rec"><span>保养</span></a>
+            <a href='javascript:void(0);' onclick="changeGoodsStatus('isNew','store')" class="s-new"><span>美容</span></a>
             <a href='javascript:void(0);' onclick="changeGoodsStatus('isBest','store')" class="s-best"><span>精品</span></a>
-            <a href='javascript:void(0);' onclick="changeGoodsStatus('isHot','store')" class="s-hot"><span>热销</span></a>
+            <a href='javascript:void(0);' onclick="changeGoodsStatus('isHot','store')" class="s-hot"><span>轮胎</span></a>
             <a href='javascript:void(0);' onclick="benchDel('store')" class="s-del"><span>删除</span></a>
             <a href='{:url("home/goods/add")}' class="s-add"><span>新增</span></a>
          </div>
@@ -42,10 +42,10 @@
 		     <th>商品名称</th>
 		     <th>商品编号</th>
 		     <th>价格</th>
-		     <th>推荐</th>
+		     <th>保养</th>
 		     <th>精品</th>
-		     <th>新品</th>
-		     <th>热销</th>
+		     <th>美容</th>
+		     <th>轮胎</th>
 		     <th>销量</th>
 		     <th>库存</th>
 		     <th width="150">操作</th>
@@ -109,16 +109,16 @@
 		</table>
 		    <div class="s-menu">
             <a href='javascript:;' onclick="changeSale(1,'store')" class="s-sale-up"><span>上架</span></a>
-            <a href='javascript:void(0);' onclick="changeGoodsStatus('isRecom','store')" class="s-rec"><span>推荐</span></a>
-            <a href='javascript:void(0);' onclick="changeGoodsStatus('isNew','store')" class="s-new"><span>新品</span></a>
+            <a href='javascript:void(0);' onclick="changeGoodsStatus('isRecom','store')" class="s-rec"><span>保养</span></a>
+            <a href='javascript:void(0);' onclick="changeGoodsStatus('isNew','store')" class="s-new"><span>美容</span></a>
             <a href='javascript:void(0);' onclick="changeGoodsStatus('isBest','store')" class="s-best"><span>精品</span></a>
-            <a href='javascript:void(0);' onclick="changeGoodsStatus('isHot','store')" class="s-hot"><span>热销</span></a>
+            <a href='javascript:void(0);' onclick="changeGoodsStatus('isHot','store')" class="s-hot"><span>轮胎</span></a>
             <a href='javascript:void(0);' onclick="benchDel('store')" class="s-del"><span>删除</span></a>
             <a href='{:url("home/goods/add")}' class="s-add"><span>新增</span></a>
          </div>
         </div>
      </form>
-{/block}  
+{/block}
 {block name="js"}
 <script type='text/javascript' src='__STYLE__/shops/goods/goods.js?v={$v}'></script>
 <script>

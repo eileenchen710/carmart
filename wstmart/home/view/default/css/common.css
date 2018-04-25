@@ -183,11 +183,12 @@ input[type=button]{cursor:pointer}
     color: #565656;
     float: left;
     font-family: Microsoft Yahei;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 18px;
     overflow: hidden;
     padding: 0;
     width: 500px;
+    padding-top: 10px;
     border:36px;outline:none;padding-left: 94px;}
 .wst-search .search-btn{
 	background-color: #4a566c;
@@ -384,7 +385,7 @@ input[type=button]{cursor:pointer}
 .wst-footer-help{background-color: #4a566c;min-width: 1200px;}
 .wst-footer-help a{color: #ddd;}
 .wst-footer-help span{color: #ccc;font-size: 20px;}
-.wst-footer-frd{color:#e23e3d;font-weight:bolder;font-size:18px;}
+.wst-footer-frd{color:#3b4e56;font-weight:bolder;font-size:18px;}
 .wst-footer-pno{color:#4a566c;font-weight:bolder;font-size:18px;}
 .wst-footer{
 	text-align:center;line-height:25px;width:1200px;margin:0 auto;

@@ -30,7 +30,7 @@ class Wst extends TagLib{
 
     /**
      * 商品数据调用    
-     *  type:推荐/新品/热销/精品/浏览历史/看了又看  - recom/new/hot/best/history/visit
+     *  type:推荐/新品/轮胎/精品/浏览历史/看了又看  - recom/new/hot/best/history/visit
      *   cat:商品分类
      *   num:获取记录数量
      * cache:缓存时间
@@ -134,7 +134,7 @@ class Wst extends TagLib{
     
     /**
      * 店铺商品数据调用    
-     *  type:推荐/新品/热销/精品  - recom/new/hot/best
+     *  type:推荐/新品/轮胎/精品  - recom/new/hot/best
      *   shop:店铺ID
      *   num:获取记录数量
      * cache:缓存时间

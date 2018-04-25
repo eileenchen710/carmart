@@ -20,7 +20,7 @@ function waituserPayByPage(p){
 		        	 cont: 'pager', 
 		        	 pages:json.TotalPage, 
 		        	 curr: json.CurrentPage,
-		        	 skin: '#e23e3d',
+		        	 skin: '#3b4e56',
 		        	 groups: 3,
 		        	 jump: function(e, first){
 		        		 if(!first){
@@ -57,7 +57,7 @@ function waitDivleryByPage(p){
 		        	 cont: 'pager', 
 		        	 pages:json.TotalPage, 
 		        	 curr: json.CurrentPage,
-		        	 skin: '#e23e3d',
+		        	 skin: '#3b4e56',
 		        	 groups: 3,
 		        	 jump: function(e, first){
 		        		 if(!first){
@@ -93,7 +93,7 @@ function deliveredByPage(p){
                cont: 'pager', 
                pages:json.TotalPage, 
                curr: json.CurrentPage,
-               skin: '#e23e3d',
+               skin: '#3b4e56',
                groups: 3,
                jump: function(e, first){
                  if(!first){
@@ -149,7 +149,7 @@ function finisedByPage(p){
 		        	 cont: 'pager', 
 		        	 pages:json.TotalPage, 
 		        	 curr: json.CurrentPage,
-		        	 skin: '#e23e3d',
+		        	 skin: '#3b4e56',
 		        	 groups: 3,
 		        	 jump: function(e, first){
 		        		 if(!first){
@@ -185,7 +185,7 @@ function failureByPage(p){
 		        	 cont: 'pager', 
 		        	 pages:json.TotalPage, 
 		        	 curr: json.CurrentPage,
-		        	 skin: '#e23e3d',
+		        	 skin: '#3b4e56',
 		        	 groups: 3,
 		        	 jump: function(e, first){
 		        		 if(!first){
@@ -267,7 +267,7 @@ function complainByPage(p){
                cont: 'pager', 
                pages:json.TotalPage, 
                curr: json.CurrentPage,
-               skin: '#e23e3d',
+               skin: '#3b4e56',
                groups: 3,
                jump: function(e, first){
                     if(!first){

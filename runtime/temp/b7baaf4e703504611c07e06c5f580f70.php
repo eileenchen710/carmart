@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:80:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/admin/view/shops/list.html";i:1523516678;s:74:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/admin/view/base.html";i:1523516677;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/admin/view/brands/list.html";i:1523516677;s:74:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/admin/view/base.html";i:1523516677;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -25,19 +25,29 @@ window.conf = {"ROOT":"__ROOT__","APP":"__APP__","STATIC":"__STATIC__","SUFFIX":
 <body>
 
 <div class="l-loading" style="display: block" id="wst-loading"></div>
-<?php if(WSTGrant('DPGL_01')): ?>
 <div class="wst-toolbar">
+   所属分类：
+     <select id='catId'>
+       <option value='0'>所有分类</option>
+       <?php if(is_array($gcatList) || $gcatList instanceof \think\Collection): $i = 0; $__LIST__ = $gcatList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+       <option value='<?php echo $vo['catId']; ?>'><?php echo $vo['catName']; ?></option>
+       <?php endforeach; endif; else: echo "" ;endif; ?>
+     </select> 
+   品牌名称：<input type='text' id='key' placeholder='品牌名称'/>  
+   <button class="btn btn-blue" onclick='javascript:loadGrid(0)'>查询</button>
+   <?php if(WSTGrant('PPGL_01')): ?>
    <button class="btn btn-green f-right" onclick='javascript:toEdit(0)'>新增</button>
+   <?php endif; ?>
+
    <div style='clear:both'></div>
 </div>
-<?php endif; ?>
 <div id="maingrid"></div>
+
+
+<script src="__ADMIN__/brands/brands.js?v=<?php echo $v; ?>" type="text/javascript"></script>
 <script>
 $(function(){initGrid();})
 </script>
-
-
-<script src="__ADMIN__/shops/shops.js?v=<?php echo $v; ?>" type="text/javascript"></script>
 
 <script>
 function showImg(opt){

@@ -27,7 +27,7 @@ class Goods extends Validate{
         ['isRecom'  ,'in:,0,1','无效的推荐状态'],
         ['isBest'  ,'in:,0,1','无效的精品状态'],
         ['isNew'  ,'in:,0,1','无效的新品状态'],
-        ['isHot'  ,'in:,0,1','无效的热销状态'],
+        ['isHot'  ,'in:,0,1','无效的轮胎状态'],
         ['goodsCatId'  ,'require','请选择完整商品分类'],
         ['goodsDesc','require','请输入商品描述'],
         ['specsIds','checkSpecsIds:1','请填写完整商品规格信息']

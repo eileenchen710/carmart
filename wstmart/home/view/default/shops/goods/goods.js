@@ -549,7 +549,7 @@ function saleByPage(p){
 		        	 cont: 'pager', 
 		        	 pages:json.TotalPage, 
 		        	 curr: json.CurrentPage,
-		        	 skin: '#e23e3d',
+		        	 skin: '#3b4e56',
 		        	 groups: 3,
 		        	 jump: function(e, first){
 		        		    if(!first){
@@ -582,7 +582,7 @@ function auditByPage(p){
 		        	 cont: 'pager', 
 		        	 pages:json.TotalPage, 
 		        	 curr: json.CurrentPage,
-		        	 skin: '#e23e3d',
+		        	 skin: '#3b4e56',
 		        	 groups: 3,
 		        	 jump: function(e, first){
 		        		 if(!first){
@@ -615,7 +615,7 @@ function storeByPage(p){
 		        	 cont: 'pager1', 
 		        	 pages:json.TotalPage, 
 		        	 curr: json.CurrentPage,
-		        	 skin: '#e23e3d',
+		        	 skin: '#3b4e56',
 		        	 groups: 3,
 		        	 jump: function(e, first){
 		        		 if(!first){
@@ -648,7 +648,7 @@ function illegalByPage(p){
 		        	 cont: 'pager2', 
 		        	 pages:json.TotalPage, 
 		        	 curr: json.CurrentPage,
-		        	 skin: '#e23e3d',
+		        	 skin: '#3b4e56',
 		        	 groups: 3,
 		        	 jump: function(e, first){
 		        		 if(!first){
@@ -722,7 +722,7 @@ function changeSale(i,func){
 	});
 }
 
-// 批量设置 精品/新品/推荐/热销
+// 批量设置 精品/新品/推荐/轮胎
 function changeGoodsStatus(isWhat,func){
 	var ids = WST.getChks('.chk');
 	if(ids==''){

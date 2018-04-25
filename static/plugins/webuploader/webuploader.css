@@ -12,14 +12,14 @@
 	cursor: pointer;
 	background: #00b7ee;
 	padding:0px 10px;
-	background:#e23e3d;
+	background:#3b4e56;
 	text-align: center;
 	border-radius: 3px;
 	overflow: hidden;
 	color:#ffffff;
 }
 .webuploader-pick-hover {
-	background: #e23e3d;
+	background: #3b4e56;
 	color:#ffffff;
 }
 

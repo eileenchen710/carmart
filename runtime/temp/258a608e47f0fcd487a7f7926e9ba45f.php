@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:8:{s:82:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/index.html";i:1524570280;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1524545620;s:93:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/self_shop_header.html";i:1523516678;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524548358;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header.html";i:1524569045;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/right_cart.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524504273;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:8:{s:82:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/index.html";i:1524641309;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1524545620;s:93:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/self_shop_header.html";i:1523516678;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524574404;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header.html";i:1524569045;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/right_cart.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524504273;}*/ ?>
 <!doctype html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -64,7 +64,11 @@ $(function() {
 			  <div class="wst-tag dorpdown-user">
 			  	<div class="wst-tagt">
 			  	   <div class="userImg" >
+               <?php if(session('WST_USER.userPhoto')): ?>
 				  	<img class='usersImg' data-original="__ROOT__/<?php echo session('WST_USER.userPhoto'); ?>"/>
+            <?php else: ?>
+              <img class="usersImg" src="__ROOT__/<?php echo WSTConf('CONF.userLogo'); ?>" height='150' width="150" />
+            <?php endif; ?>
 				   </div>
 				  <div class="wst-tagt-n">
 				    <div>
@@ -446,7 +450,11 @@ function goShop(id){
 			  <div class="wst-tag dorpdown-user">
 			  	<div class="wst-tagt">
 			  	   <div class="userImg" >
+               <?php if(session('WST_USER.userPhoto')): ?>
 				  	<img class='usersImg' data-original="__ROOT__/<?php echo session('WST_USER.userPhoto'); ?>"/>
+            <?php else: ?>
+              <img class="usersImg" src="__ROOT__/<?php echo WSTConf('CONF.userLogo'); ?>" height='150' width="150" />
+            <?php endif; ?>
 				   </div>
 				  <div class="wst-tagt-n">
 				    <div>
@@ -1099,6 +1107,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 				<?php if(is_array($vo['children']) || $vo['children'] instanceof \think\Collection): $l2 = 0;$__LIST__ = is_array($vo['children']) ? array_slice($vo['children'],0,7, true) : $vo['children']->slice(0,7, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo1): $mod = ($l2 % 2 );++$l2;?>
 				<li class="tab-item<?php echo $l; ?>" id="fl_<?php echo $l; ?>_<?php echo $l2; ?>" onmouseover="gpanelOver(this);" c=<?php echo $l; ?>><a href="<?php echo Url('home/goods/lists','cat='.$vo1['catId']); ?>"><?php echo $vo1['catName']; ?></a></li>
 				<?php endforeach; endif; else: echo "" ;endif; ?>
+				
 			</ul>
 		</div>
 
@@ -1144,12 +1153,16 @@ document.getElementById("locationImg").style.opacity = "0.5";
 
 			<div class="goods-list">
 		     
-			  <?php $wstTagGoods =  model("Tags")->listGoods("hot",$vo['catId'],6,86400); foreach($wstTagGoods as $key=>$cs){?>
+			  <?php $wstTagGoods =  model("Tags")->listGoods("best",$vo['catId'],6,86400); foreach($wstTagGoods as $key=>$cs){?>
 		      <div class="goods goods-f<?php echo $l; ?>">
 		      	<div class="img"><a target='_blank' href="<?php echo Url('home/goods/detail','id='.$cs['goodsId']); ?>" title="<?php echo $cs['goodsName']; ?>"><img title="<?php echo $cs['goodsName']; ?>" class='goodsImg' data-original="__ROOT__/<?php echo $cs['goodsImg']; ?>"/></a></div>
 		      	<div class="p-name"><a target='_blank' href="<?php echo Url('home/goods/detail','id='.$cs['goodsId']); ?>" class="wst-redlink" title="<?php echo $cs['goodsName']; ?>"><?php echo WSTMSubstr($cs['goodsName'],0,33); ?></a></div>
 		      	<div>
+							<?php if($l==2): ?>
+							<div class="p-price">价格面议</div>
+							<?php else: ?>
 		      		<div class="p-price">$<?php echo $cs['shopPrice']; ?></div>
+							<?php endif; ?>
 		      		<!-- <div class="p-hsale">
 		      			<div class="sale-num">成交数：<span class="wst-fred"><?php echo $cs['saleNum']; ?></span></div>
 		      			<a class="f-add-cart" style="display:none;" href="javascript:WST.addCart(<?php echo $cs['goodsId']; ?>);">加入购物车</a>
@@ -1204,7 +1217,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 				  <?php } ?>
 				</ul>
 		</div> -->
-
+<?php if($l!=2): ?>
 		<div class="floor-bottom">
 			<?php
 			switch ($l)
@@ -1221,10 +1234,6 @@ document.getElementById("locationImg").style.opacity = "0.5";
 				<a href="home/goods/lists/cat/366/brand/34.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada0a7d07d00.jpg" height="100" width="100" style="margin-left:30px;margin-top:5px;"/></a>
 				<a href="home/goods/lists/cat/366/brand/30.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada0a3281b7f.jpg" height="100" width="100" style="margin-left:30px;margin-top:5px;"/></a>
 			</div>';
-				break;
-
-				case 2:
-				echo "";
 				break;
 
 				case 3:
@@ -1259,6 +1268,8 @@ document.getElementById("locationImg").style.opacity = "0.5";
 					<?php } ?>
 				</ul> -->
 		</div>
+<?php endif; ?>
+
 
 	</div>
 	<?php endforeach; endif; else: echo "" ;endif; ?>
@@ -1266,7 +1277,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 </div>
 <div id="screen-left-nav" style="display:none;">
 	<ul>
-		<?php $__FOR_START_786820915__=1;$__FOR_END_786820915__=$l+1;for($i=$__FOR_START_786820915__;$i < $__FOR_END_786820915__;$i+=1){  if ($i>10)break;  ?>
+		<?php $__FOR_START_1502157028__=1;$__FOR_END_1502157028__=$l+1;for($i=$__FOR_START_1502157028__;$i < $__FOR_END_1502157028__;$i+=1){  if ($i>10)break;  ?>
 		<li class="lnav" id="F<?php echo $i; ?>" ><a href="javascript:;" onfocus="this.blur();" ><?php echo $i; ?>F</a></li>
 		<?php } ?>
 	</ul>

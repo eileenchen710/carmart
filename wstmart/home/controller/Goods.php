@@ -39,7 +39,7 @@ class Goods extends Base{
         return $m->changSaleStatus();
     }
     /**
-    * 批量修改商品状态 新品/精品/热销/推荐
+    * 批量修改商品状态 新品/精品/轮胎/推荐
     */
     public function changeGoodsStatus(){
          $m = new M();

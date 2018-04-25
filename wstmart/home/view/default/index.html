@@ -33,7 +33,7 @@
 	</div>
 </div>
 <div class='wst-main'>
-   {/* 横栏商品-推荐/最新/精品/热销 */}
+   {/* 横栏商品-推荐/最新/精品/轮胎 */}
 	<div class='wst-container'>
 	<div class="buy-new-best-hot">
 		<ul class="rec">
@@ -100,7 +100,7 @@
 			</ul>
 			<div class="wst-clear"></div>
 		</div>
-		{/* 热销商品 */}
+		{/* 轮胎商品 */}
 		<div class="rec-goods-list hide" id="fl_f_3_pl">
 			<ul class="rec-goods-list">
 				{wst:goods type='hot' cache="86400" num='5'}
@@ -144,6 +144,7 @@
 				{volist name="vo['children']" id="vo1" key="l2" length="7"}
 				<li class="tab-item{$l}" id="fl_{$l}_{$l2}" onmouseover="gpanelOver(this);" c={$l}><a href="{:Url('home/goods/lists','cat='.$vo1['catId'])}">{$vo1['catName']}</a></li>
 				{/volist}
+				
 			</ul>
 		</div>
 
@@ -194,12 +195,16 @@
 
 			<div class="goods-list">
 		     {/* 楼层分类下的商品 */}
-			  {wst:goods type='hot' cat="vo['catId']" cache="86400" num='6' id='cs'}
+			  {wst:goods type='best' cat="vo['catId']" cache="86400" num='6' id='cs'}
 		      <div class="goods goods-f{$l}">
 		      	<div class="img"><a target='_blank' href="{:Url('home/goods/detail','id='.$cs['goodsId'])}" title="{$cs['goodsName']}"><img title="{$cs['goodsName']}" class='goodsImg' data-original="__ROOT__/{$cs['goodsImg']}"/></a></div>
 		      	<div class="p-name"><a target='_blank' href="{:Url('home/goods/detail','id='.$cs['goodsId'])}" class="wst-redlink" title="{$cs['goodsName']}">{:WSTMSubstr($cs['goodsName'],0,33)}</a></div>
 		      	<div>
+							{if $l==2}
+							<div class="p-price">价格面议</div>
+							{else}
 		      		<div class="p-price">${$cs['shopPrice']}</div>
+							{/if}
 		      		<!-- <div class="p-hsale">
 		      			<div class="sale-num">成交数：<span class="wst-fred">{$cs['saleNum']}</span></div>
 		      			<a class="f-add-cart" style="display:none;" href="javascript:WST.addCart({$cs['goodsId']});">加入购物车</a>
@@ -254,7 +259,7 @@
 				  {/wst:goods}
 				</ul>
 		</div> -->
-
+{if $l!=2}
 		<div class="floor-bottom">
 			<?php
 			switch ($l)
@@ -271,10 +276,6 @@
 				<a href="home/goods/lists/cat/366/brand/34.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada0a7d07d00.jpg" height="100" width="100" style="margin-left:30px;margin-top:5px;"/></a>
 				<a href="home/goods/lists/cat/366/brand/30.html"><img class="usersImg" src="__ROOT__/upload/brands/2018-04/5ada0a3281b7f.jpg" height="100" width="100" style="margin-left:30px;margin-top:5px;"/></a>
 			</div>';
-				break;
-
-				case 2:
-				echo "";
 				break;
 
 				case 3:
@@ -309,6 +310,8 @@
 					{/wst:goods}
 				</ul> -->
 		</div>
+{/if}
+
 
 	</div>
 	{/volist}

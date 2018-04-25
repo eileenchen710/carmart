@@ -43,7 +43,7 @@
   </tr>
   <tr>
      <th>店主联系手机<font color='red'>*</font>：</th>
-     <td><input type="text" id='telephone' class='ipt' value="{$object['telephone']}" maxLength='11' data-rule="店主联系手机: required;mobile" data-rule-mobile="[/^0[4]\d{8}$/, '请检查手机号格式']"/></td>
+     <td><input type="text" id='telephone' class='ipt' value="{$object['telephone']}" maxLength='11' data-rule="店主联系手机: required;mobile" data-rule-mobile="[/^[0-9]\d{9}$/, '请检查手机号格式']"/></td>
   </tr>
   <tr>
      <th>公司名称<font color='red'>*</font>：</th>
@@ -86,14 +86,14 @@
      <input type="hidden" id='shopImg' class='ipt' value="{$object['shopImg']}" data-rule="店铺图标: required;" data-target='#msg_shopImg'/>
      </td>
   </tr>
-  <tr>
+  <!-- <tr>
      <th>客服QQ：</th>
      <td><input type="text" id='shopQQ' class='ipt' value="{$object['shopQQ']}" maxLength='200'/></td>
   </tr>
   <tr>
      <th>阿里旺旺：</th>
      <td><input type="text" id='shopWangWang' class='ipt' value="{$object['shopWangWang']}" maxLength='200'/></td>
-  </tr>
+  </tr> -->
 
   <tr>
      <th>店铺详细地址<font color='red'>*</font>：</th>

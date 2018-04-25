@@ -108,7 +108,7 @@ function phoneVerify2(){
 					isSend = false;						
 					clearInterval(task);
 					$('#timeObtain').html("重新获取验证码").css('width','100px');
-					$('#timeObtain').removeAttr('disabled').css('background','#e23e3d');
+					$('#timeObtain').removeAttr('disabled').css('background','#3b4e56');
 				}
 			},1000);
 		}

@@ -27,7 +27,7 @@ function getQueryPage(p){
 			        cont: 'pager_0', 
 			        pages:json.data.TotalPage, 
 			        curr: json.CurrentPage,
-			        skin: '#e23e3d',
+			        skin: '#3b4e56',
 			        groups: 3,
 			        jump: function(e, first){
 			        	if(!first){
@@ -80,7 +80,7 @@ function getUnSettledOrderPage(p){
 			        cont: 'pager_1', 
 			        pages:json.data.TotalPage, 
 			        curr: json.CurrentPage,
-			        skin: '#e23e3d',
+			        skin: '#3b4e56',
 			        groups: 3,
 			        jump: function(e, first){
 			        	if(!first){
@@ -114,7 +114,7 @@ function getSettleOrderPage(p){
 			        cont: 'pager_2', 
 			        pages:json.data.TotalPage, 
 			        curr: json.data.CurrentPage,
-			        skin: '#e23e3d',
+			        skin: '#3b4e56',
 			        groups: 3,
 			        jump: function(e, first){
 			        	if(!first){

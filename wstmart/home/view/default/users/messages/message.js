@@ -21,7 +21,7 @@ function queryByList(p){
                cont: 'wst-page', 
                pages:json.TotalPage, 
                curr: json.CurrentPage,
-               skin: '#e23e3d',
+               skin: '#3b4e56',
                groups: 3,
                jump: function(e, first){
                     if(!first){

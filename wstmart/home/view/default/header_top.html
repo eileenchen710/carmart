@@ -9,7 +9,11 @@
 			  <div class="wst-tag dorpdown-user">
 			  	<div class="wst-tagt">
 			  	   <div class="userImg" >
+               {if session('WST_USER.userPhoto')}
 				  	<img class='usersImg' data-original="__ROOT__/{:session('WST_USER.userPhoto')}"/>
+            {else}
+              <img class="usersImg" src="__ROOT__/{:WSTConf('CONF.userLogo')}" height='150' width="150" />
+            {/if}
 				   </div>
 				  <div class="wst-tagt-n">
 				    <div>

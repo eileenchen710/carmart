@@ -57,7 +57,7 @@
 			{/wst:goods}
 		</div>
 		<div class="hot-goods">
-			<div class="title">热销商品</div>
+			<div class="title">轮胎商品</div>
 			{wst:goods type='hot' num='3'}
 			<div class="item">
 				<div class="img"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo['goodsId'])}"><img class='goodsImg' data-original="__ROOT__/{:WSTImg($vo['goodsImg'])}" alt="{$vo['goodsName']}" title="{$vo['goodsName']}"/></a></div>
@@ -172,7 +172,7 @@
 	      		<div class="p-price">${$vo['shopPrice']}</div>
 	      		<div class="p-hsale">
 	      			<!-- <div class="sale-num">成交数：<span class="wst-fred">{$vo['saleNum']}</span></div> -->
-		      		<a class="p-add-cart" style="display:none;" href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a>
+		      		<!-- <a class="p-add-cart" style="display:none;" href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a> -->
 	      		</div>
 	      		<div class='wst-clear'></div>
 	      	</div>
@@ -207,7 +207,7 @@
 	      		<div class="p-price">${$rvo['shopPrice']}</div>
 	      		<div class="p-hsale">
 	      			<!-- <div class="sale-num">成交数：<span class="wst-fred">{$rvo['saleNum']}</span></div> -->
-		      		<a class="p-add-cart" style="display:none;" href="javascript:WST.addCart({$rvo['goodsId']});">加入购物车</a>
+		      		<!-- <a class="p-add-cart" style="display:none;" href="javascript:WST.addCart({$rvo['goodsId']});">加入购物车</a> -->
 	      		</div>
 	      		<div class='wst-clear'></div>
 	      	</div>
@@ -255,7 +255,7 @@ laypage({
     cont: 'wst-pager',
     pages: {$goodsPage["TotalPage"]}, //总页数
     skip: true, //是否开启跳页
-    skin: '#e23e3d',
+    skin: '#3b4e56',
     groups: 3, //连续显示分页数
     curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
         var page = location.search.match(/page=(\d+)/);

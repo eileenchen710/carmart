@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:89:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/deals_detail.html";i:1524409454;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1524545620;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header.html";i:1524564734;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524548358;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/right_cart.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524504273;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:89:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/deals_detail.html";i:1524575581;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1524545620;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header.html";i:1524569045;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524574404;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/right_cart.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524504273;}*/ ?>
 <!doctype html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -60,7 +60,11 @@ $(function() {
 			  <div class="wst-tag dorpdown-user">
 			  	<div class="wst-tagt">
 			  	   <div class="userImg" >
+               <?php if(session('WST_USER.userPhoto')): ?>
 				  	<img class='usersImg' data-original="__ROOT__/<?php echo session('WST_USER.userPhoto'); ?>"/>
+            <?php else: ?>
+              <img class="usersImg" src="__ROOT__/<?php echo WSTConf('CONF.userLogo'); ?>" height='150' width="150" />
+            <?php endif; ?>
 				   </div>
 				  <div class="wst-tagt-n">
 				    <div>
@@ -454,10 +458,10 @@ document.getElementById("locationImg").style.opacity = "0.5";
 </div>
 <div class="wst-clear"></div>
 
-<div class="wst-nav-menus">
+<!-- <div class="wst-nav-menus">
    <div class="nav-w" style="position: relative;">
       <div class="w-spacer"></div>
-      <!-- <div class="dorpdown <?php if(isset($hideCategory)): ?>j-index<?php endif; ?>" id="wst-categorys">
+      <div class="dorpdown <?php if(isset($hideCategory)): ?>j-index<?php endif; ?>" id="wst-categorys">
          <div class="dt j-cate-dt">
              <a href="<?php echo Url('home/goods/lists'); ?>" target="_blank">全部商品分类</a>
          </div>
@@ -509,16 +513,15 @@ document.getElementById("locationImg").style.opacity = "0.5";
                   <?php endforeach; endif; else: echo "" ;endif; ?>
              </div>
         </div>
-      </div> -->
+      </div>
       
       <div id="wst-nav-items">
            <ul>
-               <!-- <?php $_result=WSTNavigations(0);if(is_array($_result) || $_result instanceof \think\Collection): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+               <?php $_result=WSTNavigations(0);if(is_array($_result) || $_result instanceof \think\Collection): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                <li class="fore1">
                     <a href="<?php echo $vo['navUrl']; ?>" <?php if($vo['isOpen']==1): ?>target="_blank"<?php endif; ?>><?php echo $vo['navTitle']; ?></a>
                </li>
-               <?php endforeach; endif; else: echo "" ;endif; ?> -->
-               <?php $_result=WSTNavigations(0);if(is_array($_result) || $_result instanceof \think\Collection): $l = 0;$__LIST__ = is_array($_result) ? array_slice($_result,0,4, true) : $_result->slice(0,4, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($l % 2 );++$l;?>
+               <?php endforeach; endif; else: echo "" ;endif; $_result=WSTNavigations(0);if(is_array($_result) || $_result instanceof \think\Collection): $l = 0;$__LIST__ = is_array($_result) ? array_slice($_result,0,4, true) : $_result->slice(0,4, true); if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($l % 2 );++$l;?>
                <li class="fore1">
                     <a href="#c<?php echo $l-1; ?>"><?php echo $vo['navTitle']; ?></a>
                </li>
@@ -528,7 +531,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
            </ul>
       </div>
 
-      <!-- <div class='wst-right-panel' <?php if(!isset($hideCategory)): ?>style="display:none" <?php endif; ?>>
+      <div class='wst-right-panel' <?php if(!isset($hideCategory)): ?>style="display:none" <?php endif; ?>>
         <div class="index-user-tab">
           <div id="wst-right-photo">
   		  	 <a href="<?php echo url('home/users/index'); ?>"><img class="usersImg" data-original="__ROOT__/<?php echo session('WST_USER.userPhoto'); ?>"/></a>
@@ -573,14 +576,14 @@ document.getElementById("locationImg").style.opacity = "0.5";
           </a>
           <?php } ?>
         </div>
-      </div> -->
+      </div>
 
       <span class="wst-clear">
 
       </span>
 
     </div>
-</div>
+</div> -->
 <div class="wst-clear"></div>
 
 
@@ -644,9 +647,9 @@ document.getElementById("locationImg").style.opacity = "0.5";
              <div class='item'>
                <div class='dt'>商品评分：</div>
                <div class='dd'>
-		        <?php $__FOR_START_409890529__=0;$__FOR_END_409890529__=$goods['scores']['totalScores'];for($i=$__FOR_START_409890529__;$i < $__FOR_END_409890529__;$i+=1){ ?>
+		        <?php $__FOR_START_993794957__=0;$__FOR_END_993794957__=$goods['scores']['totalScores'];for($i=$__FOR_START_993794957__;$i < $__FOR_END_993794957__;$i+=1){ ?>
 					<img src="__STATIC__/plugins/raty/img/star-on.png">
-				<?php } $__FOR_START_1792648987__=1;$__FOR_END_1792648987__=6-$goods['scores']['totalScores'];for($i=$__FOR_START_1792648987__;$i < $__FOR_END_1792648987__;$i+=1){ ?>
+				<?php } $__FOR_START_1078957111__=1;$__FOR_END_1078957111__=6-$goods['scores']['totalScores'];for($i=$__FOR_START_1078957111__;$i < $__FOR_END_1078957111__;$i+=1){ ?>
 					<img src="__STATIC__/plugins/raty/img/star-off.png">
 				<?php } ?>
 				<div class='appraise'>累计评价：<span class='appraise-num'><?php echo $goods['appraiseNum']; ?></span></div>
@@ -749,7 +752,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 					<?php } ?>
 				</div>
 				<div class="hot-goods">
-					<div class="title">热销商品</div>
+					<div class="title">轮胎商品</div>
 					<?php $wstTagGoods =  model("Tags")->listGoods("hot",0,3,0); foreach($wstTagGoods as $key=>$vo){?>
 					<div class="item">
 						<div class="img"><a target='_blank' href="<?php echo Url('home/goods/detail','id='.$vo['goodsId']); ?>"><img title="<?php echo $vo['goodsName']; ?>" alt="<?php echo $vo['goodsName']; ?>" data-original="__ROOT__/<?php echo WSTImg($vo['goodsImg']); ?>" class="goodsImg" /></a></div>

@@ -17,16 +17,16 @@
     商品名称：<input type="text" name="goodsName" id="goodsName" class="s-query" /><button class="s-btn" onclick="saleByPage()">查询</button>
   </label>
 </div>
-<div class="wst-shop-content"> 
+<div class="wst-shop-content">
    <div class="s-menu">
       <a href='javascript:;' onclick="changeSale(0,'sale')" class="s-sale"><span>下架</span></a>
-      <a href='javascript:void(0);' onclick="changeGoodsStatus('isRecom','sale')" class="s-rec"><span>推荐</span></a>
-      <a href='javascript:void(0);' onclick="changeGoodsStatus('isNew','sale')" class="s-new"><span>新品</span></a>
+      <a href='javascript:void(0);' onclick="changeGoodsStatus('isRecom','sale')" class="s-rec"><span>保养</span></a>
+      <a href='javascript:void(0);' onclick="changeGoodsStatus('isNew','sale')" class="s-new"><span>美容</span></a>
       <a href='javascript:void(0);' onclick="changeGoodsStatus('isBest','sale')" class="s-best"><span>精品</span></a>
-      <a href='javascript:void(0);' onclick="changeGoodsStatus('isHot','sale')" class="s-hot"><span>热销</span></a>
+      <a href='javascript:void(0);' onclick="changeGoodsStatus('isHot','sale')" class="s-hot"><span>轮胎</span></a>
       <a href='javascript:void(0);' onclick="benchDel('sale')" class="s-del"><span>删除</span></a>
       <a href='{:url("home/goods/add")}' class="s-add"><span>新增</span></a>
-   </div> 
+   </div>
    <table class='wst-list'>
    <thead>
    <tr>
@@ -39,10 +39,10 @@
      <th>商品名称</th>
      <th>商品编号</th>
      <th>价格</th>
-     <th>推荐</th>
+     <th>汽车保养</th>
      <th>精品</th>
-     <th>新品</th>
-     <th>热销</th>
+     <th>汽车美容</th>
+     <th>轮胎</th>
      <th>销量</th>
      <th>库存</th>
      <th width="150">操作</th>
@@ -108,15 +108,15 @@
   <div id='pager'></div>
   <div class="s-menu">
       <a href='javascript:;' onclick="changeSale(0,'sale')" class="s-sale"><span>下架</span></a>
-      <a href='javascript:void(0);' onclick="changeGoodsStatus('isRecom','sale')" class="s-rec"><span>推荐</span></a>
-      <a href='javascript:void(0);' onclick="changeGoodsStatus('isNew','sale')" class="s-new"><span>新品</span></a>
+      <a href='javascript:void(0);' onclick="changeGoodsStatus('isRecom','sale')" class="s-rec"><span>保养</span></a>
+      <a href='javascript:void(0);' onclick="changeGoodsStatus('isNew','sale')" class="s-new"><span>美容</span></a>
       <a href='javascript:void(0);' onclick="changeGoodsStatus('isBest','sale')" class="s-best"><span>精品</span></a>
-      <a href='javascript:void(0);' onclick="changeGoodsStatus('isHot','sale')" class="s-hot"><span>热销</span></a>
+      <a href='javascript:void(0);' onclick="changeGoodsStatus('isHot','sale')" class="s-hot"><span>轮胎</span></a>
       <a href='javascript:void(0);' onclick="benchDel('sale')" class="s-del"><span>删除</span></a>
       <a href='{:url("home/goods/add")}' class="s-add"><span>新增</span></a>
-   </div> 
+   </div>
 </div>
-{/block}  
+{/block}
 {block name="js"}
 <script type='text/javascript' src='__STYLE__/shops/goods/goods.js?v={$v}'></script>
 <script>

@@ -183,7 +183,7 @@ function queryByPage(p){
                cont: 'pager', 
                pages:json.data.TotalPage, 
                curr: json.data.CurrentPage,
-               skin: '#e23e3d',
+               skin: '#3b4e56',
                groups: 3,
                jump: function(e, first){
                     if(!first){
