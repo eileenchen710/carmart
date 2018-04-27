@@ -2,6 +2,7 @@
 namespace wstmart\home\controller;
 use wstmart\home\model\Goods as M;
 use wstmart\common\model\Goods as CM;
+use wstmart\home\model\Shops as S;
 /**
  * ============================================================================
  * WSTMart多用户商城
@@ -332,6 +333,8 @@ class Goods extends Base{
 
     /**
      * 查看商品详情
+     * 搜索结果添加商店地址，通过getBySale -> shops model(common model)->getBriefShop()
+     * WYM changed on 27th Apirl 18 to show shop address in detail page
      */
     public function detail(){
     	$m = new M();
@@ -352,8 +355,10 @@ class Goods extends Base{
             foreach($images[0] as $k=>$v){
                 $goods['goodsDesc'] = str_replace($v, "<img class='goodsImg' data-original=\"__ROOT__/".WSTImg($images[1][$k],3)."\"", $goods['goodsDesc']);
             }
+
 	    	$this->assign('goods',$goods);
 	    	$this->assign('shop',$goods['shop']);
+
 	    	return $this->fetch("deals_detail");
     	}else{
     		return $this->fetch("error_lost");

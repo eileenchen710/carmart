@@ -182,4 +182,5 @@ class Shops extends CShops{
     public function getFieldsById($shopId,$fields){
         return $this->where(['userId'=>$shopId,'dataFlag'=>1])->field($fields)->find();
     }
+
 }

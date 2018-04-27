@@ -33,7 +33,7 @@ class Shops extends Base{
      */
     public function getBriefShop($shopId){
         $shop = $this->alias('s')->join('__SHOP_SCORES__ cs','cs.shopId = s.shopId','left')
-                    ->where(['s.shopId'=>$shopId,'s.shopStatus'=>1,'s.dataFlag'=>1])->field('s.shopImg,s.shopId,s.shopName,cs.*')->find();
+                    ->where(['s.shopId'=>$shopId,'s.shopStatus'=>1,'s.dataFlag'=>1])->field('s.shopImg,s.shopAddress,s.shopSuburb,s.shopState,s.shopPostCode,s.shopId,s.shopName,cs.*')->find();
         if(empty($shop))return [];
         $shop->toArray();
         $shop['totalScore'] = WSTScore($shop['totalScore']/3,$shop['totalUsers']);
@@ -64,7 +64,7 @@ class Shops extends Base{
     	//认证
     	$accreds = $this->shopAccreds($rs['shopId']);
     	$rs['accreds'] = $accreds;
-    
+
     	$shopAds = array();
     	$config = Db::name('shop_configs')->where("shopId=".$rs['shopId'])->find();
     	$isAds = input('param.');
