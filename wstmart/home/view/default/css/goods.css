@@ -28,7 +28,7 @@
 .goods-pics .prev {float: left;margin-right: 4px;}
 .goods-pics .next {float: right;}
 /**放大镜**/
-.goods-img-box{float: left;height: 410px;margin-right: 20px;width: 350px;}
+.goods-img-box{float: left;height: 410px;margin-right: 20px;width: 560px;}
 .spec-preview{float: left;height: 350px;width: 350px;margin-bottom:5px;}
 /*Cloud Zoom 放大镜 */
 .cloudzoom-lens{width:30px;height:30px;border:1px solid #eee;box-shadow:0px 0px 6px rgba(0,0,0,0.20);cursor:crosshair;z-index:10;}

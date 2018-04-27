@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:89:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/deals_detail.html";i:1524808721;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1524642623;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header.html";i:1524642623;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524642623;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/right_cart.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524642623;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:89:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/deals_detail.html";i:1524816771;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1524642623;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header.html";i:1524642623;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524642623;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/right_cart.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524642623;}*/ ?>
 <!doctype html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -617,18 +617,19 @@ document.getElementById("locationImg").style.opacity = "0.5";
    <div class='wst-container'>
       <div class='goods-img-box'>
           <div class="goods-img spec-preview" id="preview">
-          	<img title="<?php echo $goods['goodsName']; ?>" alt="<?php echo $goods['goodsName']; ?>" src="__ROOT__/<?php echo WSTImg($goods['goodsImg']); ?>" class="cloudzoom" data-cloudzoom="zoomImage:'__ROOT__/<?php echo $goods['goodsImg']; ?>'" height="350" width="350">
-          </div>
+          	<img title="<?php echo $goods['goodsName']; ?>" alt="<?php echo $goods['goodsName']; ?>" src="__ROOT__/<?php echo $goods['goodsImg']; ?>" class="cloudzoom" data-cloudzoom="zoomImage:'__ROOT__/<?php echo $goods['goodsImg']; ?>'" height="560" width="560">
+						<!-- <img title="<?php echo $goods['goodsName']; ?>" alt="<?php echo $goods['goodsName']; ?>" src="__ROOT__/<?php echo WSTImg($goods['goodsImg']); ?>" class="cloudzoom" data-cloudzoom="zoomImage:'__ROOT__/<?php echo $goods['goodsImg']; ?>'" height="350" width="350"> -->
+				  </div>
           <div class="goods-pics">
-            <a class="prev">&lt;</a>
+						<a class="prev">&lt;</a>
             <a class="next">&gt;</a>
             <div class="items">
                <ul>
                <?php if(is_array($goods['gallery']) || $goods['gallery'] instanceof \think\Collection): $i = 0; $__LIST__ = $goods['gallery'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-                   <li><img title="<?php echo $goods['goodsName']; ?>" alt="<?php echo $goods['goodsName']; ?>" class='cloudzoom-gallery' src="__ROOT__/<?php echo WSTImg($vo); ?>" data-cloudzoom="useZoom: '.cloudzoom', image:'__ROOT__/<?php echo WSTImg($vo); ?>', zoomImage:'__ROOT__/<?php echo $vo; ?>' " width="60" height="60"></li>
-               <?php endforeach; endif; else: echo "" ;endif; ?>
-			   </ul>
-			</div>
+                   <li><img title="<?php echo $goods['goodsName']; ?>" alt="<?php echo $goods['goodsName']; ?>" class='cloudzoom-gallery' src="__ROOT__/<?php echo WSTImg($vo); ?>" data-cloudzoom="useZoom: '.cloudzoom', image:'__ROOT__/<?php echo $vo; ?>', zoomImage:'__ROOT__/<?php echo $vo; ?>' " width="60" height="60"></li>
+							 <?php endforeach; endif; else: echo "" ;endif; ?>
+						 </ul>
+					 </div>
          </div>
       </div>
       <div class='intro'>
@@ -654,9 +655,9 @@ document.getElementById("locationImg").style.opacity = "0.5";
              <div class='item'>
                <div class='dt'>商品评分：</div>
                <div class='dd'>
-		        <?php $__FOR_START_1733120549__=0;$__FOR_END_1733120549__=$goods['scores']['totalScores'];for($i=$__FOR_START_1733120549__;$i < $__FOR_END_1733120549__;$i+=1){ ?>
+		        <?php $__FOR_START_1924246161__=0;$__FOR_END_1924246161__=$goods['scores']['totalScores'];for($i=$__FOR_START_1924246161__;$i < $__FOR_END_1924246161__;$i+=1){ ?>
 					<img src="__STATIC__/plugins/raty/img/star-on.png">
-				<?php } $__FOR_START_521605195__=1;$__FOR_END_521605195__=6-$goods['scores']['totalScores'];for($i=$__FOR_START_521605195__;$i < $__FOR_END_521605195__;$i+=1){ ?>
+				<?php } $__FOR_START_738254997__=1;$__FOR_END_738254997__=6-$goods['scores']['totalScores'];for($i=$__FOR_START_738254997__;$i < $__FOR_END_738254997__;$i+=1){ ?>
 					<img src="__STATIC__/plugins/raty/img/star-off.png">
 				<?php } ?>
 				<div class='appraise'>累计评价：<span class='appraise-num'><?php echo $goods['appraiseNum']; ?></span></div>
@@ -722,7 +723,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
           </div>
       </div>
 
-      <div class='seeing'>
+      <!-- <div class='seeing'>
          <div class='head'>看了又看</div>
          <div class='body'>
           <?php $wstTagGoods =  model("Tags")->listGoods("visit",$goods['goodsCatId'],3,0); foreach($wstTagGoods as $key=>$visit){?>
@@ -740,7 +741,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 
 
          </div>
-      </div>
+      </div> -->
       <div class='wst-clear'></div>
    </div>
 </div>

@@ -40,18 +40,19 @@
    <div class='wst-container'>
       <div class='goods-img-box'>
           <div class="goods-img spec-preview" id="preview">
-          	<img title="{$goods['goodsName']}" alt="{$goods['goodsName']}" src="__ROOT__/{:WSTImg($goods['goodsImg'])}" class="cloudzoom" data-cloudzoom="zoomImage:'__ROOT__/{$goods['goodsImg']}'" height="350" width="350">
-          </div>
+          	<img title="{$goods['goodsName']}" alt="{$goods['goodsName']}" src="__ROOT__/{$goods['goodsImg']}" class="cloudzoom" data-cloudzoom="zoomImage:'__ROOT__/{$goods['goodsImg']}'" height="560" width="560">
+						<!-- <img title="{$goods['goodsName']}" alt="{$goods['goodsName']}" src="__ROOT__/{:WSTImg($goods['goodsImg'])}" class="cloudzoom" data-cloudzoom="zoomImage:'__ROOT__/{$goods['goodsImg']}'" height="350" width="350"> -->
+				  </div>
           <div class="goods-pics">
-            <a class="prev">&lt;</a>
+						<a class="prev">&lt;</a>
             <a class="next">&gt;</a>
             <div class="items">
                <ul>
                {volist name="$goods['gallery']" id='vo'}
-                   <li><img title="{$goods['goodsName']}" alt="{$goods['goodsName']}" class='cloudzoom-gallery' src="__ROOT__/{:WSTImg($vo)}" data-cloudzoom="useZoom: '.cloudzoom', image:'__ROOT__/{:WSTImg($vo)}', zoomImage:'__ROOT__/{$vo}' " width="60" height="60"></li>
-               {/volist}
-			   </ul>
-			</div>
+                   <li><img title="{$goods['goodsName']}" alt="{$goods['goodsName']}" class='cloudzoom-gallery' src="__ROOT__/{:WSTImg($vo)}" data-cloudzoom="useZoom: '.cloudzoom', image:'__ROOT__/{$vo}', zoomImage:'__ROOT__/{$vo}' " width="60" height="60"></li>
+							 {/volist}
+						 </ul>
+					 </div>
          </div>
       </div>
       <div class='intro'>
@@ -151,7 +152,7 @@
           </div>
       </div>
 
-      <div class='seeing'>
+      <!-- <div class='seeing'>
          <div class='head'>看了又看</div>
          <div class='body'>
           {wst:goods type="visit" cat="$goods['goodsCatId']" num="5" id="visit" num="3"}
@@ -169,7 +170,7 @@
 
 
          </div>
-      </div>
+      </div> -->
       <div class='wst-clear'></div>
    </div>
 </div>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:8:{s:82:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/index.html";i:1524808147;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1524642623;s:93:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/self_shop_header.html";i:1523516678;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524642623;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header.html";i:1524642623;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/right_cart.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524642623;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:8:{s:82:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/index.html";i:1524814583;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1524642623;s:93:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/self_shop_header.html";i:1523516678;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524642623;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header.html";i:1524642623;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/right_cart.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524642623;}*/ ?>
 <!doctype html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -1018,11 +1018,17 @@ document.getElementById("locationImg").style.opacity = "0.5";
 			    <?php $wstTagGoods =  model("Tags")->listGoods("recom",0,5,86400); foreach($wstTagGoods as $key=>$vo){?>
 				<li>
 				    <a href='<?php echo Url("home/goods/detail","id=".$vo["goodsId"]); ?>' target='_blank'>
-					  <img class='goodsImg' data-original="__ROOT__/<?php echo WSTImg($vo['goodsImg']); ?>"  title="<?php echo $vo['goodsName']; ?>"/>
+							<img class='goodsImg' data-original="__ROOT__/<?php echo $vo['goodsImg']; ?>" title="<?php echo $vo['goodsName']; ?>" />
+					  <!-- <img class='goodsImg' data-original="__ROOT__/<?php echo WSTImg($vo['goodsImg']); ?>"  title="<?php echo $vo['goodsName']; ?>"/> -->
 					</a>
 					<p class="rec-goods-desc"><a href='<?php echo Url("home/goods/detail","id=".$vo["goodsId"]); ?>' target='_blank'><?php echo $vo['goodsName']; ?></a></p>
 					<div class="rec-goods-bottom">
-					   <p class="rec-goods-price">价格: <span>$<?php echo $vo['shopPrice']; ?></span></p>
+						<?php if($vo['shopPrice']!="8888"): ?>
+						<p class="rec-goods-price">价格: <span>$<?php echo $vo['shopPrice']; ?></span></p>
+						<?php else: ?>
+						<p class="rec-goods-price"><span>价格面议</span></p>
+						<?php endif; ?>
+					   <!-- <p class="rec-goods-price">价格: <span>$<?php echo $vo['shopPrice']; ?></span></p> -->
 					   <!-- <a href="javascript:WST.addCart(<?php echo $vo['goodsId']; ?>);">加入购物车</a> -->
 					</div>
 				</li>
@@ -1036,11 +1042,17 @@ document.getElementById("locationImg").style.opacity = "0.5";
 				<?php $wstTagGoods =  model("Tags")->listGoods("new",0,5,86400); foreach($wstTagGoods as $key=>$vo){?>
 				<li>
 				    <a href='<?php echo Url("home/goods/detail","id=".$vo["goodsId"]); ?>' target='_blank'>
-					  <img class='goodsImg' data-original="__ROOT__/<?php echo WSTImg($vo['goodsImg']); ?>" title="<?php echo $vo['goodsName']; ?>" />
+					  <img class='goodsImg' data-original="__ROOT__/<?php echo $vo['goodsImg']; ?>" title="<?php echo $vo['goodsName']; ?>" />
+						<!-- <img class='goodsImg' data-original="__ROOT__/<?php echo WSTImg($vo['goodsImg']); ?>" title="<?php echo $vo['goodsName']; ?>" /> -->
 					</a>
 					<p class="rec-goods-desc"><a href='<?php echo Url("home/goods/detail","id=".$vo["goodsId"]); ?>' target='_blank'><?php echo $vo['goodsName']; ?></a></p>
 					<div class="rec-goods-bottom">
-					  <p class="rec-goods-price">价格: <span>$<?php echo $vo['shopPrice']; ?></span></p>
+						<?php if($vo['shopPrice']!="8888"): ?>
+						<p class="rec-goods-price">价格: <span>$<?php echo $vo['shopPrice']; ?></span></p>
+						<?php else: ?>
+						<p class="rec-goods-price"><span>价格面议</span></p>
+						<?php endif; ?>
+					  <!-- <p class="rec-goods-price">价格: <span>$<?php echo $vo['shopPrice']; ?></span></p> -->
 					  <!-- <a href="javascript:WST.addCart(<?php echo $vo['goodsId']; ?>);">加入购物车</a> -->
 					</div>
 				</li>
@@ -1054,11 +1066,17 @@ document.getElementById("locationImg").style.opacity = "0.5";
 				<?php $wstTagGoods =  model("Tags")->listGoods("best",0,5,86400); foreach($wstTagGoods as $key=>$vo){?>
 				<li>
 				    <a href='<?php echo Url("home/goods/detail","id=".$vo["goodsId"]); ?>' target='_blank'>
-					   <img class='goodsImg' data-original="__ROOT__/<?php echo WSTImg($vo['goodsImg']); ?>" title="<?php echo $vo['goodsName']; ?>"/>
+							<img class='goodsImg' data-original="__ROOT__/<?php echo $vo['goodsImg']; ?>" title="<?php echo $vo['goodsName']; ?>" />
+					   <!-- <img class='goodsImg' data-original="__ROOT__/<?php echo WSTImg($vo['goodsImg']); ?>" title="<?php echo $vo['goodsName']; ?>"/> -->
 					</a>
 					<p class="rec-goods-desc"><a href='<?php echo Url("home/goods/detail","id=".$vo["goodsId"]); ?>' target='_blank'><?php echo $vo['goodsName']; ?></a></p>
 					<div class="rec-goods-bottom">
-					   <p class="rec-goods-price">价格: <span>$<?php echo $vo['shopPrice']; ?></span></p>
+						<?php if($vo['shopPrice']!="8888"): ?>
+						<p class="rec-goods-price">价格: <span>$<?php echo $vo['shopPrice']; ?></span></p>
+						<?php else: ?>
+						<p class="rec-goods-price"><span>价格面议</span></p>
+						<?php endif; ?>
+					   <!-- <p class="rec-goods-price">价格: <span>$<?php echo $vo['shopPrice']; ?></span></p> -->
 					   <!-- <a href="javascript:WST.addCart(<?php echo $vo['goodsId']; ?>);">加入购物车</a> -->
 				    </div>
 				</li>
@@ -1072,11 +1090,17 @@ document.getElementById("locationImg").style.opacity = "0.5";
 				<?php $wstTagGoods =  model("Tags")->listGoods("hot",0,5,86400); foreach($wstTagGoods as $key=>$vo){?>
 				<li>
 				    <a href='<?php echo Url("home/goods/detail","id=".$vo["goodsId"]); ?>' target='_blank'>
-					  <img class='goodsImg' data-original="__ROOT__/<?php echo WSTImg($vo['goodsImg']); ?>" title="<?php echo $vo['goodsName']; ?>"/>
+							<img class='goodsImg' data-original="__ROOT__/<?php echo $vo['goodsImg']; ?>" title="<?php echo $vo['goodsName']; ?>" />
+					  <!-- <img class='goodsImg' data-original="__ROOT__/<?php echo WSTImg($vo['goodsImg']); ?>" title="<?php echo $vo['goodsName']; ?>"/> -->
 					</a>
 					<p class="rec-goods-desc"><a href='<?php echo Url("home/goods/detail","id=".$vo["goodsId"]); ?>' target='_blank'><?php echo $vo['goodsName']; ?></a></p>
 					<div class="rec-goods-bottom">
-					   <p class="rec-goods-price">价格: <span>$<?php echo $vo['shopPrice']; ?></span></p>
+						<?php if($vo['shopPrice']!="8888"): ?>
+						<p class="rec-goods-price">价格: <span>$<?php echo $vo['shopPrice']; ?></span></p>
+						<?php else: ?>
+						<p class="rec-goods-price"><span>价格面议</span></p>
+						<?php endif; ?>
+						 <!-- <p class="rec-goods-price">价格: <span>$<?php echo $vo['shopPrice']; ?></span></p> -->
 					   <!-- <a href="javascript:WST.addCart(<?php echo $vo['goodsId']; ?>);">加入购物车</a> -->
 					</div>
 				</li>
@@ -1186,7 +1210,12 @@ document.getElementById("locationImg").style.opacity = "0.5";
 		      	<div class="img"><a target='_blank' href="<?php echo Url('home/goods/detail','id='.$vo2['goodsId']); ?>" title="<?php echo $vo2['goodsName']; ?>"><img title="<?php echo $vo2['goodsName']; ?>" class='goodsImg' data-original="__ROOT__/<?php echo $vo2['goodsImg']; ?>"/></a></div>
 		      	<div class="p-name"><a target='_blank' href="<?php echo Url('home/goods/detail','id='.$vo2['goodsId']); ?>" class="wst-redlink" title="<?php echo $vo2['goodsName']; ?>"><?php echo WSTMSubstr($vo2['goodsName'],0,33); ?></a></div>
 		      	<div>
+							<?php if($vo2['shopPrice']=="8888"): ?>
+							<div class="p-price">价格面议</div>
+							<?php else: ?>
 		      		<div class="p-price">$<?php echo $vo2['shopPrice']; ?></div>
+							<?php endif; ?>
+		      		<!-- <div class="p-price">$<?php echo $vo2['shopPrice']; ?></div> -->
 		      		<div class="p-hsale">
 		      			<!-- <div class="sale-num">成交数：<span class="wst-fred"><?php echo $vo2['saleNum']; ?></span></div>
 		      			<a class="f-add-cart" style="display:none;" href="javascript:WST.addCart(<?php echo $vo2['goodsId']; ?>);">加入购物车</a> -->
@@ -1277,7 +1306,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 </div>
 <div id="screen-left-nav" style="display:none;">
 	<ul>
-		<?php $__FOR_START_1865359346__=1;$__FOR_END_1865359346__=$l+1;for($i=$__FOR_START_1865359346__;$i < $__FOR_END_1865359346__;$i+=1){  if ($i>10)break;  ?>
+		<?php $__FOR_START_60434629__=1;$__FOR_END_60434629__=$l+1;for($i=$__FOR_START_60434629__;$i < $__FOR_END_60434629__;$i+=1){  if ($i>10)break;  ?>
 		<li class="lnav" id="F<?php echo $i; ?>" ><a href="javascript:;" onfocus="this.blur();" ><?php echo $i; ?>F</a></li>
 		<?php } ?>
 	</ul>

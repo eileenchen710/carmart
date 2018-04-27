@@ -413,7 +413,8 @@
 }
 .rec-goods-list img{
 	width:216px;
-	height:232px;
+	/* height:232px; */
+	height:216px;
 }
 
 .countdown{
@@ -442,7 +443,7 @@
 
 .rec-goods-price{
 	float:left;
-	padding-top: 10px;
+	padding-top: 0px;
 }
 .rec-goods-price>span{
 	font-weight:bold;
