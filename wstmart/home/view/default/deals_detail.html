@@ -220,30 +220,44 @@
 			       <div class="wst-tab-item goods-desc-box" style="position: relative;">
 			       {$goods['goodsDesc']|htmlspecialchars_decode}
 			       </div>
+<<<<<<< HEAD
 			       <!-- <div class="wst-tab-item" style="position: relative;display:none">
 			          <table class='wst-attrs-list'>
+=======
+			       <div class="wst-tab-item" style="position: relative;display:none">
+			          	<table class='wst-attrs-list'>
+>>>>>>> local_wayne
 
 
 
 
-											 <div class='title'>{$shop['shopName']}</div>
-											 <div class='body'>
-													 <div class='totalScore'><img class="shopsImg" data-original="__ROOT__/{$shop['shopImg']}" title="{$shop['shopName']}" style="width:75px;height:75px;"></div>
-													 <div class='itemScore'>商品评价：{if ($shop['goodsScore']!=0)}{$shop['goodsScore']}{else /}5{/if}</div>
-													 <div class='itemScore'>服务评分：{if ($shop['serviceScore']!=0)}{$shop['goodsScore']}{else /}5{/if}</div>
-													 <div class='itemScore'>物流速度：{if ($shop['timeScore']!=0)}{$shop['goodsScore']}{else /}5{/if}</div>
-											 </div>
-											 <div class='footer'>
-													<a class="home" href='{:Url("home/shops/home","shopId=".$shop["shopId"])}' target='_blank'>进店逛逛</a>
-													{if ($goods['favShop']>0)}
-													<a class="j-fav" href='javascript:void(0);' onclick='WST.cancelFavorite(this,1,{$shop["shopId"]},{$goods['favShop']})'>已关注</a>
-													{else}
-													<a class="j-fav2" href='javascript:void(0);' onclick='WST.addFavorite(this,1,{$shop["shopId"]},{$goods['favShop']})'>关注店铺</a>
-													{/if}
-													<div class='wst-clear'></div>
-											 </div>
+							 <div class='title'>{$shop['shopName']}</div>
+							 <div class='body'>
+									 <div class='totalScore'><img class="shopsImg" data-original="__ROOT__/{$shop['shopImg']}" title="{$shop['shopName']}" style="width:75px;height:75px;"></div>
+									 <div class='itemScore'>商品评价：{if ($shop['goodsScore']!=0)}{$shop['goodsScore']}{else /}5{/if}</div>
+									 <div class='itemScore'>服务评分：{if ($shop['serviceScore']!=0)}{$shop['goodsScore']}{else /}5{/if}</div>
+									 <div class='itemScore'>物流速度：{if ($shop['timeScore']!=0)}{$shop['goodsScore']}{else /}5{/if}</div>
+							 </div>
+							 <div class='footer'>
+									<a class="home" href='{:Url("home/shops/home","shopId=".$shop["shopId"])}' target='_blank'>进店逛逛</a>
+									{if ($goods['favShop']>0)}
+									<a class="j-fav" href='javascript:void(0);' onclick='WST.cancelFavorite(this,1,{$shop["shopId"]},{$goods['favShop']})'>已关注</a>
+									{else}
+									<a class="j-fav2" href='javascript:void(0);' onclick='WST.addFavorite(this,1,{$shop["shopId"]},{$goods['favShop']})'>关注店铺</a>
+									{/if}
+									<div class='wst-clear'></div>
+							 </div>
 
+							 <div>
+				 				<iframe
+				 					width="600"
+				 					height="450"
+				 					frameborder="0" style="border:0"
+				 					src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAMIxb82Lk3jNlQ-LSxfCRMUTgV9BbRDdA&q={$shop['shopAddress']}+{$shop['shopSuburb']}+{$shop['shopState']}+{$shop['shopPostCode']}" allowfullscreen>
+				 				</iframe>
+				 			</div>
 
+<<<<<<< HEAD
 
 
 
@@ -257,6 +271,17 @@
 			             {/volist}
 			          </table>
 			       </div> -->
+=======
+				             {volist name="$goods['attrs']" id="vo"}
+				             <tr>
+				                <th nowrap>{$vo['attrName']}</th>
+				                <td>{$vo['attrVal']}
+												</td>
+				             </tr>
+				             {/volist}
+			          	</table>
+			       </div>
+>>>>>>> local_wayne
              <input type="hidden" id="filtertype" value="all" />
              <script id="tblist" type="text/html">
               <div class="appr-filter">

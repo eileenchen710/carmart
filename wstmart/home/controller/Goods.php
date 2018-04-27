@@ -2,6 +2,7 @@
 namespace wstmart\home\controller;
 use wstmart\home\model\Goods as M;
 use wstmart\common\model\Goods as CM;
+use wstmart\home\model\Shops as S;
 /**
  * ============================================================================
  * WSTMart多用户商城
@@ -280,12 +281,19 @@ class Goods extends Base{
     	$data['brandFilter'] = model('Brands')->listQuery((int)current($goodsCatIds));
     	$data['brandId'] = Input('brand/d');
     	$data['price'] = Input('price');
+        //echo $data['brandId'];
     	//封装当前选中的值
     	$selector = [];
-    	//处理品牌
+    	//处理品牌 用于前台显示筛选条件
     	if($data['brandId']>0){
+            //echo $data['brandId'];
     		foreach ($data['brandFilter'] as $key =>$v){
-    			if($v['brandId']==$data['brandId'])$selector[] = ['id'=>$v['brandId'],'type'=>'brand','label'=>"品牌","val"=>$v['brandName']];
+                //echo $v['brandId'];
+    			if($v['brandId']==$data['brandId']){
+                    $selector[] = ['id'=>$v['brandId'],'type'=>'brand','label'=>"品牌","val"=>$v['brandName']];
+                }//else{
+                //    echo "cjhssz";
+                //}
     		}
     		unset($data['brandFilter']);
     	}
@@ -325,6 +333,8 @@ class Goods extends Base{
 
     /**
      * 查看商品详情
+     * 搜索结果添加商店地址，通过getBySale -> shops model(common model)->getBriefShop()
+     * WYM changed on 27th Apirl 18 to show shop address in detail page
      */
     public function detail(){
     	$m = new M();
@@ -345,8 +355,10 @@ class Goods extends Base{
             foreach($images[0] as $k=>$v){
                 $goods['goodsDesc'] = str_replace($v, "<img class='goodsImg' data-original=\"__ROOT__/".WSTImg($images[1][$k],3)."\"", $goods['goodsDesc']);
             }
+
 	    	$this->assign('goods',$goods);
 	    	$this->assign('shop',$goods['shop']);
+
 	    	return $this->fetch("deals_detail");
     	}else{
     		return $this->fetch("error_lost");

@@ -14,14 +14,14 @@ $(function(){
 			$(this).attr('v',1);
 		}
 	});
-	
+
 	$(".item-more").hover(function(){
 		if($(this).find("i").hasClass("drop-down-icon")){
 			$(this).find("i").attr({"class":"down-hover"});
 		}else{
 			$(this).find("i").attr({"class":"up-hover"});
 		}
-		
+
 	},function(){
 		if($(this).find("i").hasClass("down-hover")){
 			$(this).find("i").attr({"class":"drop-down"});
@@ -149,7 +149,7 @@ function gpanelOver(obj){
 
 	$("li[id^="+preid+"_]").removeClass("j-tab-selected"+index);
 	$("#"+sid).addClass("j-tab-selected"+index);
-	
+
 	$("ul[id^="+preid+"_]").hide();
 	$("#"+sid+"_pl").show();
 }
@@ -187,7 +187,7 @@ function choiceArea(t,pid){
 			// 判断搜索页面
 			var search = $(t).attr('search');
 			if(search==1){search = 'search="1"';}
-			
+
 			var json = WST.toJson(data);
 			if(json.status==1){
 				var html = '';
@@ -205,4 +205,3 @@ function choiceArea(t,pid){
 		$(nextid+"_pl").show();
 	}
 }
-
