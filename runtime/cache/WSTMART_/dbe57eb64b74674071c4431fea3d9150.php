@@ -1,3 +1,0 @@
-<?php
-//000000086400a:2:{i:0;a:7:{s:4:"adId";i:72;s:6:"adName";s:19:"首页轮播广告1";s:5:"adURL";s:20:"https://www.mbsydney";s:6:"adFile";s:39:"upload/adspic/2018-04/5adc924d2b9fc.png";s:13:"positionWidth";i:1920;s:14:"positionHeight";i:420;s:6:"isOpen";b:1;}i:1;a:7:{s:4:"adId";i:36;s:6:"adName";s:19:"首页轮播广告2";s:5:"adURL";s:0:"";s:6:"adFile";s:39:"upload/adspic/2018-04/5adc8f5db13d9.png";s:13:"positionWidth";i:1920;s:14:"positionHeight";i:420;s:6:"isOpen";b:0;}}
-?>

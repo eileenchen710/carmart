@@ -280,12 +280,19 @@ class Goods extends Base{
     	$data['brandFilter'] = model('Brands')->listQuery((int)current($goodsCatIds));
     	$data['brandId'] = Input('brand/d');
     	$data['price'] = Input('price');
+        //echo $data['brandId'];
     	//封装当前选中的值
     	$selector = [];
-    	//处理品牌
+    	//处理品牌 用于前台显示筛选条件
     	if($data['brandId']>0){
+            //echo $data['brandId'];
     		foreach ($data['brandFilter'] as $key =>$v){
-    			if($v['brandId']==$data['brandId'])$selector[] = ['id'=>$v['brandId'],'type'=>'brand','label'=>"品牌","val"=>$v['brandName']];
+                //echo $v['brandId'];
+    			if($v['brandId']==$data['brandId']){
+                    $selector[] = ['id'=>$v['brandId'],'type'=>'brand','label'=>"品牌","val"=>$v['brandName']];
+                }//else{
+                //    echo "cjhssz";
+                //}
     		}
     		unset($data['brandFilter']);
     	}

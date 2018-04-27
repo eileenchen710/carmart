@@ -41,7 +41,7 @@ class Goods extends CGoods{
 		$where['m.shopId'] = $shopId;
 		$rs = $this->alias('m')
 		    ->where($where)
-			->field('goodsId,goodsName,goodsImg,goodsSn,isSale,isBest,isHot,isNew,isRecom,goodsStock,saleNum,shopPrice,isSpec')
+			->field('goodsId,goodsName,goodsImg,goodsSn,isSale,isBest,isHot,isNew,isRecom,goodsStock,saleNum,shopPrice,isSpec,brandId')
 			->order('saleTime', 'desc')
 			->paginate(input('pagesize/d'))->toArray();
 		foreach ($rs['Rows'] as $key => $v){
@@ -72,7 +72,7 @@ class Goods extends CGoods{
 
 		$rs = $this->alias('m')
 		    ->where($where)
-			->field('goodsId,goodsName,goodsImg,goodsSn,isSale,isBest,isHot,isNew,isRecom,goodsStock,saleNum,shopPrice,isSpec')
+			->field('goodsId,goodsName,goodsImg,brandId,goodsSn,isSale,isBest,isHot,isNew,isRecom,goodsStock,saleNum,shopPrice,isSpec')
 			->order('saleTime', 'desc')
 			->paginate(input('pagesize/d'))->toArray();
         foreach ($rs['Rows'] as $key => $v){
@@ -102,7 +102,7 @@ class Goods extends CGoods{
 		$rs = $this->alias('m')
 		    ->where($where)
 		    ->where('goodsStatus','<>',-1)
-			->field('goodsId,goodsName,goodsImg,goodsSn,isSale,isBest,isHot,isNew,isRecom,goodsStock,saleNum,shopPrice,isSpec')
+			->field('goodsId,goodsName,goodsImg,brandId,goodsSn,isSale,isBest,isHot,isNew,isRecom,goodsStock,saleNum,shopPrice,isSpec')
 			->order('saleTime', 'desc')
 			->paginate(input('pagesize/d'))->toArray();
         foreach ($rs['Rows'] as $key => $v){
@@ -111,7 +111,7 @@ class Goods extends CGoods{
 		return $rs;
 	}
 	/**
-	 * 违规的商品 
+	 * 违规的商品
 	 */
 	public function illegalByPage(){
 		$shopId = (int)session('WST_USER.shopId');
@@ -133,7 +133,7 @@ class Goods extends CGoods{
 
 		$rs = $this->alias('m')
 		    ->where($where)
-			->field('goodsId,goodsName,goodsImg,goodsSn,isSale,isBest,isHot,isNew,isRecom,illegalRemarks,goodsStock,saleNum,shopPrice,isSpec')
+			->field('goodsId,goodsName,goodsImg,brandId,goodsSn,isSale,isBest,isHot,isNew,isRecom,illegalRemarks,goodsStock,saleNum,shopPrice,isSpec')
 			->order('saleTime', 'desc')
 			->paginate(input('pagesize/d'))->toArray();
 		foreach ($rs['Rows'] as $key => $v){
@@ -141,7 +141,7 @@ class Goods extends CGoods{
 		}
 		return $rs;
 	}
-	
+
 	/**
 	 * 新增商品
 	 */
@@ -158,7 +158,7 @@ class Goods extends CGoods{
 		$data['shopId'] = $shopId;
 		$data['saleTime'] = date('Y-m-d H:i:s');
 		$data['createTime'] = date('Y-m-d H:i:s');
-		$goodsCats = model('GoodsCats')->getParentIs($data['goodsCatId']);		
+		$goodsCats = model('GoodsCats')->getParentIs($data['goodsCatId']);
 		$data['goodsCatIdPath'] = implode('_',$goodsCats)."_";
 		$data['isSpec'] = ($specsIds!='')?1:0;
 		Db::startTrans();
@@ -271,7 +271,7 @@ class Goods extends CGoods{
             return WSTReturn('新增失败',-1);
         }
 	}
-	
+
 	/**
 	 * 编辑商品资料
 	 */
@@ -440,7 +440,7 @@ class Goods extends CGoods{
             return WSTReturn('编辑失败',-1);
         }
 	}
-	
+
 	/**
 	 * 获取商品资料方便编辑
 	 */
@@ -454,7 +454,7 @@ class Goods extends CGoods{
 			                      ->field('gc.isAllowImg,sit.catId,sit.itemId,sit.itemName,sit.itemImg')
 			                      ->order('gc.isAllowImg desc,gc.catSort asc,gc.catId asc')->select();
 			$spec0 = [];
-			$spec1 = [];                      
+			$spec1 = [];
 			foreach ($specs as $key =>$v){
 				if($v['isAllowImg']==1){
 					$spec0[] = $v;
@@ -501,7 +501,7 @@ class Goods extends CGoods{
 			$specs = Db::name('spec_cats')->alias('gc')->join('__SPEC_ITEMS__ sit','gc.catId=sit.catId','inner')
 			                      ->where(['sit.goodsId'=>$goodsId,'gc.isShow'=>1,'sit.dataFlag'=>1])
 			                      ->field('gc.isAllowImg,gc.catName,sit.catId,sit.itemId,sit.itemName,sit.itemImg')
-			                      ->order('gc.isAllowImg desc,gc.catSort asc,gc.catId asc')->select();                     
+			                      ->order('gc.isAllowImg desc,gc.catSort asc,gc.catId asc')->select();
 			foreach ($specs as $key =>$v){
 				$rs['spec'][$v['catId']]['name'] = $v['catName'];
 				$rs['spec'][$v['catId']]['list'][] = $v;
@@ -531,7 +531,7 @@ class Goods extends CGoods{
 		}
 		return $rs;
 	}
-	
+
 	/**
 	 * 删除商品
 	 */
@@ -584,7 +584,7 @@ class Goods extends CGoods{
         }
         return WSTReturn('删除失败',-1);
 	 }
-	
+
 	/**
 	 * 批量上架商品
 	 */
@@ -685,7 +685,7 @@ class Goods extends CGoods{
 		$data['attrs'] = Db::name('attributes')->where(['dataFlag'=>1,'isShow'=>1,'goodsCatId'=>['in',$goodsCatIds]])->field('attrId,attrName,attrType,attrVal')->order('attrSort asc,attrId asc')->select();
 	    return WSTReturn("", 1,$data);
 	}
-	
+
 	/**
 	 * 检测商品主表的货号或者商品编号
 	 */
@@ -696,7 +696,7 @@ class Goods extends CGoods{
 		$rs = $dbo = $this->where($conditon)->count();
 		return ($rs==0)?false:true;
 	}
-	
+
     /**
      * 获取符合筛选条件的商品ID
      */
@@ -711,7 +711,7 @@ class Goods extends CGoods{
 	    	$goodsIds2 = [];
 	    	$attrVal = input('v_'.(int)$v);
 	    	if($attrVal=='')continue;
-	    	$sql = "select goodsId goodsId from ".$prefix."goods_attributes 
+	    	$sql = "select goodsId goodsId from ".$prefix."goods_attributes
 	    	where attrId=".(int)$v." and find_in_set('".$attrVal."',attrVal) ";
 			$rs = Db::query($sql);
 			if(!empty($rs)){
@@ -731,7 +731,7 @@ class Goods extends CGoods{
 		}
 		return $goodsIds;
     }
-	
+
 	/**
 	 * 获取分页商品记录
 	 */
@@ -771,7 +771,7 @@ class Goods extends CGoods{
 		}
 		$list = Db::name("goods")->alias('g')->join("__SHOPS__ s","g.shopId = s.shopId")
 			->where($where)
-			->field('goodsId,goodsName,goodsSn,goodsStock,saleNum,shopPrice,marketPrice,isSpec,goodsImg,appraiseNum,visitNum,s.shopId,shopName')
+			->field('goodsId,goodsName,goodsSn,goodsStock,saleNum,shopPrice,marketPrice,isSpec,goodsImg,brandId,appraiseNum,visitNum,s.shopId,shopName')
 			->order($pageBy[$orderBy]." ".$pageOrder[$order].",goodsId asc")
 			->paginate(input('pagesize/d'))->toArray();
 
@@ -815,7 +815,7 @@ class Goods extends CGoods{
 		$rs = Db::name("goods")->alias('g')->join("__SHOPS__ s","g.shopId = s.shopId",'inner')
 			->where($where)
 			->field('min(shopPrice) minPrice,max(shopPrice) maxPrice')->find();
-		
+
 		if($rs['maxPrice']=='')return;
 		$minPrice = 0;
 		$maxPrice = $rs['maxPrice'];
@@ -872,13 +872,13 @@ class Goods extends CGoods{
 		if($c2Id!=0)$where[] = " shopCatId2=".$c2Id;
 		$where[] = " g.shopId = ".$shopId;
 		$prefix = config('database.prefix');
-		$sql1 = 'SELECT g.goodsId,g.goodsName,g.goodsImg,gs.specStock goodsStock ,gs.warnStock warnStock,g.isSpec,gs.productNo,gs.id,gs.specIds,g.isSale
+		$sql1 = 'SELECT g.goodsId,g.goodsName,g.goodsImg,g.brandId,gs.specStock goodsStock ,gs.warnStock warnStock,g.isSpec,gs.productNo,gs.id,gs.specIds,g.isSale
                     FROM '.$prefix.'goods g inner JOIN '.$prefix.'goods_specs gs ON gs.goodsId=g.goodsId and gs.specStock <= gs.warnStock and gs.warnStock>0
                     WHERE g.dataFlag = 1 and '.implode(' and ',$where);
-		
-		$sql2 = 'SELECT g.goodsId,g.goodsName,g.goodsImg,g.goodsStock,g.warnStock,g.isSpec,g.productNo,0 as id,"" as specIds,g.isSale
-                    FROM '.$prefix.'goods g 
-                    WHERE g.dataFlag = 1  and isSpec=0 and g.goodsStock<=g.warnStock 
+
+		$sql2 = 'SELECT g.goodsId,g.goodsName,g.goodsImg,g.brandId,g.goodsStock,g.warnStock,g.isSpec,g.productNo,0 as id,"" as specIds,g.isSale
+                    FROM '.$prefix.'goods g
+                    WHERE g.dataFlag = 1  and isSpec=0 and g.goodsStock<=g.warnStock
                     and g.warnStock>0 and '.implode(' and ',$where);
 		$page = (int)input('post.'.config('paginate.var_page'));
 		$page = ($page<=0)?1:$page;
