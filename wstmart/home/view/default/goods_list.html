@@ -271,51 +271,31 @@
 	   </div>
 	   <div class="goods-list">
 	      {volist name='goodsPage["Rows"]' id='vo'}
-<<<<<<< HEAD
-	      <div class="goods">
-	      	<div class="img"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo['goodsId'])}"><img title="{$vo['goodsName']}" alt="{$vo['goodsName']}" class='goodsImg2' data-original="__ROOT__/{$vo['goodsImg']}"/></a></div>
-	      	<div class="p-name"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo['goodsId'])}" class="wst-redlink" title="{$vo['goodsName']}">{$vo['goodsName']}</a></div>
-	      	<div>
-						{if $vo['shopPrice']!="8888"}
-	      		<div class="p-price">${$vo['shopPrice']}</div>
-						{else}
-						<div class="p-price">价格面议</div>
-						{/if}
-	      		<div class="p-hsale">
-	      			<!-- <div class="sale-num">成交数：<span class="wst-fred">{$vo['saleNum']}</span></div> -->
-		      		<!-- <a class="p-add-cart" style="display:none;" href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a> -->
-	      		</div>
-	      		<div class='wst-clear'></div>
-	      	</div>
-	      	<div>
-						{if $vo['marketPrice']!="9999"}
-	      		<div class="p-mprice">市场价<span>${$vo['marketPrice']}</span></div>
-						{/if}
-	      		<div class="p-appraise">已有<span class="wst-fred">{$vo['appraiseNum']}</span>人评价</div>
-	      		<div class='wst-clear'></div>
-	      	</div>
-	      	<div class="p-shop"><a href="{:Url('home/shops/home','shopId='.$vo['shopId'])}" target='_blank' class="wst-redlink">{$vo['shopName']}</a></div>
-	      </div>
-=======
+
+
 		  	  {if $brandId == ''}
 			  <div class="goods">
 		      	<div class="img"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo['goodsId'])}"><img title="{$vo['goodsName']}" alt="{$vo['goodsName']}" class='goodsImg2' data-original="__ROOT__/{$vo['goodsImg']}"/></a></div>
 		      	<div class="p-name"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo['goodsId'])}" class="wst-redlink" title="{$vo['goodsName']}">{$vo['goodsName']}</a></div>
 		      	<div>
+							{if $vo['shopPrice']!="8888"}
 		      		<div class="p-price">${$vo['shopPrice']}</div>
+							{else}
+							<div class="p-price">价格面议</div>
+							{/if}
 		      		<div class="p-hsale">
-		      			<!-- <div class="sale-num">成交数：<span class="wst-fred">{$vo['saleNum']}</span></div> -->
-			      		<!-- <a class="p-add-cart" style="display:none;" href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a> -->
 		      		</div>
 		      		<div class='wst-clear'></div>
 		      	</div>
 		      	<div>
+							{if $vo['marketPrice']!="9999"}
 		      		<div class="p-mprice">市场价<span>${$vo['marketPrice']}</span></div>
+							{/if}
 		      		<div class="p-appraise">已有<span class="wst-fred">{$vo['appraiseNum']}</span>人评价</div>
 		      		<div class='wst-clear'></div>
 		      	</div>
 		      	<div class="p-shop"><a href="{:Url('home/shops/home','shopId='.$vo['shopId'])}" target='_blank' class="wst-redlink">{$vo['shopName']}</a></div>
-			</div>
+		      </div>
 			  {elseif $vo['brandId'] != $brandId}
 			  <div class="goods" style="display: none;">
 			  </div>
@@ -324,25 +304,27 @@
 		      	<div class="img"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo['goodsId'])}"><img title="{$vo['goodsName']}" alt="{$vo['goodsName']}" class='goodsImg2' data-original="__ROOT__/{$vo['goodsImg']}"/></a></div>
 		      	<div class="p-name"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo['goodsId'])}" class="wst-redlink" title="{$vo['goodsName']}">{$vo['goodsName']}</a></div>
 		      	<div>
+							{if $vo['shopPrice']!="8888"}
 		      		<div class="p-price">${$vo['shopPrice']}</div>
-					<div class="p-brandId">{$vo['brandId']}</div>
-
+							{else}
+							<div class="p-price">价格面议</div>
+							{/if}
 		      		<div class="p-hsale">
-		      			<!-- <div class="sale-num">成交数：<span class="wst-fred">{$vo['saleNum']}</span></div> -->
-			      		<!-- <a class="p-add-cart" style="display:none;" href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a> -->
 		      		</div>
 		      		<div class='wst-clear'></div>
 		      	</div>
 		      	<div>
+							{if $vo['marketPrice']!="9999"}
 		      		<div class="p-mprice">市场价<span>${$vo['marketPrice']}</span></div>
+							{/if}
 		      		<div class="p-appraise">已有<span class="wst-fred">{$vo['appraiseNum']}</span>人评价</div>
 		      		<div class='wst-clear'></div>
 		      	</div>
 		      	<div class="p-shop"><a href="{:Url('home/shops/home','shopId='.$vo['shopId'])}" target='_blank' class="wst-redlink">{$vo['shopName']}</a></div>
-			</div>
+		      </div>
 
 			{/if}
->>>>>>> local_wayne
+
 
 	      {/volist}
 	     <div class='wst-clear'></div>

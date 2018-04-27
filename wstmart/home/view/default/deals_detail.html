@@ -219,8 +219,16 @@
 			    <div class="wst-tab-content" style='width:99%;margin-bottom: 10px;min-height:1312px;'>
 			       <div class="wst-tab-item goods-desc-box" style="position: relative;">
 			       {$goods['goodsDesc']|htmlspecialchars_decode}
+				   <div>
+					  <iframe
+						  width="600"
+						  height="450"
+						  frameborder="0" style="border:0"
+						  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAMIxb82Lk3jNlQ-LSxfCRMUTgV9BbRDdA&q={$shop['shopAddress']}+{$shop['shopSuburb']}+{$shop['shopState']}+{$shop['shopPostCode']}" allowfullscreen>
+					  </iframe>
+				  </div>
 			       </div>
-<<<<<<< HEAD
+
 			       <!-- <div class="wst-tab-item" style="position: relative;display:none">
 			          <table class='wst-attrs-list'>
 =======
@@ -257,11 +265,6 @@
 				 				</iframe>
 				 			</div>
 
-<<<<<<< HEAD
-
-
-
-
 			             {volist name="$goods['attrs']" id="vo"}
 			             <tr>
 			                <th nowrap>{$vo['attrName']}</th>
@@ -271,17 +274,7 @@
 			             {/volist}
 			          </table>
 			       </div> -->
-=======
-				             {volist name="$goods['attrs']" id="vo"}
-				             <tr>
-				                <th nowrap>{$vo['attrName']}</th>
-				                <td>{$vo['attrVal']}
-												</td>
-				             </tr>
-				             {/volist}
-			          	</table>
-			       </div>
->>>>>>> local_wayne
+
              <input type="hidden" id="filtertype" value="all" />
              <script id="tblist" type="text/html">
               <div class="appr-filter">
