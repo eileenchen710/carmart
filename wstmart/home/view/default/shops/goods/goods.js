@@ -95,7 +95,7 @@ function initEdit(){
 	    }
 		getShopsCats('shopCatId2',OBJ.shopCatId1,OBJ.shopCatId2);
 	}
-	
+
 }
 /**获取本店分类**/
 function getShopsCats(objId,pVal,objVal){
@@ -195,8 +195,8 @@ function addSpec(opts){
 	if(opts.itemId){
 		id2SepcNumConverter[opts.itemId] = opts.catId+'_'+specNum;
 	}
-	
-	specNum++;	
+
+	specNum++;
 }
 /**删除普通规格值**/
 function delSpec(obj,catId,num){
@@ -346,7 +346,7 @@ function addSpecSaleCol(){
             return doubleArrays[0];
         }
     }
-	
+
 	var specsRows = this.combined(specArray);
 	//生成规格值表
 	html = [];
@@ -355,7 +355,7 @@ function addSpecSaleCol(){
 	for(var i=0;i<specsRows.length;i++){
 		id = [],specHtml = [];
 		html.push('<tr class="j-saleTd">');
-		
+
 		if(specsRows[i].length){
 			for(var j=0;j<specsRows[i].length;j++){
 				id.push(specsRows[i][j].id);
@@ -466,7 +466,7 @@ function getSpecAttrs(goodsCatId){
 				for(var i=0;i<json.data.attrs.length;i++){
 					tmp = json.data.attrs[i];
 					html.push('<tr><th width="120" nowrap>'+tmp.attrName+'：</th><td>');
-					if(tmp.attrType==1){		
+					if(tmp.attrType==1){
 						str = tmp.attrVal.split(',');
 						for(var j=0;j<str.length;j++){
 						    html.push('<label><input type="checkbox" class="j-ipt" name="attr_'+tmp.attrId+'" value="'+str[j]+'"/>'+str[j]+'</label>');
@@ -514,7 +514,7 @@ function getSpecAttrs(goodsCatId){
 						}
 					}
 				}
-				
+
 			}
 			//给没有初始化的规格初始化一个输入框
 			if(json.data.spec0 && !$('.j-speccat_'+json.data.spec0.catId)[0]){
@@ -525,7 +525,7 @@ function getSpecAttrs(goodsCatId){
 					if(!$('.j-speccat_'+json.data.spec1[i].catId)[0])addSpec({catId:json.data.spec1[i].catId,checked:''});
 				}
 			}
-			
+
 		}
 	});
 }
@@ -546,8 +546,8 @@ function saleByPage(p){
 	       	});
 	       	if(json.TotalPage>1){
 	       		laypage({
-		        	 cont: 'pager', 
-		        	 pages:json.TotalPage, 
+		        	 cont: 'pager',
+		        	 pages:json.TotalPage,
 		        	 curr: json.CurrentPage,
 		        	 skin: '#3b4e56',
 		        	 groups: 3,
@@ -555,12 +555,12 @@ function saleByPage(p){
 		        		    if(!first){
 		        		    	saleByPage(e.curr);
 		        		    }
-		        	    } 
+		        	    }
 		        });
 	       	}else{
 	       		$('#pager').empty();
 	       	}
-       	}  
+       	}
 	});
 }
 function auditByPage(p){
@@ -579,8 +579,8 @@ function auditByPage(p){
 	       	});
 	       	if(json.TotalPage>1){
 	       		laypage({
-		        	 cont: 'pager', 
-		        	 pages:json.TotalPage, 
+		        	 cont: 'pager',
+		        	 pages:json.TotalPage,
 		        	 curr: json.CurrentPage,
 		        	 skin: '#3b4e56',
 		        	 groups: 3,
@@ -588,12 +588,12 @@ function auditByPage(p){
 		        		 if(!first){
 		        		      saleByPage(e.curr);
 		        		 }
-		        	 } 
+		        	 }
 		        });
 	       	}else{
 	       		$('#pager').empty();
 	       	}
-       	}  
+       	}
 	});
 }
 function storeByPage(p){
@@ -612,8 +612,8 @@ function storeByPage(p){
 	       	});
 	       	if(json.TotalPage>1){
 	       		laypage({
-		        	 cont: 'pager1', 
-		        	 pages:json.TotalPage, 
+		        	 cont: 'pager1',
+		        	 pages:json.TotalPage,
 		        	 curr: json.CurrentPage,
 		        	 skin: '#3b4e56',
 		        	 groups: 3,
@@ -621,12 +621,12 @@ function storeByPage(p){
 		        		 if(!first){
 		        			 storeByPage(e.curr);
 		        		 }
-		        	 } 
+		        	 }
 		        });
 	       	}else{
 	       		$('#pager1').empty();
 	       	}
-       	}  
+       	}
 	});
 }
 function illegalByPage(p){
@@ -645,8 +645,8 @@ function illegalByPage(p){
 		    });
 	       	if(json.TotalPage>1){
 	       		laypage({
-		        	 cont: 'pager2', 
-		        	 pages:json.TotalPage, 
+		        	 cont: 'pager2',
+		        	 pages:json.TotalPage,
 		        	 curr: json.CurrentPage,
 		        	 skin: '#3b4e56',
 		        	 groups: 3,
@@ -654,12 +654,12 @@ function illegalByPage(p){
 		        		 if(!first){
 		        		      saleByPage(e.curr);
 		        		 }
-		        	 } 
+		        	 }
 		        });
 	       	}else{
 	       		$('#pager2').empty();
 	       	}
-       	}  
+       	}
 	});
 }
 function del(id,func){
@@ -749,7 +749,7 @@ function changeGoodsStatus(isWhat,func){
 	});
 }
 
-// 双击设置 
+// 双击设置
 function changSaleStatus(isWhat, obj, id){
 	var params = {};
 	status = $(obj).attr('status');
@@ -780,7 +780,7 @@ function changSaleStatus(isWhat, obj, id){
 }
 
 //双击修改
-function toEditGoodsBase(fv,goodsId,flag){	
+function toEditGoodsBase(fv,goodsId,flag){
 	if((fv==2 || fv==3) && flag==1){
 		WST.msg('该商品存在商品属性，不能直接修改，请进入编辑页修改', {icon: 5});
 		return;
@@ -790,7 +790,7 @@ function toEditGoodsBase(fv,goodsId,flag){
 		$("#ipt_"+fv+"_"+goodsId).focus();
 		$("#ipt_"+fv+"_"+goodsId).val($("#span_"+fv+"_"+goodsId).html());
 	}
-	
+
 }
 function endEditGoodsBase(fv,goodsId){
 	$('#span_'+fv+'_'+goodsId).html($('#ipt_'+fv+'_'+goodsId).val());
@@ -805,7 +805,7 @@ function editGoodsBase(fv,goodsId){
 			WST.msg('价格不能为空', {icon: 5});
 		}else if(fv==3){
 			WST.msg('库存不能为空', {icon: 5});
-		}		
+		}
         return;
 	}
 	var params = {};
@@ -818,7 +818,7 @@ function editGoodsBase(fv,goodsId){
 			endEditGoodsBase(fv,goodsId);
 			$('#img_'+fv+'_'+goodsId).fadeTo("slow",0);
 		}else{
-			WST.msg('修改失败!', {icon: 5}); 
+			WST.msg('修改失败!', {icon: 5});
 		}
 	});
 }
@@ -829,7 +829,7 @@ function benchDel(func,flag){
 	}else{
 		var ids = WST.getChks('.chk');
 	}
-	
+
 	if(ids==''){
 		WST.msg('请先选择商品!', {icon: 5});
 		return;

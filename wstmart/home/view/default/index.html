@@ -52,11 +52,17 @@
 			    {wst:goods type='recom' cache="86400" num='5'}
 				<li>
 				    <a href='{:Url("home/goods/detail","id=".$vo["goodsId"])}' target='_blank'>
-					  <img class='goodsImg' data-original="__ROOT__/{:WSTImg($vo['goodsImg'])}"  title="{$vo['goodsName']}"/>
+							<img class='goodsImg' data-original="__ROOT__/{$vo['goodsImg']}" title="{$vo['goodsName']}" />
+					  <!-- <img class='goodsImg' data-original="__ROOT__/{:WSTImg($vo['goodsImg'])}"  title="{$vo['goodsName']}"/> -->
 					</a>
 					<p class="rec-goods-desc"><a href='{:Url("home/goods/detail","id=".$vo["goodsId"])}' target='_blank'>{$vo['goodsName']}</a></p>
 					<div class="rec-goods-bottom">
-					   <p class="rec-goods-price">价格: <span>${$vo['shopPrice']}</span></p>
+						{if $vo['shopPrice']!="8888"}
+						<p class="rec-goods-price">价格: <span>${$vo['shopPrice']}</span></p>
+						{else}
+						<p class="rec-goods-price"><span>价格面议</span></p>
+						{/if}
+					   <!-- <p class="rec-goods-price">价格: <span>${$vo['shopPrice']}</span></p> -->
 					   <!-- <a href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a> -->
 					</div>
 				</li>
@@ -70,11 +76,17 @@
 				{wst:goods type='new' cache="86400" num='5'}
 				<li>
 				    <a href='{:Url("home/goods/detail","id=".$vo["goodsId"])}' target='_blank'>
-					  <img class='goodsImg' data-original="__ROOT__/{:WSTImg($vo['goodsImg'])}" title="{$vo['goodsName']}" />
+					  <img class='goodsImg' data-original="__ROOT__/{$vo['goodsImg']}" title="{$vo['goodsName']}" />
+						<!-- <img class='goodsImg' data-original="__ROOT__/{:WSTImg($vo['goodsImg'])}" title="{$vo['goodsName']}" /> -->
 					</a>
 					<p class="rec-goods-desc"><a href='{:Url("home/goods/detail","id=".$vo["goodsId"])}' target='_blank'>{$vo['goodsName']}</a></p>
 					<div class="rec-goods-bottom">
-					  <p class="rec-goods-price">价格: <span>${$vo['shopPrice']}</span></p>
+						{if $vo['shopPrice']!="8888"}
+						<p class="rec-goods-price">价格: <span>${$vo['shopPrice']}</span></p>
+						{else}
+						<p class="rec-goods-price"><span>价格面议</span></p>
+						{/if}
+					  <!-- <p class="rec-goods-price">价格: <span>${$vo['shopPrice']}</span></p> -->
 					  <!-- <a href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a> -->
 					</div>
 				</li>
@@ -88,11 +100,17 @@
 				{wst:goods type='best' cache="86400" num='5'}
 				<li>
 				    <a href='{:Url("home/goods/detail","id=".$vo["goodsId"])}' target='_blank'>
-					   <img class='goodsImg' data-original="__ROOT__/{:WSTImg($vo['goodsImg'])}" title="{$vo['goodsName']}"/>
+							<img class='goodsImg' data-original="__ROOT__/{$vo['goodsImg']}" title="{$vo['goodsName']}" />
+					   <!-- <img class='goodsImg' data-original="__ROOT__/{:WSTImg($vo['goodsImg'])}" title="{$vo['goodsName']}"/> -->
 					</a>
 					<p class="rec-goods-desc"><a href='{:Url("home/goods/detail","id=".$vo["goodsId"])}' target='_blank'>{$vo['goodsName']}</a></p>
 					<div class="rec-goods-bottom">
-					   <p class="rec-goods-price">价格: <span>${$vo['shopPrice']}</span></p>
+						{if $vo['shopPrice']!="8888"}
+						<p class="rec-goods-price">价格: <span>${$vo['shopPrice']}</span></p>
+						{else}
+						<p class="rec-goods-price"><span>价格面议</span></p>
+						{/if}
+					   <!-- <p class="rec-goods-price">价格: <span>${$vo['shopPrice']}</span></p> -->
 					   <!-- <a href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a> -->
 				    </div>
 				</li>
@@ -106,11 +124,17 @@
 				{wst:goods type='hot' cache="86400" num='5'}
 				<li>
 				    <a href='{:Url("home/goods/detail","id=".$vo["goodsId"])}' target='_blank'>
-					  <img class='goodsImg' data-original="__ROOT__/{:WSTImg($vo['goodsImg'])}" title="{$vo['goodsName']}"/>
+							<img class='goodsImg' data-original="__ROOT__/{$vo['goodsImg']}" title="{$vo['goodsName']}" />
+					  <!-- <img class='goodsImg' data-original="__ROOT__/{:WSTImg($vo['goodsImg'])}" title="{$vo['goodsName']}"/> -->
 					</a>
 					<p class="rec-goods-desc"><a href='{:Url("home/goods/detail","id=".$vo["goodsId"])}' target='_blank'>{$vo['goodsName']}</a></p>
 					<div class="rec-goods-bottom">
-					   <p class="rec-goods-price">价格: <span>${$vo['shopPrice']}</span></p>
+						{if $vo['shopPrice']!="8888"}
+						<p class="rec-goods-price">价格: <span>${$vo['shopPrice']}</span></p>
+						{else}
+						<p class="rec-goods-price"><span>价格面议</span></p>
+						{/if}
+						 <!-- <p class="rec-goods-price">价格: <span>${$vo['shopPrice']}</span></p> -->
 					   <!-- <a href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a> -->
 					</div>
 				</li>
@@ -144,7 +168,7 @@
 				{volist name="vo['children']" id="vo1" key="l2" length="7"}
 				<li class="tab-item{$l}" id="fl_{$l}_{$l2}" onmouseover="gpanelOver(this);" c={$l}><a href="{:Url('home/goods/lists','cat='.$vo1['catId'])}">{$vo1['catName']}</a></li>
 				{/volist}
-				
+
 			</ul>
 		</div>
 
@@ -158,7 +182,7 @@
 			</div>
 			<div class="floor-left-goods">
 			    {/* 楼层左侧推荐商品 */}
-				{wst:goods type='recom' cat="vo['catId']" cache="86400" num='8' id="gvo"}
+				{wst:goods type='best' cat="vo['catId']" cache="86400" num='8' id="gvo"}
 				<div class='item'>
 				{$key+1}.&nbsp;<a href="{:Url('home/goods/detail','id='.$gvo['goodsId'])}" title="{$gvo['goodsName']}">{$gvo['goodsName']}</a>
 				</div>
@@ -200,7 +224,7 @@
 		      	<div class="img"><a target='_blank' href="{:Url('home/goods/detail','id='.$cs['goodsId'])}" title="{$cs['goodsName']}"><img title="{$cs['goodsName']}" class='goodsImg' data-original="__ROOT__/{$cs['goodsImg']}"/></a></div>
 		      	<div class="p-name"><a target='_blank' href="{:Url('home/goods/detail','id='.$cs['goodsId'])}" class="wst-redlink" title="{$cs['goodsName']}">{:WSTMSubstr($cs['goodsName'],0,33)}</a></div>
 		      	<div>
-							{if $l==2}
+							{if $cs['shopPrice']=="8888"}
 							<div class="p-price">价格面议</div>
 							{else}
 		      		<div class="p-price">${$cs['shopPrice']}</div>
@@ -228,7 +252,12 @@
 		      	<div class="img"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo2['goodsId'])}" title="{$vo2['goodsName']}"><img title="{$vo2['goodsName']}" class='goodsImg' data-original="__ROOT__/{$vo2['goodsImg']}"/></a></div>
 		      	<div class="p-name"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo2['goodsId'])}" class="wst-redlink" title="{$vo2['goodsName']}">{:WSTMSubstr($vo2['goodsName'],0,33)}</a></div>
 		      	<div>
+							{if $vo2['shopPrice']=="8888"}
+							<div class="p-price">价格面议</div>
+							{else}
 		      		<div class="p-price">${$vo2['shopPrice']}</div>
+							{/if}
+		      		<!-- <div class="p-price">${$vo2['shopPrice']}</div> -->
 		      		<div class="p-hsale">
 		      			<!-- <div class="sale-num">成交数：<span class="wst-fred">{$vo2['saleNum']}</span></div>
 		      			<a class="f-add-cart" style="display:none;" href="javascript:WST.addCart({$vo2['goodsId']});">加入购物车</a> -->
