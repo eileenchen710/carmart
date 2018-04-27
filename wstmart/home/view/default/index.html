@@ -144,7 +144,7 @@
 				{volist name="vo['children']" id="vo1" key="l2" length="7"}
 				<li class="tab-item{$l}" id="fl_{$l}_{$l2}" onmouseover="gpanelOver(this);" c={$l}><a href="{:Url('home/goods/lists','cat='.$vo1['catId'])}">{$vo1['catName']}</a></li>
 				{/volist}
-				
+
 			</ul>
 		</div>
 
@@ -158,7 +158,7 @@
 			</div>
 			<div class="floor-left-goods">
 			    {/* 楼层左侧推荐商品 */}
-				{wst:goods type='recom' cat="vo['catId']" cache="86400" num='8' id="gvo"}
+				{wst:goods type='best' cat="vo['catId']" cache="86400" num='8' id="gvo"}
 				<div class='item'>
 				{$key+1}.&nbsp;<a href="{:Url('home/goods/detail','id='.$gvo['goodsId'])}" title="{$gvo['goodsName']}">{$gvo['goodsName']}</a>
 				</div>
@@ -200,7 +200,7 @@
 		      	<div class="img"><a target='_blank' href="{:Url('home/goods/detail','id='.$cs['goodsId'])}" title="{$cs['goodsName']}"><img title="{$cs['goodsName']}" class='goodsImg' data-original="__ROOT__/{$cs['goodsImg']}"/></a></div>
 		      	<div class="p-name"><a target='_blank' href="{:Url('home/goods/detail','id='.$cs['goodsId'])}" class="wst-redlink" title="{$cs['goodsName']}">{:WSTMSubstr($cs['goodsName'],0,33)}</a></div>
 		      	<div>
-							{if $l==2}
+							{if $cs['shopPrice']=="8888"}
 							<div class="p-price">价格面议</div>
 							{else}
 		      		<div class="p-price">${$cs['shopPrice']}</div>

@@ -218,7 +218,7 @@ function WSTConfig(){
 		cache('WST_CONF',$rs,31536000);
 	}
 	return $rs;
-} 
+}
 
 /**
  * 判断手机号格式是否正确
@@ -412,7 +412,7 @@ function WSTUploadPic($fromType=0){
 	    	$ttf = is_file($customTtf)?$customTtf:EXTEND_PATH.'/verify/verify/ttfs/3.ttf';
 	        $image = \image\Image::open($imageSrc);
 	    	if(!empty($wmWord)){//当设置了文字水印 就一定会执行文字水印,不管是否设置了文件水印
-		    	
+
 	    		//执行文字水印
 	    		$image->text($wmWord, $ttf, $wmSize, $wmColor, $wmPosition)->save($imageSrc);
 	    		if($thumbSrc!==null){
@@ -462,7 +462,7 @@ function WSTUploadPic($fromType=0){
     }else{
         //上传失败获取错误信息
         return $file->getError();
-    }    
+    }
 }
 /**
  * 上传文件
@@ -519,7 +519,7 @@ function WSTOrderQnique(){
 * 图片管理
 * @param $imgPath    图片路径
 * @param $fromType   0：用户/商家 1：平台管理员
-* 
+*
 */
 function WSTRecordImages($imgPath, $fromType){
 	$data = [];
@@ -530,7 +530,7 @@ function WSTRecordImages($imgPath, $fromType){
 	//获取表名
 	$table = explode('/',$imgPath);
 	$data['fromTable'] = $table[1];
-	$data['fromType'] = (int)$fromType; 
+	$data['fromType'] = (int)$fromType;
 	//根据类型判断所有者
 	$data['ownId'] = ((int)$fromType==0)?(int)session('WST_USER.userId'):(int)session('WST_STAFF.staffId');
 	$data['isUse'] = 0; //默认不使用
@@ -580,7 +580,7 @@ function WSTUseImages($fromType, $dataId, $imgPath, $fromTable='', $imgFieldName
 		$tableName = $prefix.$fromTable;
 		$pk = Db::getTableInfo("$tableName", 'pk');
 		// 取出旧图
-		$oldImgPath = model("$fromTable")->where("$pk",$dataId)->value("$imgFieldName"); 
+		$oldImgPath = model("$fromTable")->where("$pk",$dataId)->value("$imgFieldName");
 		// 转数组
 		$oldImgPath = explode(',', $oldImgPath);
 
@@ -611,7 +611,7 @@ function WSTEditorImageRocord($fromTable, $dataId, $oldDesc, $newDesc){
 	    preg_match_all($rule,$oldDesc,$images);
 	    $oldImgPath = $images[1];
 
-	    preg_match_all($rule,$newDesc,$images);  
+	    preg_match_all($rule,$newDesc,$images);
 	    // 获取新的src数组
 	    $imgPath = $images[1];
 		// 1.要设置为启用的文件
@@ -655,7 +655,7 @@ function WSTRootPath(){
  * 切换图片
  * @param $imgurl 图片路径
  * @param $imgType 图片类型    0:PC版大图   1:PC版缩略图       2:移动版大图    3:移动版缩略图
- * 图片规则  
+ * 图片规则
  * PC版版大图 :201635459344.jpg
  * PC版版缩略图 :201635459344_thumb.jpg
  * 移动版大图 :201635459344_m.jpg

@@ -59,14 +59,22 @@
           <span class='tips'>{$goods['goodsTips']}</span>
           <div class='summary'>
           	<div class="infol">
-             <div class='item'>
-               <div class='dt'>市场价：</div>
-               <div class='dd market-price' id='j-market-price'>${$goods['marketPrice']}</div>
-             </div>
-             <div class='item'>
-               <div class='dt'>价格：</div>
-               <div class='dd price' id='j-shop-price'>${$goods['shopPrice']}</div>
-             </div>
+							{if $goods['marketPrice']!="9999"}
+ 						<div class='item'>
+ 							<div class='dt'>市场价：</div>
+ 							<div class='dd market-price' id='j-market-price'>${$goods['marketPrice']}</div>
+ 						</div>
+ 						{/if}
+ 						{if $goods['shopPrice']!="8888"}
+ 						<div class='item'>
+ 							<div class='dt'>价格：</div>
+ 							<div class='dd price' id='j-shop-price'>${$goods['shopPrice']}</div>
+ 						</div>
+ 						{else}
+ 						<div class='item'>
+ 							<div class='dd price' >价格面议</div>
+ 						</div>
+ 					{/if}
              <div class='item'>
                <div class='dt'>商品评分：</div>
                <div class='dd'>
@@ -79,10 +87,10 @@
 				<div class='appraise'>累计评价：<span class='appraise-num'>{$goods['appraiseNum']}</span></div>
 				</div>
              </div>
-             <div class='item'>
+             <!-- <div class='item'>
                <div class='dt'>商品编号：</div>
                <div class='dd'>{$goods['goodsSn']}</div>
-             </div>
+             </div> -->
              </div>
              <!-- <div class="infor">
              	<div id='qrcode' style='width:125px;height:125px;margin-left:18px;'></div>
@@ -131,6 +139,9 @@
                  <!-- <a id='addBtn' href='javascript:addCart(0,"#buyNum")' class='addBtn' >加入购物车</a>
                  <a id='buyBtn' href='javascript:addCart(1,"#buyNum")' class='buyBtn'>立即购买</a> -->
                {/if}
+							 <div class="wst-favorite">
+								 <a href='javascript:void(0);'  class='favorite j-fav2 j-fav3'>关注商品</a>
+							 </div>
                <div class="wst-favorite">
                {if ($goods['favGood']>0)}
                  <a href='javascript:void(0);' onclick='WST.cancelFavorite(this,0,{$goods["goodsId"]},{$goods['favGood']})' class='favorite j-fav'>已关注</a>
@@ -192,11 +203,18 @@
 					<div class="item">
 						<div class="img"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo['goodsId'])}"><img title="{$vo['goodsName']}" alt="{$vo['goodsName']}" data-original="__ROOT__/{:WSTImg($vo['goodsImg'])}" class="goodsImg" /></a></div>
 						<div class="p-name"><a class="wst-hide wst-redlink">{$vo['goodsName']}</a></div>
+						{if $vo['shopPrice']=="8888"}
+						<div class="p-price">价格面议</div>
+						{elseif $vo['marketPrice']=="9999"}
+						<div class="p-price">${$vo['shopPrice']}</div>
+						{else}
 						<div class="p-price">${$vo['shopPrice']}<span class="v-price">${$vo['marketPrice']}</span></div>
+						{/if}
+						<!-- <div class="p-price">${$vo['shopPrice']}<span class="v-price">${$vo['marketPrice']}</span></div> -->
 					</div>
 					{/wst:goods}
 				</div>
-				<div class="hot-goods">
+				<!-- <div class="hot-goods">
 					<div class="title">轮胎商品</div>
 					{wst:goods type='hot' num='3'}
 					<div class="item">
@@ -205,7 +223,7 @@
 						<div class="p-price">${$vo['shopPrice']}<span class="v-price">${$vo['marketPrice']}</span></div>
 					</div>
 					{/wst:goods}
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<div class='goods-desc'>
@@ -350,8 +368,8 @@ var goodsInfo = {
 </script>
 <script type='text/javascript' src='__STYLE__/js/cloudzoom.js?v={$v}'></script>
 <script type='text/javascript' src='__STYLE__/js/goods.js?v={$v}'></script>
-<!-- <script type='text/javascript' src='__STYLE__/js/qrcode.js?v={$v}'></script> -->
-<!-- <script>
+<script type='text/javascript' src='__STYLE__/js/qrcode.js?v={$v}'></script>
+<script>
 $(function(){
   queryByPage();
 	var qr = qrcode(10, 'M');
@@ -363,5 +381,5 @@ $(function(){
 function goShop(id){
   location.href=WST.U('home/shops/home','shopId='+id);
 }
-</script> -->
+</script>
 {/block}

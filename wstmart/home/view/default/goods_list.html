@@ -142,11 +142,18 @@
 			<div class="item">
 				<div class="img"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo['goodsId'])}"><img class='goodsImg' data-original="__ROOT__/{:WSTImg($vo['goodsImg'])}" alt="{$vo['goodsName']}" title="{$vo['goodsName']}"/></a></div>
 				<div class="p-name"><a class="wst-hide wst-redlink">{$vo['goodsName']}</a></div>
+				{if $vo['shopPrice']=="8888"}
+				<div class="p-price">价格面议</div>
+				{elseif $vo['marketPrice']=="9999"}
+				<div class="p-price">${$vo['shopPrice']}</div>
+				{else}
 				<div class="p-price">${$vo['shopPrice']}<span class="v-price">${$vo['marketPrice']}</span></div>
+				{/if}
+				<!-- <div class="p-price">${$vo['shopPrice']}<span class="v-price">${$vo['marketPrice']}</span></div> -->
 			</div>
 			{/wst:goods}
 		</div>
-		<div class="hot-goods">
+		<!-- <div class="hot-goods">
 			<div class="title">轮胎商品</div>
 			{wst:goods type='hot' cat="$catId" num='3'}
 			<div class="item">
@@ -155,7 +162,7 @@
 				<div class="p-price">${$vo['shopPrice']}<span class="v-price">${$vo['marketPrice']}</span></div>
 			</div>
 			{/wst:goods}
-		</div>
+		</div> -->
 	</div>
 	<div class='goods-main'>
 	   <div class='goods-filters'>
@@ -232,12 +239,12 @@
 		     <label for="stock"></label>
 		     </div>
 	                  仅显示有货</div>
-	        <div class='chk'>
+	        <!-- <div class='chk'>
 	         <div class="checkbox-box-s">
 		     <input name='isNew' value='1' class="sipt wst-checkbox-s" onclick="goodsFilter(this,4)" type='checkbox' id="new" {if $isNew==1}checked{/if}/>
 		     <label for="new"></label>
 		     </div>
-	                  新品</div>
+	                  新品</div> -->
 	      </div>
 	      <div class='line line2'>
 	        <a class="{if condition="$orderBy eq 0"}curr {/if}" href='javascript:void(0)' onclick='javascript:goodsOrder(0)'>销量<span class="{if condition="$orderBy neq 0"}store{/if}{if condition="$orderBy eq 0 and $order eq 1"}store2{/if}{if condition="$orderBy eq 0 and $order eq 0"}store3{/if}"></span></a>
@@ -250,7 +257,7 @@
 			<input type="text" class="sipt wst-price-ipt" id="sprice" value="{$sprice}" style="margin-left:8px;" onkeypress='return WST.isNumberdoteKey(event);' onkeyup="javascript:WST.isChinese(this,1)">
 			- <input type="text" class="sipt wst-price-ipt" id="eprice" value="{$eprice}" onkeypress='return WST.isNumberKey(event);' onkeyup="javascript:WST.isChinese(this,1)">
 			</div>
-			<button class="wst-price-but" type="submit" style="width:60px;height: 25px;" onclick='javascript:goodsOrder()'>确定</button>
+			<button class="wst-price-but" type="submit" style="width:60px;height: 23px;margin-left:20px;" onclick='javascript:goodsOrder()'>确定</button>
 
 
 			<div class="page" style="float:right;">
@@ -267,7 +274,11 @@
 	      	<div class="img"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo['goodsId'])}"><img title="{$vo['goodsName']}" alt="{$vo['goodsName']}" class='goodsImg2' data-original="__ROOT__/{$vo['goodsImg']}"/></a></div>
 	      	<div class="p-name"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo['goodsId'])}" class="wst-redlink" title="{$vo['goodsName']}">{$vo['goodsName']}</a></div>
 	      	<div>
+						{if $vo['shopPrice']!="8888"}
 	      		<div class="p-price">${$vo['shopPrice']}</div>
+						{else}
+						<div class="p-price">价格面议</div>
+						{/if}
 	      		<div class="p-hsale">
 	      			<!-- <div class="sale-num">成交数：<span class="wst-fred">{$vo['saleNum']}</span></div> -->
 		      		<!-- <a class="p-add-cart" style="display:none;" href="javascript:WST.addCart({$vo['goodsId']});">加入购物车</a> -->
@@ -275,7 +286,9 @@
 	      		<div class='wst-clear'></div>
 	      	</div>
 	      	<div>
+						{if $vo['marketPrice']!="9999"}
 	      		<div class="p-mprice">市场价<span>${$vo['marketPrice']}</span></div>
+						{/if}
 	      		<div class="p-appraise">已有<span class="wst-fred">{$vo['appraiseNum']}</span>人评价</div>
 	      		<div class='wst-clear'></div>
 	      	</div>

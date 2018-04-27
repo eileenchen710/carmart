@@ -401,12 +401,12 @@
 	border: 1px solid #e9e7e7;
 }
 .wst-shop-listh a:hover{
-	border: 1px solid #ff8043;
+	border: 1px solid #18d26e;
 }
 a.wst-shop-a{
 	color:#ffffff;
-	background:#ff8043;
-	border: 1px solid #ff8043;
+	background:#18d26e;
+	border: 1px solid #18d26e;
 }
 .wst-shop-store,.wst-shop-store2,.wst-shop-store3{
 	float:right;
@@ -435,7 +435,7 @@ input.wst-price-ipt{
 	border: 1px solid #e9e7e7;
 }
 input.wst-price-ipt:focus{
-	border: 1px solid #ff8043;
+	border: 1px solid #18d26e;
 }
 .wst-price-ipt1{
 	position: absolute;

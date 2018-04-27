@@ -59,14 +59,22 @@
           <span class='tips'>{$goods['goodsTips']}</span>
           <div class='summary'>
           	<div class="infol">
+							{if $goods['marketPrice']!="9999"}
              <div class='item'>
                <div class='dt'>市场价：</div>
                <div class='dd market-price' id='j-market-price'>${$goods['marketPrice']}</div>
              </div>
-             <div class='item'>
+						 {/if}
+						 {if $goods['shopPrice']!="8888"}
+						 <div class='item'>
                <div class='dt'>价格：</div>
                <div class='dd price' id='j-shop-price'>${$goods['shopPrice']}</div>
              </div>
+						 {else}
+						 <div class='item'>
+               <div class='dd price' >价格面议</div>
+             </div>
+					 {/if}
              <div class='item'>
                <div class='dt'>商品评分：</div>
                <div class='dd'>
@@ -79,15 +87,15 @@
 				<div class='appraise'>累计评价：<span class='appraise-num'>{$goods['appraiseNum']}</span></div>
 				</div>
              </div>
-             <div class='item'>
+             <!-- <div class='item'>
                <div class='dt'>商品编号：</div>
                <div class='dd'>{$goods['goodsSn']}</div>
+             </div> -->
              </div>
-             </div>
-             <div class="infor">
+             <!-- <div class="infor">
              	<div id='qrcode' style='width:125px;height:125px;margin-left:18px;'></div>
              	<div style='text-align: center;'>微信端扫购有惊喜</div>
-             </div>
+             </div> -->
              <div class='wst-clear'></div>
           </div>
           <div class='spec'>
@@ -119,10 +127,10 @@
                     &nbsp; &nbsp;（库存：<span id='goods-stock'>0</span>&nbsp;{$goods['goodsUnit']}）
                 </div>
              </div> -->
-             <div class='item'>
-                <!-- <div class='dt'>服务：</div> -->
+             <!-- <div class='item'>
+                <div class='dt'>服务：</div>
                 <div class='dd'><a href='{:Url("home/shops/home","shopId=".$shop["shopId"])}' target='_blank'>{$shop['shopName']}</a> </div>
-             </div>
+             </div> -->
              <div class='item' style='padding-left:75px;margin-top:20px;'>
                <!-- {if $goods['read']}
                  <a id='addBtn' href='javascript:void(0);' class='addBtn un-buy' >加入购物车</a>
@@ -131,6 +139,7 @@
                  <a id='addBtn' href='javascript:addCart(0,"#buyNum")' class='addBtn' >加入购物车</a>
                  <a id='buyBtn' href='javascript:addCart(1,"#buyNum")' class='buyBtn'>立即购买</a>
                {/if} -->
+
                <div class="wst-favorite">
                {if ($goods['favGood']>0)}
                  <a href='javascript:void(0);' onclick='WST.cancelFavorite(this,0,{$goods["goodsId"]},{$goods['favGood']})' class='favorite j-fav'>已关注</a>
@@ -142,7 +151,7 @@
           </div>
       </div>
 
-      <!-- <div class='seeing'>
+      <div class='seeing'>
          <div class='head'>看了又看</div>
          <div class='body'>
           {wst:goods type="visit" cat="$goods['goodsCatId']" num="5" id="visit" num="3"}
@@ -160,7 +169,7 @@
 
 
          </div>
-      </div> -->
+      </div>
       <div class='wst-clear'></div>
    </div>
 </div>
@@ -175,11 +184,18 @@
 					<div class="item">
 						<div class="img"><a target='_blank' href="{:Url('home/goods/detail','id='.$vo['goodsId'])}"><img title="{$vo['goodsName']}" alt="{$vo['goodsName']}" data-original="__ROOT__/{:WSTImg($vo['goodsImg'])}" class="goodsImg" /></a></div>
 						<div class="p-name"><a class="wst-hide wst-redlink">{$vo['goodsName']}</a></div>
+						{if $vo['shopPrice']=="8888"}
+						<div class="p-price">价格面议</div>
+						{elseif $vo['marketPrice']=="9999"}
+						<div class="p-price">${$vo['shopPrice']}</div>
+						{else}
 						<div class="p-price">${$vo['shopPrice']}<span class="v-price">${$vo['marketPrice']}</span></div>
+						{/if}
+						<!-- <div class="p-price">${$vo['shopPrice']}<span class="v-price">${$vo['marketPrice']}</span></div> -->
 					</div>
 					{/wst:goods}
 				</div>
-				<div class="hot-goods">
+				<!-- <div class="hot-goods">
 					<div class="title">轮胎商品</div>
 					{wst:goods type='hot' num='3'}
 					<div class="item">
@@ -188,7 +204,7 @@
 						<div class="p-price">${$vo['shopPrice']}<span class="v-price">${$vo['marketPrice']}</span></div>
 					</div>
 					{/wst:goods}
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<div class='goods-desc'>
@@ -196,7 +212,6 @@
 				<ul class="wst-tab-nav">
 				   <li>商品介绍</li>
 				   <!-- <li>商品属性</li> -->
-					  <li>商家信息</li>
 				   <li>商品评价</li>
 
 				</ul>
@@ -204,7 +219,7 @@
 			       <div class="wst-tab-item goods-desc-box" style="position: relative;">
 			       {$goods['goodsDesc']|htmlspecialchars_decode}
 			       </div>
-			       <div class="wst-tab-item" style="position: relative;display:none">
+			       <!-- <div class="wst-tab-item" style="position: relative;display:none">
 			          <table class='wst-attrs-list'>
 
 
@@ -240,7 +255,7 @@
 			             </tr>
 			             {/volist}
 			          </table>
-			       </div>
+			       </div> -->
              <input type="hidden" id="filtertype" value="all" />
              <script id="tblist" type="text/html">
               <div class="appr-filter">

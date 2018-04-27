@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:89:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/deals_detail.html";i:1524642623;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1524642623;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header.html";i:1524642623;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524642623;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/right_cart.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524642623;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:7:{s:89:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/deals_detail.html";i:1524808721;s:81:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/base.html";i:1524642623;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header.html";i:1524642623;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/header_top.html";i:1524642623;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/shop_apply.html";i:1523516678;s:87:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/right_cart.html";i:1523516678;s:83:"/Applications/XAMPP/xamppfiles/htdocs/carmart/wstmart/home/view/default/footer.html";i:1524642623;}*/ ?>
 <!doctype html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -636,34 +636,41 @@ document.getElementById("locationImg").style.opacity = "0.5";
           <span class='tips'><?php echo $goods['goodsTips']; ?></span>
           <div class='summary'>
           	<div class="infol">
+							<?php if($goods['marketPrice']!="9999"): ?>
              <div class='item'>
                <div class='dt'>市场价：</div>
                <div class='dd market-price' id='j-market-price'>$<?php echo $goods['marketPrice']; ?></div>
              </div>
-             <div class='item'>
+						 <?php endif; if($goods['shopPrice']!="8888"): ?>
+						 <div class='item'>
                <div class='dt'>价格：</div>
                <div class='dd price' id='j-shop-price'>$<?php echo $goods['shopPrice']; ?></div>
              </div>
+						 <?php else: ?>
+						 <div class='item'>
+               <div class='dd price' >价格面议</div>
+             </div>
+					 <?php endif; ?>
              <div class='item'>
                <div class='dt'>商品评分：</div>
                <div class='dd'>
-		        <?php $__FOR_START_1356227285__=0;$__FOR_END_1356227285__=$goods['scores']['totalScores'];for($i=$__FOR_START_1356227285__;$i < $__FOR_END_1356227285__;$i+=1){ ?>
+		        <?php $__FOR_START_1733120549__=0;$__FOR_END_1733120549__=$goods['scores']['totalScores'];for($i=$__FOR_START_1733120549__;$i < $__FOR_END_1733120549__;$i+=1){ ?>
 					<img src="__STATIC__/plugins/raty/img/star-on.png">
-				<?php } $__FOR_START_87787543__=1;$__FOR_END_87787543__=6-$goods['scores']['totalScores'];for($i=$__FOR_START_87787543__;$i < $__FOR_END_87787543__;$i+=1){ ?>
+				<?php } $__FOR_START_521605195__=1;$__FOR_END_521605195__=6-$goods['scores']['totalScores'];for($i=$__FOR_START_521605195__;$i < $__FOR_END_521605195__;$i+=1){ ?>
 					<img src="__STATIC__/plugins/raty/img/star-off.png">
 				<?php } ?>
 				<div class='appraise'>累计评价：<span class='appraise-num'><?php echo $goods['appraiseNum']; ?></span></div>
 				</div>
              </div>
-             <div class='item'>
+             <!-- <div class='item'>
                <div class='dt'>商品编号：</div>
                <div class='dd'><?php echo $goods['goodsSn']; ?></div>
+             </div> -->
              </div>
-             </div>
-             <div class="infor">
+             <!-- <div class="infor">
              	<div id='qrcode' style='width:125px;height:125px;margin-left:18px;'></div>
              	<div style='text-align: center;'>微信端扫购有惊喜</div>
-             </div>
+             </div> -->
              <div class='wst-clear'></div>
           </div>
           <div class='spec'>
@@ -691,10 +698,10 @@ document.getElementById("locationImg").style.opacity = "0.5";
                     &nbsp; &nbsp;（库存：<span id='goods-stock'>0</span>&nbsp;<?php echo $goods['goodsUnit']; ?>）
                 </div>
              </div> -->
-             <div class='item'>
-                <!-- <div class='dt'>服务：</div> -->
+             <!-- <div class='item'>
+                <div class='dt'>服务：</div>
                 <div class='dd'><a href='<?php echo Url("home/shops/home","shopId=".$shop["shopId"]); ?>' target='_blank'><?php echo $shop['shopName']; ?></a> </div>
-             </div>
+             </div> -->
              <div class='item' style='padding-left:75px;margin-top:20px;'>
                <!-- <?php if($goods['read']): ?>
                  <a id='addBtn' href='javascript:void(0);' class='addBtn un-buy' >加入购物车</a>
@@ -703,6 +710,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
                  <a id='addBtn' href='javascript:addCart(0,"#buyNum")' class='addBtn' >加入购物车</a>
                  <a id='buyBtn' href='javascript:addCart(1,"#buyNum")' class='buyBtn'>立即购买</a>
                <?php endif; ?> -->
+
                <div class="wst-favorite">
                <?php if(($goods['favGood']>0)): ?>
                  <a href='javascript:void(0);' onclick='WST.cancelFavorite(this,0,<?php echo $goods["goodsId"]; ?>,<?php echo $goods['favGood']; ?>)' class='favorite j-fav'>已关注</a>
@@ -714,7 +722,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
           </div>
       </div>
 
-      <!-- <div class='seeing'>
+      <div class='seeing'>
          <div class='head'>看了又看</div>
          <div class='body'>
           <?php $wstTagGoods =  model("Tags")->listGoods("visit",$goods['goodsCatId'],3,0); foreach($wstTagGoods as $key=>$visit){?>
@@ -732,7 +740,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 
 
          </div>
-      </div> -->
+      </div>
       <div class='wst-clear'></div>
    </div>
 </div>
@@ -747,11 +755,18 @@ document.getElementById("locationImg").style.opacity = "0.5";
 					<div class="item">
 						<div class="img"><a target='_blank' href="<?php echo Url('home/goods/detail','id='.$vo['goodsId']); ?>"><img title="<?php echo $vo['goodsName']; ?>" alt="<?php echo $vo['goodsName']; ?>" data-original="__ROOT__/<?php echo WSTImg($vo['goodsImg']); ?>" class="goodsImg" /></a></div>
 						<div class="p-name"><a class="wst-hide wst-redlink"><?php echo $vo['goodsName']; ?></a></div>
+						<?php if($vo['shopPrice']=="8888"): ?>
+						<div class="p-price">价格面议</div>
+						<?php elseif($vo['marketPrice']=="9999"): ?>
+						<div class="p-price">$<?php echo $vo['shopPrice']; ?></div>
+						<?php else: ?>
 						<div class="p-price">$<?php echo $vo['shopPrice']; ?><span class="v-price">$<?php echo $vo['marketPrice']; ?></span></div>
+						<?php endif; ?>
+						<!-- <div class="p-price">$<?php echo $vo['shopPrice']; ?><span class="v-price">$<?php echo $vo['marketPrice']; ?></span></div> -->
 					</div>
 					<?php } ?>
 				</div>
-				<div class="hot-goods">
+				<!-- <div class="hot-goods">
 					<div class="title">轮胎商品</div>
 					<?php $wstTagGoods =  model("Tags")->listGoods("hot",0,3,0); foreach($wstTagGoods as $key=>$vo){?>
 					<div class="item">
@@ -760,7 +775,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 						<div class="p-price">$<?php echo $vo['shopPrice']; ?><span class="v-price">$<?php echo $vo['marketPrice']; ?></span></div>
 					</div>
 					<?php } ?>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<div class='goods-desc'>
@@ -768,7 +783,6 @@ document.getElementById("locationImg").style.opacity = "0.5";
 				<ul class="wst-tab-nav">
 				   <li>商品介绍</li>
 				   <!-- <li>商品属性</li> -->
-					  <li>商家信息</li>
 				   <li>商品评价</li>
 
 				</ul>
@@ -776,7 +790,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 			       <div class="wst-tab-item goods-desc-box" style="position: relative;">
 			       <?php echo htmlspecialchars_decode($goods['goodsDesc']); ?>
 			       </div>
-			       <div class="wst-tab-item" style="position: relative;display:none">
+			       <!-- <div class="wst-tab-item" style="position: relative;display:none">
 			          <table class='wst-attrs-list'>
 
 
@@ -812,7 +826,7 @@ document.getElementById("locationImg").style.opacity = "0.5";
 			             </tr>
 			             <?php endforeach; endif; else: echo "" ;endif; ?>
 			          </table>
-			       </div>
+			       </div> -->
              <input type="hidden" id="filtertype" value="all" />
              <script id="tblist" type="text/html">
               <div class="appr-filter">

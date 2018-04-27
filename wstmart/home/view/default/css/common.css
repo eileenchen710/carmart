@@ -79,7 +79,7 @@ input[type=button]{cursor:pointer}
 .wst-header .last-menu{float:right;right:0px;white-space:nowrap;}
 
 .wst-header .wst-nav .drop-info{position: relative;padding: 0 8px;border:1px solid #fafafa;border-top:0;border-bottom:0;}
-.wst-header .wst-nav .drop-infos a{color:#fe6047;}
+.wst-header .wst-nav .drop-infos a{color:#18d26e;}
 .wst-header .wst-nav .dorpdown-user{position: absolute;z-index:1000;cursor:pointer;left:-1px;display:none;}
 .wst-tag{width:280px;height:80px;border:1px solid #dedbdb;position:relative;background-color:#f7f7f6;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);}
 .wst-tag:after{top:-16px;border-color:transparent transparent #f7f7f6;}
@@ -87,7 +87,7 @@ input[type=button]{cursor:pointer}
 .wst-tagt .userImg{margin-left:10px;float:left;width:60px;height:60px;}
 .wst-tagt .userImg img{width:60px;height:60px;border-radius:1000px;}
 .wst-tagt-n{float:left;width:190px;margin-left:5px}
-.wst-tagt-na{float:left;color:#fe6047;font-size:15px;margin-left:12px;}
+.wst-tagt-na{float:left;color:#18d26e;font-size:15px;margin-left:12px;}
 .wst-tagt-n img{float:left;width:18px;margin-top:5px;margin-left:6px;}
 .wst-tagt-ip{float:left;width:190px;line-height:18px;margin-left:12px;color:#3d3d3e;}
 .wst-tagb{float:left;padding:10px 0px 0px 30px;}
