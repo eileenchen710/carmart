@@ -1,0 +1,37 @@
+.wst-search-location{float:left;position: relative;width: 250px;margin-left: 50px;margin-top: 50px;}
+.wst-search-location .j-search-location{
+  background-color: #ffffff;
+    color: #999;
+    font-size: 15px;
+    height: 36px;
+    line-height: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 250px;
+    border:2px solid #4a566c;
+    padding-left: 20px;
+
+}
+
+.wst-search-location .search-btn{
+	background-color: #4a566c;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bolder;
+    height: 36px;
+    line-height: 36px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 80px;
+    letter-spacing: 2px;
+}
+
+.j-search-location .search-location{
+  border: 0px;
+    outline: none;
+    width: 135px;
+}
